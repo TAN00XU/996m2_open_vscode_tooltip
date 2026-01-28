@@ -1,0 +1,5414 @@
+{
+    "添加buff": {
+        "prefix": "addbuff",
+        "description": "添加buff",
+        "body": "addbuff(base, buffId, time, overLap, objOwner, abil)",
+        "scope": "接口/BUFF相关/添加buff"
+    },
+    "删除buff": {
+        "prefix": "delbuff",
+        "description": "删除buff",
+        "body": "delbuff(base, buffId)",
+        "scope": "接口/BUFF相关/删除buff"
+    },
+    "是否有buff": {
+        "prefix": "hasbuff",
+        "description": "是否有buff",
+        "body": "hasbuff(base, buffId)",
+        "scope": "接口/BUFF相关/是否有buff"
+    },
+    "获取buff信息": {
+        "prefix": "getbuffinfo",
+        "description": "获取buff信息",
+        "body": "getbuffinfo(base, buffId, type)",
+        "scope": "接口/BUFF相关/获取buff信息"
+    },
+    "获取buff模板信息": {
+        "prefix": "getstdbuffinfo",
+        "description": "获取buff模板信息",
+        "body": "getstdbuffinfo(buffInfo, id)",
+        "scope": "接口/BUFF相关/获取buff模板信息"
+    },
+    "获取角色所有buff": {
+        "prefix": "getallbuffid",
+        "description": "获取角色所有buff",
+        "body": "getallbuffid(actor)",
+        "scope": "接口/BUFF相关/获取角色所有buff"
+    },
+    "设置buff堆叠层数": {
+        "prefix": "buffstack",
+        "description": "设置buff堆叠层数",
+        "body": "buffstack(actor, buffId, opt, stack, iTimer)",
+        "scope": "接口/BUFF相关/设置buff堆叠层数"
+    },
+    "创建临时NPC": {
+        "prefix": "createnpc",
+        "description": "创建临时NPC",
+        "body": "createnpc(map, X, Y, NPC)",
+        "scope": "接口/NPC/创建临时NPC"
+    },
+    "删除NPC": {
+        "prefix": "delnpc",
+        "description": "删除NPC",
+        "body": "delnpc(name, map)",
+        "scope": "接口/NPC/删除NPC"
+    },
+    "根据唯一ID删除NPC": {
+        "prefix": "DelNpcByUserId",
+        "description": "根据唯一ID删除NPC",
+        "body": "DelNpcByUserId(npc)",
+        "scope": "接口/NPC/根据唯一ID删除NPC"
+    },
+    "根据ID获取NPC对象": {
+        "prefix": "getnpcbyindex",
+        "description": "根据ID获取NPC对象",
+        "body": "getnpcbyindex(NPCIndex)",
+        "scope": "接口/NPC/根据ID获取NPC对象"
+    },
+    "打开指定NPC面板": {
+        "prefix": "opennpcshow",
+        "description": "打开指定NPC面板",
+        "body": "opennpcshow(actor, NPCIndex, nRange)",
+        "scope": "接口/NPC/打开指定NPC面板"
+    },
+    "移动到指定NPC附近": {
+        "prefix": "opennpcshowex",
+        "description": "移动到指定NPC附近",
+        "body": "opennpcshowex(actor, NPCIndex, nRange, nRange2)",
+        "scope": "接口/NPC/移动到指定NPC附近"
+    },
+    "获取当前NPC对象": {
+        "prefix": "getcurrnpc",
+        "description": "获取当前NPC对象",
+        "body": "getcurrnpc(actor)",
+        "scope": "接口/NPC/获取当前NPC对象"
+    },
+    "设置NPC特效": {
+        "prefix": "setnpceffect",
+        "description": "设置NPC特效",
+        "body": "setnpceffect(actor, NPCIndex, Effect, X, Y)",
+        "scope": "接口/NPC/设置NPC特效"
+    },
+    "删除NPC特效": {
+        "prefix": "delnpceffect",
+        "description": "删除NPC特效",
+        "body": "delnpceffect(actor, NPCIndex)",
+        "scope": "接口/NPC/删除NPC特效"
+    },
+    "关闭当前的NPC对话框": {
+        "prefix": "close",
+        "description": "关闭当前的NPC对话框",
+        "body": "close(actor)",
+        "scope": "接口/NPC/关闭当前的NPC对话框"
+    },
+    "给NPC注册Lua消息": {
+        "prefix": "regnpcmsg",
+        "description": "给NPC注册Lua消息",
+        "body": "regnpcmsg(msgId, NPCIndex)",
+        "scope": "接口/NPC/给NPC注册Lua消息"
+    },
+    "获取NPC对象的Idx": {
+        "prefix": "getnpcindex",
+        "description": "获取NPC对象的Idx",
+        "body": "getnpcindex(NPC)",
+        "scope": "接口/NPC/获取NPC对象的Idx"
+    },
+    "调用其他NPC的lua函数": {
+        "prefix": "callfunbynpc",
+        "description": "调用其他NPC的lua函数",
+        "body": "callfunbynpc(actor, NPCIndex, delayTime, func, sParam)",
+        "scope": "接口/NPC/调用其他NPC的lua函数"
+    },
+    "打开NPC大窗口": {
+        "prefix": "openmerchantbigdlg",
+        "description": "打开NPC大窗口",
+        "body": "openmerchantbigdlg(path, pos, x, y, height, width, bool, closeX, closeY, isMove)",
+        "scope": "接口/NPC/打开NPC大窗口"
+    },
+    "获取当前虚拟机id[npcid]": {
+        "prefix": "getsysindex",
+        "description": "获取当前虚拟机id[npcid]",
+        "body": "getsysindex()",
+        "scope": "接口/NPC/获取当前虚拟机id[npcid]"
+    },
+    "NPC界面文本发送": {
+        "prefix": "say",
+        "description": "NPC界面文本发送",
+        "body": "say(actor, msg)",
+        "scope": "接口/NPC/NPC界面文本发送"
+    },
+    "增加自定义按钮": {
+        "prefix": "addbutton",
+        "description": "增加自定义按钮",
+        "body": "addbutton(actor, windowId, buttonId, icon)",
+        "scope": "接口/NPC/增加自定义按钮"
+    },
+    "删除自定义按钮": {
+        "prefix": "delbutton",
+        "description": "删除自定义按钮",
+        "body": "delbutton(actor, windowId, buttonId)",
+        "scope": "接口/NPC/删除自定义按钮"
+    },
+    "打开OK框": {
+        "prefix": "openupgradedlg",
+        "description": "打开OK框",
+        "body": "openupgradedlg(actor, title)",
+        "scope": "接口/NPC/打开OK框"
+    },
+    "回收OK框物品": {
+        "prefix": "takedlgitem",
+        "description": "回收OK框物品",
+        "body": "takedlgitem(actor, count)",
+        "scope": "接口/NPC/回收OK框物品"
+    },
+    "返回OK框物品到背包": {
+        "prefix": "reclaimitem",
+        "description": "返回OK框物品到背包",
+        "body": "reclaimitem(actor)",
+        "scope": "接口/NPC/返回OK框物品到背包"
+    },
+    "把包裹中的物品放入自定义OK框中": {
+        "prefix": "bagitemintobox",
+        "description": "把包裹中的物品放入自定义OK框中",
+        "body": "bagitemintobox(actor, item, index)",
+        "scope": "接口/NPC/把包裹中的物品放入自定义OK框中"
+    },
+    "把自定义OK框物品返回到包裹": {
+        "prefix": "returnboxitem",
+        "description": "把自定义OK框物品返回到包裹",
+        "body": "returnboxitem(actor, index)",
+        "scope": "接口/NPC/把自定义OK框物品返回到包裹"
+    },
+    "删除自定义OK框中的物品": {
+        "prefix": "delboxitem",
+        "description": "删除自定义OK框中的物品",
+        "body": "delboxitem(actor, index, num)",
+        "scope": "接口/NPC/删除自定义OK框中的物品"
+    },
+    "获取自定义OK框中的物品": {
+        "prefix": "getboxitem",
+        "description": "获取自定义OK框中的物品",
+        "body": "getboxitem(actor, index)",
+        "scope": "接口/NPC/获取自定义OK框中的物品"
+    },
+    "更新OK框物品": {
+        "prefix": "updateboxitem",
+        "description": "更新OK框物品",
+        "body": "updateboxitem(actor, boxId)",
+        "scope": "接口/NPC/更新OK框物品"
+    },
+    "NPC喊话": {
+        "prefix": "NPCTalk",
+        "description": "NPC喊话",
+        "body": "NPCTalk(actor, npcid, time, str)",
+        "scope": "接口/NPC/NPC喊话"
+    },
+    "通知客户端显示表单": {
+        "prefix": "ShowFormWithContent",
+        "description": "通知客户端显示表单",
+        "body": "ShowFormWithContent(actor, FormName, Content)",
+        "scope": "接口/人物相关/通知客户端显示表单"
+    },
+    "设置表单的允许回调函数列表": {
+        "prefix": "SetFormAllowFunc",
+        "description": "设置表单的允许回调函数列表",
+        "body": "SetFormAllowFunc(funname)",
+        "scope": "接口/人物相关/设置表单的允许回调函数列表"
+    },
+    "发送消息": {
+        "prefix": "sendluamsg",
+        "description": "发送消息",
+        "body": "sendluamsg(actor, msgId, param1, param2, param3, sMsg, sendScope, targetMapId)",
+        "scope": "接口/人物相关/发送消息"
+    },
+    "修改人物名称": {
+        "prefix": "changehumname",
+        "description": "修改人物名称",
+        "body": "changehumname(actor, name)",
+        "scope": "接口/人物相关/修改人物名称"
+    },
+    "修改人物名字颜色": {
+        "prefix": "changenamecolor",
+        "description": "修改人物名字颜色",
+        "body": "changenamecolor(actor, color)",
+        "scope": "接口/人物相关/修改人物名字颜色"
+    },
+    "刷新人物属性": {
+        "prefix": "recalcabilitys",
+        "description": "刷新人物属性",
+        "body": "recalcabilitys(actor)",
+        "scope": "接口/人物相关/刷新人物属性"
+    },
+    "获取人物属性": {
+        "prefix": "gethumability",
+        "description": "获取人物属性",
+        "body": "gethumability(actor, id)",
+        "scope": "接口/人物相关/获取人物属性"
+    },
+    "调整人物属性": {
+        "prefix": "changehumability",
+        "description": "调整人物属性",
+        "body": "changehumability(actor, id, value, time)",
+        "scope": "接口/人物相关/调整人物属性"
+    },
+    "修改人物临时属性（带有效期）": {
+        "prefix": "changehumnewvalue",
+        "description": "修改人物临时属性（带有效期）",
+        "body": "changehumnewvalue(actor, nWhere, nValue, nTime)",
+        "scope": "接口/人物相关/修改人物临时属性（带有效期）"
+    },
+    "获取人物临时属性": {
+        "prefix": "gethumnewvalue",
+        "description": "获取人物临时属性",
+        "body": "gethumnewvalue(actor, nWhere)",
+        "scope": "接口/人物相关/获取人物临时属性"
+    },
+    "获取人物永久属性": {
+        "prefix": "getusebonuspoint",
+        "description": "获取人物永久属性",
+        "body": "getusebonuspoint(actor, nIndex)",
+        "scope": "接口/人物相关/获取人物永久属性"
+    },
+    "设置人物永久属性": {
+        "prefix": "setusebonuspoint",
+        "description": "设置人物永久属性",
+        "body": "setusebonuspoint(actor, nIndex, nValue)",
+        "scope": "接口/人物相关/设置人物永久属性"
+    },
+    "通过字符串增加对应属性值(参照cfg_equip.xls属性字段)": {
+        "prefix": "addattlist",
+        "description": "通过字符串增加对应属性值(参照cfg_equip.xls属性字段)",
+        "body": "addattlist(actor, attrIndex, opt, attrStr, type)",
+        "scope": "接口/人物相关/通过字符串增加对应属性值(参照cfg_equip.xls属性字段)"
+    },
+    "获取字符串属性": {
+        "prefix": "getattlist",
+        "description": "获取字符串属性",
+        "body": "getattlist(actor, attrIndex)",
+        "scope": "接口/人物相关/获取字符串属性"
+    },
+    "清除字符串属性": {
+        "prefix": "delattlist",
+        "description": "清除字符串属性",
+        "body": "delattlist(actor, attrIndex)",
+        "scope": "接口/人物相关/清除字符串属性"
+    },
+    "设置装备部位属性加成(万分比)": {
+        "prefix": "setequipaddvalue",
+        "description": "设置装备部位属性加成(万分比)",
+        "body": "setequipaddvalue(actor, where, sFlag, pro)",
+        "scope": "接口/人物相关/设置装备部位属性加成(万分比)"
+    },
+    "获取装备部位属性加成(万分比)": {
+        "prefix": "getequipaddvalue",
+        "description": "获取装备部位属性加成(万分比)",
+        "body": "getequipaddvalue(actor, where)",
+        "scope": "接口/人物相关/获取装备部位属性加成(万分比)"
+    },
+    "获取人物标记/标识值": {
+        "prefix": "getflagstatus",
+        "description": "获取人物标记/标识值",
+        "body": "getflagstatus(actor, nIndex)",
+        "scope": "接口/人物相关/获取人物标记/标识值"
+    },
+    "设置人物标记/标识值": {
+        "prefix": "setflagstatus",
+        "description": "设置人物标记/标识值",
+        "body": "setflagstatus(actor, nIndex, nValue)",
+        "scope": "接口/人物相关/设置人物标记/标识值"
+    },
+    "设置人物经验值": {
+        "prefix": "changeexp",
+        "description": "设置人物经验值",
+        "body": "changeexp(actor, opt, count, addexp)",
+        "scope": "接口/人物相关/设置人物经验值"
+    },
+    "调整人物等级": {
+        "prefix": "changelevel",
+        "description": "调整人物等级",
+        "body": "changelevel(actor, opt, count)",
+        "scope": "接口/人物相关/调整人物等级"
+    },
+    "设置等级锁": {
+        "prefix": "setlocklevel",
+        "description": "设置等级锁",
+        "body": "setlocklevel(actor, iType, level)",
+        "scope": "接口/人物相关/设置等级锁"
+    },
+    "改变人物模式": {
+        "prefix": "changemode",
+        "description": "改变人物模式",
+        "body": "changemode(actor, mode, time, param1, param2)",
+        "scope": "接口/人物相关/改变人物模式"
+    },
+    "顶戴花翎": {
+        "prefix": "seticon",
+        "description": "顶戴花翎",
+        "body": "seticon(actor, where, effType, resName, x, y, autoDrop, selfSee, posM)",
+        "scope": "接口/人物相关/顶戴花翎"
+    },
+    "在人物身上播放特效": {
+        "prefix": "playeffect",
+        "description": "在人物身上播放特效",
+        "body": "playeffect(actor, effectId, offsetX, offsetY, times, behind, selfShow)",
+        "scope": "接口/人物相关/在人物身上播放特效"
+    },
+    "清除人物身上播放的特效": {
+        "prefix": "clearplayeffect",
+        "description": "清除人物身上播放的特效",
+        "body": "clearplayeffect(actor, effectId)",
+        "scope": "接口/人物相关/清除人物身上播放的特效"
+    },
+    "修改人物当前血量": {
+        "prefix": "humanhp",
+        "description": "修改人物当前血量",
+        "body": "humanhp(actor, operate, nvalue, effId, delay, hitter, isSend, isRob)",
+        "scope": "接口/人物相关/修改人物当前血量"
+    },
+    "修改人物当前MP": {
+        "prefix": "humanmp",
+        "description": "修改人物当前MP",
+        "body": "humanmp(actor, operate, nValue)",
+        "scope": "接口/人物相关/修改人物当前MP"
+    },
+    "调整HP(血量)的百分比": {
+        "prefix": "addhpper",
+        "description": "调整HP(血量)的百分比",
+        "body": "addhpper(actor, opt, value)",
+        "scope": "接口/人物相关/调整HP(血量)的百分比"
+    },
+    "调整MP(蓝量)的百分比": {
+        "prefix": "addmpper",
+        "description": "调整MP(蓝量)的百分比",
+        "body": "addmpper(actor, opt, value)",
+        "scope": "接口/人物相关/调整MP(蓝量)的百分比"
+    },
+    "设置人物伤害吸收": {
+        "prefix": "setsuckdamage",
+        "description": "设置人物伤害吸收",
+        "body": "setsuckdamage(actor, operate, sum, rate, success)",
+        "scope": "接口/人物相关/设置人物伤害吸收"
+    },
+    "获取人物伤害吸收": {
+        "prefix": "getsuckdamage",
+        "description": "获取人物伤害吸收",
+        "body": "getsuckdamage(actor)",
+        "scope": "接口/人物相关/获取人物伤害吸收"
+    },
+    "人物变色": {
+        "prefix": "setbodycolor",
+        "description": "人物变色",
+        "body": "setbodycolor(actor, color, time)",
+        "scope": "接口/人物相关/人物变色"
+    },
+    "播放光环效果": {
+        "prefix": "mobfireburn",
+        "description": "播放光环效果",
+        "body": "mobfireburn(actor, mapId, x, y, type, time, behind, selfShow)",
+        "scope": "接口/人物相关/播放光环效果"
+    },
+    "脚本设置防秒杀功能": {
+        "prefix": "killedprotect",
+        "description": "脚本设置防秒杀功能",
+        "body": "killedprotect(actor,maxHp)",
+        "scope": "接口/人物相关/脚本设置防秒杀功能"
+    },
+    "立即杀死角色": {
+        "prefix": "kill",
+        "description": "立即杀死角色",
+        "body": "kill(actor, killer)",
+        "scope": "接口/人物相关/立即杀死角色"
+    },
+    "查询人物货币": {
+        "prefix": "querymoney",
+        "description": "查询人物货币",
+        "body": "querymoney(actor, id)",
+        "scope": "接口/人物相关/查询人物货币"
+    },
+    "设置人物货币": {
+        "prefix": "changemoney",
+        "description": "设置人物货币",
+        "body": "changemoney(actor, id, opt, count, desc, send)",
+        "scope": "接口/人物相关/设置人物货币"
+    },
+    "获取人物通用货币数量(多货币计算)": {
+        "prefix": "getbindmoney",
+        "description": "获取人物通用货币数量(多货币计算)",
+        "body": "getbindmoney(actor, moneyName)",
+        "scope": "接口/人物相关/获取人物通用货币数量(多货币计算)"
+    },
+    "扣除人物通用货币数量(多货币依次计算)": {
+        "prefix": "consumebindmoney",
+        "description": "扣除人物通用货币数量(多货币依次计算)",
+        "body": "consumebindmoney(actor, moneyName, count, desc)",
+        "scope": "接口/人物相关/扣除人物通用货币数量(多货币依次计算)"
+    },
+    "设置人物背包格子数": {
+        "prefix": "setbagcount",
+        "description": "设置人物背包格子数",
+        "body": "setbagcount(actor, count)",
+        "scope": "接口/人物相关/设置人物背包格子数"
+    },
+    "获取背包剩余空格数": {
+        "prefix": "getbagblank",
+        "description": "获取背包剩余空格数",
+        "body": "getbagblank(actor)",
+        "scope": "接口/人物相关/获取背包剩余空格数"
+    },
+    "遍历背包勾选物品": {
+        "prefix": "selectbagitems",
+        "description": "遍历背包勾选物品",
+        "body": "selectbagitems(actor, makeIndex)",
+        "scope": "接口/人物相关/遍历背包勾选物品"
+    },
+    "穿戴装备": {
+        "prefix": "takeonitem",
+        "description": "穿戴装备",
+        "body": "takeonitem(actor, where, makeIndex)",
+        "scope": "接口/人物相关/穿戴装备"
+    },
+    "脱下装备": {
+        "prefix": "takeoffitem",
+        "description": "脱下装备",
+        "body": "takeoffitem(actor, where, makeIndex)",
+        "scope": "接口/人物相关/脱下装备"
+    },
+    "开/关首饰盒": {
+        "prefix": "setsndaitembox",
+        "description": "开/关首饰盒",
+        "body": "setsndaitembox(actor, bState)",
+        "scope": "接口/人物相关/开/关首饰盒"
+    },
+    "修改武器、衣服外观": {
+        "prefix": "changeitemshape",
+        "description": "修改武器、衣服外观",
+        "body": "changeitemshape(actor, makeIndex, looks)",
+        "scope": "接口/人物相关/修改武器、衣服外观"
+    },
+    "修改武器、衣服特效": {
+        "prefix": "changedresseffect",
+        "description": "修改武器、衣服特效",
+        "body": "changedresseffect(actor, where, effId, selfSee)",
+        "scope": "接口/人物相关/修改武器、衣服特效"
+    },
+    "修改角色外观(武器、衣服、特效)": {
+        "prefix": "setfeature",
+        "description": "修改角色外观(武器、衣服、特效)",
+        "body": "setfeature(actor, type, shape, time, param1, param2)",
+        "scope": "接口/人物相关/修改角色外观(武器、衣服、特效)"
+    },
+    "给人物装备面板加特效": {
+        "prefix": "updateequipeffect",
+        "description": "给人物装备面板加特效",
+        "body": "updateequipeffect(actor, effectId, position)",
+        "scope": "接口/人物相关/给人物装备面板加特效"
+    },
+    "获取技能信息": {
+        "prefix": "getskillinfo",
+        "description": "获取技能信息",
+        "body": "getskillinfo(actor, skillId, type)",
+        "scope": "接口/人物相关/获取技能信息"
+    },
+    "添加技能": {
+        "prefix": "addskill",
+        "description": "添加技能",
+        "body": "addskill(actor, skillId, level)",
+        "scope": "接口/人物相关/添加技能"
+    },
+    "删除技能": {
+        "prefix": "delskill",
+        "description": "删除技能",
+        "body": "delskill(actor, skillId)",
+        "scope": "接口/人物相关/删除技能"
+    },
+    "删除非本职业技能": {
+        "prefix": "delnojobskill",
+        "description": "删除非本职业技能",
+        "body": "delnojobskill(actor)",
+        "scope": "接口/人物相关/删除非本职业技能"
+    },
+    "删除所有技能": {
+        "prefix": "clearskill",
+        "description": "删除所有技能",
+        "body": "clearskill(actor)",
+        "scope": "接口/人物相关/删除所有技能"
+    },
+    "是否有该技能": {
+        "prefix": "HasSkill",
+        "description": "是否有该技能",
+        "body": "HasSkill(actor, skillId)",
+        "scope": "接口/人物相关/是否有该技能"
+    },
+    "设置技能等级": {
+        "prefix": "setskillinfo",
+        "description": "设置技能等级",
+        "body": "setskillinfo(actor, skillId, flag, point)",
+        "scope": "接口/人物相关/设置技能等级"
+    },
+    "用脚本命令释放技能": {
+        "prefix": "releasemagic",
+        "description": "用脚本命令释放技能",
+        "body": "releasemagic(actor, skillId, type, level, target, flag)",
+        "scope": "接口/人物相关/用脚本命令释放技能"
+    },
+    "对目标释放技能": {
+        "prefix": "releasemagic_target",
+        "description": "对目标释放技能",
+        "body": "releasemagic_target(actor, skillId, sType, sLevel, target, data)",
+        "scope": "接口/人物相关/对目标释放技能"
+    },
+    "对坐标释放技能": {
+        "prefix": "releasemagic_pos",
+        "description": "对坐标释放技能",
+        "body": "releasemagic_pos(actor, skillId, sType, sLevel, X, Y, data)",
+        "scope": "接口/人物相关/对坐标释放技能"
+    },
+    "设置人物攻击力倍数": {
+        "prefix": "powerrate",
+        "description": "设置人物攻击力倍数",
+        "body": "powerrate(actor, rate, time)",
+        "scope": "接口/人物相关/设置人物攻击力倍数"
+    },
+    "减少技能CD冷却时间": {
+        "prefix": "setskilldeccd",
+        "description": "减少技能CD冷却时间",
+        "body": "setskilldeccd(actor, skillName, char, time)",
+        "scope": "接口/人物相关/减少技能CD冷却时间"
+    },
+    "获取技能初始冷却时间": {
+        "prefix": "getskillcscd",
+        "description": "获取技能初始冷却时间",
+        "body": "getskillcscd(skillName)",
+        "scope": "接口/人物相关/获取技能初始冷却时间"
+    },
+    "获取当前技能冷却时间": {
+        "prefix": "getskilldqcd",
+        "description": "获取当前技能冷却时间",
+        "body": "getskilldqcd(actor, skillName)",
+        "scope": "接口/人物相关/获取当前技能冷却时间"
+    },
+    "重置技能冷却时间": {
+        "prefix": "skillrestcd",
+        "description": "重置技能冷却时间",
+        "body": "skillrestcd(actor, skillInfo, time)",
+        "scope": "接口/人物相关/重置技能冷却时间"
+    },
+    "获取技能等级": {
+        "prefix": "getskilllevel",
+        "description": "获取技能等级",
+        "body": "getskilllevel(actor, skillId)",
+        "scope": "接口/人物相关/获取技能等级"
+    },
+    "获取技能强化等级": {
+        "prefix": "getskilllevelup",
+        "description": "获取技能强化等级",
+        "body": "getskilllevelup(actor, skillId)",
+        "scope": "接口/人物相关/获取技能强化等级"
+    },
+    "获取技能熟练度": {
+        "prefix": "getskilltrain",
+        "description": "获取技能熟练度",
+        "body": "getskilltrain(actor, skillId)",
+        "scope": "接口/人物相关/获取技能熟练度"
+    },
+    "增加技能威力": {
+        "prefix": "setmagicpower",
+        "description": "增加技能威力",
+        "body": "setmagicpower(actor, skillName, value, type)",
+        "scope": "接口/人物相关/增加技能威力"
+    },
+    "增加技能防御力": {
+        "prefix": "setmagicdefpower",
+        "description": "增加技能防御力",
+        "body": "setmagicdefpower(actor, skillName, value, type)",
+        "scope": "接口/人物相关/增加技能防御力"
+    },
+    "根据技能id获取技能名字": {
+        "prefix": "getskillname",
+        "description": "根据技能id获取技能名字",
+        "body": "getskillname(skillId)",
+        "scope": "接口/人物相关/根据技能id获取技能名字"
+    },
+    "根据技能名字获取技能id": {
+        "prefix": "getskillindex",
+        "description": "根据技能名字获取技能id",
+        "body": "getskillindex(skillName)",
+        "scope": "接口/人物相关/根据技能名字获取技能id"
+    },
+    "改变技能特效": {
+        "prefix": "setmagicskillefft",
+        "description": "改变技能特效",
+        "body": "setmagicskillefft(actor, skillName, effectId, effectId2)",
+        "scope": "接口/人物相关/改变技能特效"
+    },
+    "根据玩家名获取玩家对象": {
+        "prefix": "getplayerbyname",
+        "description": "根据玩家名获取玩家对象",
+        "body": "getplayerbyname(actorName)",
+        "scope": "接口/人物相关/根据玩家名获取玩家对象"
+    },
+    "根据玩家唯一ID获取玩家对象": {
+        "prefix": "getplayerbyid",
+        "description": "根据玩家唯一ID获取玩家对象",
+        "body": "getplayerbyid(id)",
+        "scope": "接口/人物相关/根据玩家唯一ID获取玩家对象"
+    },
+    "添加称号": {
+        "prefix": "confertitle",
+        "description": "添加称号",
+        "body": "confertitle(actor, name, use)",
+        "scope": "接口/人物相关/添加称号"
+    },
+    "删除称号": {
+        "prefix": "deprivetitle",
+        "description": "删除称号",
+        "body": "deprivetitle(actor, name)",
+        "scope": "接口/人物相关/删除称号"
+    },
+    "检测人物称号": {
+        "prefix": "checktitle",
+        "description": "检测人物称号",
+        "body": "checktitle(actor, title)",
+        "scope": "接口/人物相关/检测人物称号"
+    },
+    "获取人物所有称号": {
+        "prefix": "newgettitlelist",
+        "description": "获取人物所有称号",
+        "body": "newgettitlelist(actor)",
+        "scope": "接口/人物相关/获取人物所有称号"
+    },
+    "改变称号时间": {
+        "prefix": "changetitletime",
+        "description": "改变称号时间",
+        "body": "changetitletime(actor, titleName, operation, cour)",
+        "scope": "接口/人物相关/改变称号时间"
+    },
+    "完美封号系统": {
+        "prefix": "setranklevelname",
+        "description": "完美封号系统",
+        "body": "setranklevelname(actor, levelName)",
+        "scope": "接口/人物相关/完美封号系统"
+    },
+    "修改攻击模式": {
+        "prefix": "changeattackmode",
+        "description": "修改攻击模式",
+        "body": "changeattackmode(actor, attackMode)",
+        "scope": "接口/人物相关/修改攻击模式"
+    },
+    "强制修改攻击模式": {
+        "prefix": "setattackmode",
+        "description": "强制修改攻击模式",
+        "body": "setattackmode(actor, attackMode, time)",
+        "scope": "接口/人物相关/强制修改攻击模式"
+    },
+    "获取当前攻击模式": {
+        "prefix": "getattackmode",
+        "description": "获取当前攻击模式",
+        "body": "getattackmode(actor)",
+        "scope": "接口/人物相关/获取当前攻击模式"
+    },
+    "打开仓库面板": {
+        "prefix": "openstorage",
+        "description": "打开仓库面板",
+        "body": "openstorage(actor, isOpenUI)",
+        "scope": "接口/人物相关/打开仓库面板"
+    },
+    "新解锁仓库格子": {
+        "prefix": "changestorage",
+        "description": "新解锁仓库格子",
+        "body": "changestorage(actor, nCount)",
+        "scope": "接口/人物相关/新解锁仓库格子"
+    },
+    "获取仓库剩余格子数": {
+        "prefix": "getsblank",
+        "description": "获取仓库剩余格子数",
+        "body": "getsblank(actor)",
+        "scope": "接口/人物相关/获取仓库剩余格子数"
+    },
+    "获取玩家仓库最大格子数": {
+        "prefix": "getssize",
+        "description": "获取玩家仓库最大格子数",
+        "body": "getssize(actor)",
+        "scope": "接口/人物相关/获取玩家仓库最大格子数"
+    },
+    "跳转地图（随机坐标）": {
+        "prefix": "map",
+        "description": "跳转地图（随机坐标）",
+        "body": "map(actor, mapId)",
+        "scope": "接口/人物相关/跳转地图（随机坐标）"
+    },
+    "飞地图（指定坐标）": {
+        "prefix": "mapmove",
+        "description": "飞地图（指定坐标）",
+        "body": "mapmove(actor, mapId, nX, nY, nRange, effect)",
+        "scope": "接口/人物相关/飞地图（指定坐标）"
+    },
+    "导航玩家到指定位置": {
+        "prefix": "gotonow",
+        "description": "导航玩家到指定位置",
+        "body": "gotonow(actor, X, Y)",
+        "scope": "接口/人物相关/导航玩家到指定位置"
+    },
+    "获取所有玩家对象列表(遍历玩家列表)": {
+        "prefix": "getplayerlst",
+        "description": "获取所有玩家对象列表(遍历玩家列表)",
+        "body": "getplayerlst(offline)",
+        "scope": "接口/人物相关/获取所有玩家对象列表(遍历玩家列表)"
+    },
+    "获取玩家GM权限值": {
+        "prefix": "getgmlevel",
+        "description": "获取玩家GM权限值",
+        "body": "getgmlevel(actor)",
+        "scope": "接口/人物相关/获取玩家GM权限值"
+    },
+    "设置玩家GM权限值": {
+        "prefix": "setgmlevel",
+        "description": "设置玩家GM权限值",
+        "body": "setgmlevel(actor, gmlevel)",
+        "scope": "接口/人物相关/设置玩家GM权限值"
+    },
+    "复活": {
+        "prefix": "realive",
+        "description": "复活",
+        "body": "realive(actor)",
+        "scope": "接口/人物相关/复活"
+    },
+    "人物强制掉线(踢人下线)": {
+        "prefix": "kick",
+        "description": "人物强制掉线(踢人下线)",
+        "body": "kick(actor)",
+        "scope": "接口/人物相关/人物强制掉线(踢人下线)"
+    },
+    "延时跳转": {
+        "prefix": "delaygoto",
+        "description": "延时跳转",
+        "body": "delaygoto(actor, time, func, del)",
+        "scope": "接口/人物相关/延时跳转"
+    },
+    "删除延迟": {
+        "prefix": "cleardelaygoto",
+        "description": "删除延迟",
+        "body": "cleardelaygoto(actor, func)",
+        "scope": "接口/人物相关/删除延迟"
+    },
+    "延时消息跳转": {
+        "prefix": "delaymsggoto",
+        "description": "延时消息跳转",
+        "body": "delaymsggoto(actor, time, func)",
+        "scope": "接口/人物相关/延时消息跳转"
+    },
+    "增加附加伤害效果": {
+        "prefix": "rangeharm",
+        "description": "增加附加伤害效果",
+        "body": "rangeharm(actor, targetX, targetY, range, power, addType, addValue, checkState, targetType, sffectId, harmNum)",
+        "scope": "接口/人物相关/增加附加伤害效果"
+    },
+    "获取人物战斗力": {
+        "prefix": "getfightpower",
+        "description": "获取人物战斗力",
+        "body": "getfightpower(actor)",
+        "scope": "接口/人物相关/获取人物战斗力"
+    },
+    "设置人物战斗力": {
+        "prefix": "setfightpower",
+        "description": "设置人物战斗力",
+        "body": "setfightpower(actor, power)",
+        "scope": "接口/人物相关/设置人物战斗力"
+    },
+    "获取推广包ID": {
+        "prefix": "getpromoteid",
+        "description": "获取推广包ID",
+        "body": "getpromoteid(actor)",
+        "scope": "接口/人物相关/获取推广包ID"
+    },
+    "调整人物下次攻击倍率": {
+        "prefix": "SetNextDamage",
+        "description": "调整人物下次攻击倍率",
+        "body": "SetNextDamage(actor, num, obj)",
+        "scope": "接口/人物相关/调整人物下次攻击倍率"
+    },
+    "魔法盾减伤": {
+        "prefix": "SetSheildDec",
+        "description": "魔法盾减伤",
+        "body": "SetSheildDec(actor, per, type)",
+        "scope": "接口/人物相关/魔法盾减伤"
+    },
+    "获取玩家登录账号id": {
+        "prefix": "GetUserAccount",
+        "description": "获取玩家登录账号id",
+        "body": "GetUserAccount(actor)",
+        "scope": "接口/人物相关/获取玩家登录账号id"
+    },
+    "获取等级锁": {
+        "prefix": "getlocklevel",
+        "description": "获取等级锁",
+        "body": "getlocklevel(actor)",
+        "scope": "接口/人物相关/获取等级锁"
+    },
+    "全身所有装备星星数量总和": {
+        "prefix": "GetStarCountAll",
+        "description": "全身所有装备星星数量总和",
+        "body": "GetStarCountAll(actor)",
+        "scope": "接口/人物相关/全身所有装备星星数量总和"
+    },
+    "获取剩余复活时间": {
+        "prefix": "GetRevivalTime",
+        "description": "获取剩余复活时间",
+        "body": "GetRevivalTime(actor, type)",
+        "scope": "接口/人物相关/获取剩余复活时间"
+    },
+    "开启一键拾取按钮": {
+        "prefix": "SetAutoPick",
+        "description": "开启一键拾取按钮",
+        "body": "SetAutoPick(actor, set)",
+        "scope": "接口/人物相关/开启一键拾取按钮"
+    },
+    "获取人物背包最大格子数": {
+        "prefix": "GetBagMaxCount",
+        "description": "获取人物背包最大格子数",
+        "body": "GetBagMaxCount(actor)",
+        "scope": "接口/人物相关/获取人物背包最大格子数"
+    },
+    "获取角色技能最大冷却时间": {
+        "prefix": "GetSkillMaxCD",
+        "description": "获取角色技能最大冷却时间",
+        "body": "GetSkillMaxCD(actor, skillId)",
+        "scope": "接口/人物相关/获取角色技能最大冷却时间"
+    },
+    "设置角色技能最大冷却时间": {
+        "prefix": "SetSkillMaxCD",
+        "description": "设置角色技能最大冷却时间",
+        "body": "SetSkillMaxCD(actor, skillId, time)",
+        "scope": "接口/人物相关/设置角色技能最大冷却时间"
+    },
+    "设置角色技能剩余冷却时间": {
+        "prefix": "SetSkillCD",
+        "description": "设置角色技能剩余冷却时间",
+        "body": "SetSkillCD(actor, skillId, time)",
+        "scope": "接口/人物相关/设置角色技能剩余冷却时间"
+    },
+    "获取角色技能剩余冷却时间": {
+        "prefix": "GetSkillCD",
+        "description": "获取角色技能剩余冷却时间",
+        "body": "GetSkillCD(actor, skillId)",
+        "scope": "接口/人物相关/获取角色技能剩余冷却时间"
+    },
+    "获取角色所有属性基准值": {
+        "prefix": "AttrTabPre",
+        "description": "获取角色所有属性基准值",
+        "body": "AttrTabPre(actor)",
+        "scope": "接口/人物相关/获取角色所有属性基准值"
+    },
+    "设置杀怪掉落是否绑定": {
+        "prefix": "SetBind",
+        "description": "设置杀怪掉落是否绑定",
+        "body": "SetBind(actor, isbind)",
+        "scope": "接口/人物相关/设置杀怪掉落是否绑定"
+    },
+    "获取杀怪掉落是否绑定": {
+        "prefix": "GetBind",
+        "description": "获取杀怪掉落是否绑定",
+        "body": "GetBind(actor)",
+        "scope": "接口/人物相关/获取杀怪掉落是否绑定"
+    },
+    "获取角色所有技能": {
+        "prefix": "getallskills",
+        "description": "获取角色所有技能",
+        "body": "getallskills(actor)",
+        "scope": "接口/人物相关/获取角色所有技能"
+    },
+    "添加系统延时回调": {
+        "prefix": "globaldelaygoto",
+        "description": "添加系统延时回调",
+        "body": "globaldelaygoto(time, funcName)",
+        "scope": "接口/人物相关/添加系统延时回调"
+    },
+    "删除系统延时回调": {
+        "prefix": "globalcleardelaygoto",
+        "description": "删除系统延时回调",
+        "body": "globalcleardelaygoto(funcName, value)",
+        "scope": "接口/人物相关/删除系统延时回调"
+    },
+    "人物飘血飘字特效": {
+        "prefix": "sendattackeff",
+        "description": "人物飘血飘字特效",
+        "body": "sendattackeff(target, type, damage, hitter)",
+        "scope": "接口/人物相关/人物飘血飘字特效"
+    },
+    "设定人物攻击飘血飘字类型": {
+        "prefix": "setattackefftype",
+        "description": "设定人物攻击飘血飘字类型",
+        "body": "setattackefftype(actor, type)",
+        "scope": "接口/人物相关/设定人物攻击飘血飘字类型"
+    },
+    "停止自动挂机": {
+        "prefix": "stopautoattack",
+        "description": "停止自动挂机",
+        "body": "stopautoattack(actor)",
+        "scope": "接口/人物相关/停止自动挂机"
+    },
+    "采集挖矿等进度条操作": {
+        "prefix": "showprogressbardlg",
+        "description": "采集挖矿等进度条操作",
+        "body": "showprogressbardlg(actor, time, succ, msg, canStop, fail)",
+        "scope": "接口/人物相关/采集挖矿等进度条操作"
+    },
+    "改变玩家速度": {
+        "prefix": "changespeed",
+        "description": "改变玩家速度",
+        "body": "changespeed(actor, type, level)",
+        "scope": "接口/人物相关/改变玩家速度"
+    },
+    "百分比修改速度": {
+        "prefix": "changespeedex",
+        "description": "百分比修改速度",
+        "body": "changespeedex(actor, model, value, time)",
+        "scope": "接口/人物相关/百分比修改速度"
+    },
+    "设置玩家穿人穿怪": {
+        "prefix": "throughhum",
+        "description": "设置玩家穿人穿怪",
+        "body": "throughhum(actor, type, time, objType)",
+        "scope": "接口/人物相关/设置玩家穿人穿怪"
+    },
+    "设置当前攻击目标": {
+        "prefix": "settargetcert",
+        "description": "设置当前攻击目标",
+        "body": "settargetcert(hitter, target)",
+        "scope": "接口/人物相关/设置当前攻击目标"
+    },
+    "判断对象是否可被攻击": {
+        "prefix": "ispropertarget",
+        "description": "判断对象是否可被攻击",
+        "body": "ispropertarget(hitter, target)",
+        "scope": "接口/人物相关/判断对象是否可被攻击"
+    },
+    "增加气泡": {
+        "prefix": "addbutshow",
+        "description": "增加气泡",
+        "body": "addbutshow(actor, id, name, func)",
+        "scope": "接口/人物相关/增加气泡"
+    },
+    "删除气泡": {
+        "prefix": "delbutshow",
+        "description": "删除气泡",
+        "body": "delbutshow(actor, id)",
+        "scope": "接口/人物相关/删除气泡"
+    },
+    "获取角色朝向前一格玩家对象": {
+        "prefix": "getoppositeobj",
+        "description": "获取角色朝向前一格玩家对象",
+        "body": "getoppositeobj(actor)",
+        "scope": "接口/人物相关/获取角色朝向前一格玩家对象"
+    },
+    "调用游戏面板": {
+        "prefix": "openhyperlink",
+        "description": "调用游戏面板",
+        "body": "openhyperlink(actor, nId, nState, rankWnd, isHero)",
+        "scope": "接口/人物相关/调用游戏面板"
+    },
+    "开启自动挂机": {
+        "prefix": "startautoattack",
+        "description": "开启自动挂机",
+        "body": "startautoattack(actor)",
+        "scope": "接口/人物相关/开启自动挂机"
+    },
+    "离线挂机": {
+        "prefix": "offlineplay",
+        "description": "离线挂机",
+        "body": "offlineplay(actor, time)",
+        "scope": "接口/人物相关/离线挂机"
+    },
+    "剔除离线挂机角色": {
+        "prefix": "tdummy",
+        "description": "剔除离线挂机角色",
+        "body": "tdummy(mapId, level, count)",
+        "scope": "接口/人物相关/剔除离线挂机角色"
+    },
+    "获取玩家好友列表": {
+        "prefix": "getfriendnamelist",
+        "description": "获取玩家好友列表",
+        "body": "getfriendnamelist(actor)",
+        "scope": "接口/人物相关/获取玩家好友列表"
+    },
+    "人物转生控制": {
+        "prefix": "renewlevel",
+        "description": "人物转生控制",
+        "body": "renewlevel(actor, rLevel, level, num)",
+        "scope": "接口/人物相关/人物转生控制"
+    },
+    "调整人物转生属性点": {
+        "prefix": "bonuspoint",
+        "description": "调整人物转生属性点",
+        "body": "bonuspoint(actor, sFlag, value)",
+        "scope": "接口/人物相关/调整人物转生属性点"
+    },
+    "获取人物转生属性点": {
+        "prefix": "getbonuspoint",
+        "description": "获取人物转生属性点",
+        "body": "getbonuspoint(actor)",
+        "scope": "接口/人物相关/获取人物转生属性点"
+    },
+    "复位属性点数": {
+        "prefix": "restbonuspoint",
+        "description": "复位属性点数",
+        "body": "restbonuspoint(actor)",
+        "scope": "接口/人物相关/复位属性点数"
+    },
+    "获取玩家pk等级": {
+        "prefix": "getpklevel",
+        "description": "获取玩家pk等级",
+        "body": "getpklevel(actor)",
+        "scope": "接口/人物相关/获取玩家pk等级"
+    },
+    "给按钮增加红点": {
+        "prefix": "reddot",
+        "description": "给按钮增加红点",
+        "body": "reddot(actor, win_id, btn_id, x, y, type, mode)",
+        "scope": "接口/人物相关/给按钮增加红点"
+    },
+    "给按钮删除红点": {
+        "prefix": "reddel",
+        "description": "给按钮删除红点",
+        "body": "reddel(actor, win_id, btn_ind)",
+        "scope": "接口/人物相关/给按钮删除红点"
+    },
+    "拾取道具飞入背包按钮动作": {
+        "prefix": "setpickitemtobag",
+        "description": "拾取道具飞入背包按钮动作",
+        "body": "setpickitemtobag(actor, win_id, btn_id)",
+        "scope": "接口/人物相关/拾取道具飞入背包按钮动作"
+    },
+    "吸怪功能": {
+        "prefix": "monmove",
+        "description": "吸怪功能",
+        "body": "monmove(actor, max, min, monLevel, type, isMove, unLimit)",
+        "scope": "接口/人物相关/吸怪功能"
+    },
+    "人物显示一个放大的虚影": {
+        "prefix": "showphantom",
+        "description": "人物显示一个放大的虚影",
+        "body": "showphantom(actor, opacity, time)",
+        "scope": "接口/人物相关/人物显示一个放大的虚影"
+    },
+    "获取人物身上装备属性值命令": {
+        "prefix": "getitemattidvalue",
+        "description": "获取人物身上装备属性值命令",
+        "body": "getitemattidvalue(actor, model, attrId, where, MakeIndex)",
+        "scope": "接口/人物相关/获取人物身上装备属性值命令"
+    },
+    "获取角色所有属性": {
+        "prefix": "attrtab",
+        "description": "获取角色所有属性",
+        "body": "attrtab(actor)",
+        "scope": "接口/人物相关/获取角色所有属性"
+    },
+    "是否在骑马": {
+        "prefix": "checkonhorse",
+        "description": "是否在骑马",
+        "body": "checkonhorse(actor)",
+        "scope": "接口/人物相关/是否在骑马"
+    },
+    "上马": {
+        "prefix": "ridehorse",
+        "description": "上马",
+        "body": "ridehorse(actor, horseAppr, horseEff, horseFature, Type)",
+        "scope": "接口/人物相关/上马"
+    },
+    "下马": {
+        "prefix": "dismounthorse",
+        "description": "下马",
+        "body": "dismounthorse(actor)",
+        "scope": "接口/人物相关/下马"
+    },
+    "添加足迹特效": {
+        "prefix": "setmoveeff",
+        "description": "添加足迹特效",
+        "body": "setmoveeff(actor, effectId, modle)",
+        "scope": "接口/人物相关/添加足迹特效"
+    },
+    "给视野内玩家发送自定义广播消息": {
+        "prefix": "setotherparams",
+        "description": "给视野内玩家发送自定义广播消息",
+        "body": "setotherparams(actor, varIndex, varValue)",
+        "scope": "接口/人物相关/给视野内玩家发送自定义广播消息"
+    },
+    "收摊": {
+        "prefix": "StopShop",
+        "description": "收摊",
+        "body": "StopShop(actor)",
+        "scope": "接口/人物相关/收摊"
+    },
+    "骰子功能": {
+        "prefix": "playdice",
+        "description": "骰子功能",
+        "body": "playdice(actor, num, funcName)",
+        "scope": "接口/人物相关/骰子功能"
+    },
+    "开启宝箱": {
+        "prefix": "opendragonbox",
+        "description": "开启宝箱",
+        "body": "opendragonbox(actor, boxIndex, num)",
+        "scope": "接口/人物相关/开启宝箱"
+    },
+    "立即推送前端变量": {
+        "prefix": "sendredvartoclient",
+        "description": "立即推送前端变量",
+        "body": "sendredvartoclient(actor)",
+        "scope": "接口/人物相关/立即推送前端变量"
+    },
+    "设置人物照亮范围（光照）": {
+        "prefix": "setcandlevalue",
+        "description": "设置人物照亮范围（光照）",
+        "body": "setcandlevalue(actor, value)",
+        "scope": "接口/人物相关/设置人物照亮范围（光照）"
+    },
+    "获取自定义排行榜缓存数据": {
+        "prefix": "getsortdata",
+        "description": "获取自定义排行榜缓存数据",
+        "body": "getsortdata(rankIndex, isHero)",
+        "scope": "接口/人物相关/获取自定义排行榜缓存数据"
+    },
+    "镖车自动寻路到指定坐标": {
+        "prefix": "dartmap",
+        "description": "镖车自动寻路到指定坐标",
+        "body": "dartmap(actor, aimX, aimY, range)",
+        "scope": "接口/人物相关/镖车自动寻路到指定坐标"
+    },
+    "人物下线，镖车存活设置": {
+        "prefix": "darttime",
+        "description": "人物下线，镖车存活设置",
+        "body": "darttime(actor, time, isDie)",
+        "scope": "接口/人物相关/人物下线，镖车存活设置"
+    },
+    "新建任务": {
+        "prefix": "newpicktask",
+        "description": "新建任务",
+        "body": "newpicktask(actor, nId, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)",
+        "scope": "接口/任务相关/新建任务"
+    },
+    "刷新进行中任务状态": {
+        "prefix": "newchangetask",
+        "description": "刷新进行中任务状态",
+        "body": "newchangetask(actor, nId, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)",
+        "scope": "接口/任务相关/刷新进行中任务状态"
+    },
+    "完成任务": {
+        "prefix": "newcompletetask",
+        "description": "完成任务",
+        "body": "newcompletetask(actor, nId)",
+        "scope": "接口/任务相关/完成任务"
+    },
+    "删除任务": {
+        "prefix": "newdeletetask",
+        "description": "删除任务",
+        "body": "newdeletetask(actor, nId)",
+        "scope": "接口/任务相关/删除任务"
+    },
+    "任务置顶显示": {
+        "prefix": "tasktopshow",
+        "description": "任务置顶显示",
+        "body": "tasktopshow(actor, nId)",
+        "scope": "接口/任务相关/任务置顶显示"
+    },
+    "增加系统任务计时": {
+        "prefix": "dsfuncall",
+        "description": "增加系统任务计时",
+        "body": "dsfuncall(actor, funcName, time, model, isClear)",
+        "scope": "接口/任务相关/增加系统任务计时"
+    },
+    "删除系统任务计时": {
+        "prefix": "deldsfuncall",
+        "description": "删除系统任务计时",
+        "body": "deldsfuncall(actor, funcName)",
+        "scope": "接口/任务相关/删除系统任务计时"
+    },
+    "改变系统任务计时": {
+        "prefix": "cngdsfuncallstate",
+        "description": "改变系统任务计时",
+        "body": "cngdsfuncallstate(actor, funcName, model)",
+        "scope": "接口/任务相关/改变系统任务计时"
+    },
+    "获取服务器假人数量": {
+        "prefix": "GetDummyPlayCount",
+        "description": "获取服务器假人数量",
+        "body": "GetDummyPlayCount()",
+        "scope": "接口/假人相关/获取服务器假人数量"
+    },
+    "获取地图假人数量": {
+        "prefix": "GetMapDummyPlayCount",
+        "description": "获取地图假人数量",
+        "body": "GetMapDummyPlayCount(mapId)",
+        "scope": "接口/假人相关/获取地图假人数量"
+    },
+    "检测是否是假人": {
+        "prefix": "IsDummy",
+        "description": "检测是否是假人",
+        "body": "IsDummy(actor)",
+        "scope": "接口/假人相关/检测是否是假人"
+    },
+    "假人自动寻路到当前地图坐标": {
+        "prefix": "dummygoto",
+        "description": "假人自动寻路到当前地图坐标",
+        "body": "dummygoto(actor, x, y)",
+        "scope": "接口/假人相关/假人自动寻路到当前地图坐标"
+    },
+    "假人是否锁定目标攻击": {
+        "prefix": "dummylocktarget",
+        "description": "假人是否锁定目标攻击",
+        "body": "dummylocktarget(actor, type)",
+        "scope": "接口/假人相关/假人是否锁定目标攻击"
+    },
+    "踢出所有假人": {
+        "prefix": "kickdummy",
+        "description": "踢出所有假人",
+        "body": "kickdummy()",
+        "scope": "接口/假人相关/踢出所有假人"
+    },
+    "假人停止行动": {
+        "prefix": "dummystopex",
+        "description": "假人停止行动",
+        "body": "dummystopex(actor)",
+        "scope": "接口/假人相关/假人停止行动"
+    },
+    "假人开始行动": {
+        "prefix": "dummystartex",
+        "description": "假人开始行动",
+        "body": "dummystartex(actor)",
+        "scope": "接口/假人相关/假人开始行动"
+    },
+    "假人登录": {
+        "prefix": "dummylogon",
+        "description": "假人登录",
+        "body": "dummylogon(actor, mapId, x, y, range, job, num, interval, mode, sexy)",
+        "scope": "接口/假人相关/假人登录"
+    },
+    "建立关系": {
+        "prefix": "SetPlayNet",
+        "description": "建立关系",
+        "body": "SetPlayNet(actor, role, netid)",
+        "scope": "接口/关系相关/建立关系"
+    },
+    "解散关系": {
+        "prefix": "DisPlayNet",
+        "description": "解散关系",
+        "body": "DisPlayNet(netIndex)",
+        "scope": "接口/关系相关/解散关系"
+    },
+    "获取关系成员": {
+        "prefix": "GetNetMem",
+        "description": "获取关系成员",
+        "body": "GetNetMem(actor, netid, online)",
+        "scope": "接口/关系相关/获取关系成员"
+    },
+    "获取关系成员允许召唤状态": {
+        "prefix": "GetNetCallState",
+        "description": "获取关系成员允许召唤状态",
+        "body": "GetNetCallState(actor, netid)",
+        "scope": "接口/关系相关/获取关系成员允许召唤状态"
+    },
+    "设置关系成员允许召唤状态": {
+        "prefix": "SetNetCallState",
+        "description": "设置关系成员允许召唤状态",
+        "body": "SetNetCallState(actor, netid, isSet)",
+        "scope": "接口/关系相关/设置关系成员允许召唤状态"
+    },
+    "获取人物关系ID": {
+        "prefix": "GetPlayNet",
+        "description": "获取人物关系ID",
+        "body": "GetPlayNet(actor, role)",
+        "scope": "接口/关系相关/获取人物关系ID"
+    },
+    "将玩家踢出关系": {
+        "prefix": "DelPlayNet",
+        "description": "将玩家踢出关系",
+        "body": "DelPlayNet(netIndex, userid)",
+        "scope": "接口/关系相关/将玩家踢出关系"
+    },
+    "设置关系的等级": {
+        "prefix": "SetNetRank",
+        "description": "设置关系的等级",
+        "body": "SetNetRank(actor, netIndex, level)",
+        "scope": "接口/关系相关/设置关系的等级"
+    },
+    "获取关系的等级": {
+        "prefix": "GetNetRank",
+        "description": "获取关系的等级",
+        "body": "GetNetRank(actor, netIndex)",
+        "scope": "接口/关系相关/获取关系的等级"
+    },
+    "学习内功": {
+        "prefix": "readskillng",
+        "description": "学习内功",
+        "body": "readskillng(actor)",
+        "scope": "接口/内功/学习内功"
+    },
+    "获取内功等级": {
+        "prefix": "getnglevel",
+        "description": "获取内功等级",
+        "body": "getnglevel(actor)",
+        "scope": "接口/内功/获取内功等级"
+    },
+    "调整人物内功等级": {
+        "prefix": "changenglevel",
+        "description": "调整人物内功等级",
+        "body": "changenglevel(actor, opt, value)",
+        "scope": "接口/内功/调整人物内功等级"
+    },
+    "调整人物内功经验": {
+        "prefix": "changengexp",
+        "description": "调整人物内功经验",
+        "body": "changengexp(actor, opt, value)",
+        "scope": "接口/内功/调整人物内功经验"
+    },
+    "开启经络页签": {
+        "prefix": "setpulsestate",
+        "description": "开启经络页签",
+        "body": "setpulsestate(actor, pulse, isOpen)",
+        "scope": "接口/内功/开启经络页签"
+    },
+    "开启经络穴位": {
+        "prefix": "openpulse",
+        "description": "开启经络穴位",
+        "body": "openpulse(actor, pulse, acupoint)",
+        "scope": "接口/内功/开启经络穴位"
+    },
+    "修改经络的修炼等级格式": {
+        "prefix": "changepulselevel",
+        "description": "修改经络的修炼等级格式",
+        "body": "changepulselevel(actor, pulse, opt, level)",
+        "scope": "接口/内功/修改经络的修炼等级格式"
+    },
+    "学习内功/连击技能": {
+        "prefix": "addskillex",
+        "description": "学习内功/连击技能",
+        "body": "addskillex(actor, skillName, skillLevel)",
+        "scope": "接口/内功/学习内功/连击技能"
+    },
+    "设置杀怪内功经验倍数": {
+        "prefix": "killpulseexprate",
+        "description": "设置杀怪内功经验倍数",
+        "body": "killpulseexprate(actor, pro, time)",
+        "scope": "接口/内功/设置杀怪内功经验倍数"
+    },
+    "设置地图杀怪内功经验倍数": {
+        "prefix": "plusemapkillmonexprate",
+        "description": "设置地图杀怪内功经验倍数",
+        "body": "plusemapkillmonexprate(actor, mapId, pro)",
+        "scope": "接口/内功/设置地图杀怪内功经验倍数"
+    },
+    "调整人物的当前内力值": {
+        "prefix": "addinternalforce",
+        "description": "调整人物的当前内力值",
+        "body": "addinternalforce(actor, sFlag, value, model)",
+        "scope": "接口/内功/调整人物的当前内力值"
+    },
+    "设置Int临时变量": {
+        "prefix": "SetTempInt",
+        "description": "设置Int临时变量",
+        "body": "SetTempInt(Type, actor, sVarName, nValue)",
+        "scope": "接口/变量相关/临时变量/设置Int临时变量"
+    },
+    "获取Int临时变量": {
+        "prefix": "GetTempInt",
+        "description": "获取Int临时变量",
+        "body": "GetTempInt(Type, actor, sVarName)",
+        "scope": "接口/变量相关/临时变量/获取Int临时变量"
+    },
+    "设置Str临时变量": {
+        "prefix": "SetTempStr",
+        "description": "设置Str临时变量",
+        "body": "SetTempStr(Type, actor, sVarName, nValue)",
+        "scope": "接口/变量相关/临时变量/设置Str临时变量"
+    },
+    "获取Str临时变量": {
+        "prefix": "GetTempStr",
+        "description": "获取Str临时变量",
+        "body": "GetTempStr(Type, actor, sVarName)",
+        "scope": "接口/变量相关/临时变量/获取Str临时变量"
+    },
+    "设置系统Int临时变量": {
+        "prefix": "SetSysTempInt",
+        "description": "设置系统Int临时变量",
+        "body": "SetSysTempInt(varName, value)",
+        "scope": "接口/变量相关/临时变量/设置系统Int临时变量"
+    },
+    "获取系统Int临时变量": {
+        "prefix": "GetSysTempInt",
+        "description": "获取系统Int临时变量",
+        "body": "GetSysTempInt(varName)",
+        "scope": "接口/变量相关/临时变量/获取系统Int临时变量"
+    },
+    "设置系统Str临时变量": {
+        "prefix": "SetSysTempStr",
+        "description": "设置系统Str临时变量",
+        "body": "SetSysTempStr(varName, value)",
+        "scope": "接口/变量相关/临时变量/设置系统Str临时变量"
+    },
+    "获取系统Str临时变量": {
+        "prefix": "GetSysTempStr",
+        "description": "获取系统Str临时变量",
+        "body": "GetSysTempStr(varName)",
+        "scope": "接口/变量相关/临时变量/获取系统Str临时变量"
+    },
+    "删除多个变量名": {
+        "prefix": "DelVar",
+        "description": "删除多个变量名",
+        "body": "DelVar(Type, actor, sVarName)",
+        "scope": "接口/变量相关/其他/删除多个变量名"
+    },
+    "删除多个系统变量": {
+        "prefix": "DelSysVar",
+        "description": "删除多个系统变量",
+        "body": "DelSysVar(sysVarName)",
+        "scope": "接口/变量相关/其他/删除多个系统变量"
+    },
+    "刷新物品变量到前端": {
+        "prefix": "SendItemVarToc",
+        "description": "刷新物品变量到前端",
+        "body": "SendItemVarToc(actor, makeIndex)",
+        "scope": "接口/变量相关/其他/刷新物品变量到前端"
+    },
+    "设置离线玩家变量值": {
+        "prefix": "SetOffLinePlayVar",
+        "description": "设置离线玩家变量值",
+        "body": "SetOffLinePlayVar(actor, targetName, varName, varValue, isInt)",
+        "scope": "接口/变量相关/其他/设置离线玩家变量值"
+    },
+    "请求离线玩家变量": {
+        "prefix": "OffLineVar",
+        "description": "请求离线玩家变量",
+        "body": "OffLineVar(UserID, varname)",
+        "scope": "接口/变量相关/其他/请求离线玩家变量"
+    },
+    "获取目标全部变量": {
+        "prefix": "GetObjVar",
+        "description": "获取目标全部变量",
+        "body": "GetObjVar(type, obj)",
+        "scope": "接口/变量相关/其他/获取目标全部变量"
+    },
+    "设置目标全部变量": {
+        "prefix": "SetObjVar",
+        "description": "设置目标全部变量",
+        "body": "SetObjVar(type, obj, json)",
+        "scope": "接口/变量相关/其他/设置目标全部变量"
+    },
+    "注册变量排行": {
+        "prefix": "RegRankVar",
+        "description": "注册变量排行",
+        "body": "RegRankVar(varName, type, isRealTime, rankNum, isDescence)",
+        "scope": "接口/变量相关/变量排序/注册变量排行"
+    },
+    "获取变量排行的排名": {
+        "prefix": "GetRankVar",
+        "description": "获取变量排行的排名",
+        "body": "GetRankVar(varName, num, type)",
+        "scope": "接口/变量相关/变量排序/获取变量排行的排名"
+    },
+    "注销变量排行": {
+        "prefix": "UnRegRankVar",
+        "description": "注销变量排行",
+        "body": "UnRegRankVar(varName)",
+        "scope": "接口/变量相关/变量排序/注销变量排行"
+    },
+    "是否注册了排行榜": {
+        "prefix": "HasRankVar",
+        "description": "是否注册了排行榜",
+        "body": "HasRankVar(sVName)",
+        "scope": "接口/变量相关/变量排序/是否注册了排行榜"
+    },
+    "获取玩家排行": {
+        "prefix": "GetPlayRankVar",
+        "description": "获取玩家排行",
+        "body": "GetPlayRankVar(actor, sVName)",
+        "scope": "接口/变量相关/变量排序/获取玩家排行"
+    },
+    "获取对象int型变量": {
+        "prefix": "GetInt",
+        "description": "获取对象int型变量",
+        "body": "GetInt(Type, actor, sVarName)",
+        "scope": "接口/变量相关/普通变量/获取对象int型变量"
+    },
+    "设置对象int型变量": {
+        "prefix": "SetInt",
+        "description": "设置对象int型变量",
+        "body": "SetInt(Type, actor, sVarName, nValue)",
+        "scope": "接口/变量相关/普通变量/设置对象int型变量"
+    },
+    "获取对象str型变量": {
+        "prefix": "GetStr",
+        "description": "获取对象str型变量",
+        "body": "GetStr(Type, actor, sVarName)",
+        "scope": "接口/变量相关/普通变量/获取对象str型变量"
+    },
+    "设置对象str型变量": {
+        "prefix": "SetStr",
+        "description": "设置对象str型变量",
+        "body": "SetStr(Type, actor, sVarName, nValue)",
+        "scope": "接口/变量相关/普通变量/设置对象str型变量"
+    },
+    "设置系统int变量": {
+        "prefix": "SetSysInt",
+        "description": "设置系统int变量",
+        "body": "SetSysInt(varName, value, itype)",
+        "scope": "接口/变量相关/普通变量/设置系统int变量"
+    },
+    "获取系统int变量": {
+        "prefix": "GetSysInt",
+        "description": "获取系统int变量",
+        "body": "GetSysInt(varName)",
+        "scope": "接口/变量相关/普通变量/获取系统int变量"
+    },
+    "设置系统str变量": {
+        "prefix": "SetSysStr",
+        "description": "设置系统str变量",
+        "body": "SetSysStr(varName, value, itype)",
+        "scope": "接口/变量相关/普通变量/设置系统str变量"
+    },
+    "获取系统str变量": {
+        "prefix": "GetSysStr",
+        "description": "获取系统str变量",
+        "body": "GetSysStr(varName)",
+        "scope": "接口/变量相关/普通变量/获取系统str变量"
+    },
+    "设置Int期限变量": {
+        "prefix": "SetTLInt",
+        "description": "设置Int期限变量",
+        "body": "SetTLInt(Type, actor, sVarName, nValue, time)",
+        "scope": "接口/变量相关/期限变量/设置Int期限变量"
+    },
+    "获取Int期限变量": {
+        "prefix": "GetTLInt",
+        "description": "获取Int期限变量",
+        "body": "GetTLInt(Type, actor, sVarName)",
+        "scope": "接口/变量相关/期限变量/获取Int期限变量"
+    },
+    "设置Str期限变量": {
+        "prefix": "SetTLStr",
+        "description": "设置Str期限变量",
+        "body": "SetTLStr(Type, actor, sVarName, nValue, time)",
+        "scope": "接口/变量相关/期限变量/设置Str期限变量"
+    },
+    "获取Str期限变量": {
+        "prefix": "GetTLStr",
+        "description": "获取Str期限变量",
+        "body": "GetTLStr(Type, actor, sVarName)",
+        "scope": "接口/变量相关/期限变量/获取Str期限变量"
+    },
+    "设置系统int型TL变量": {
+        "prefix": "SetSysTLInt",
+        "description": "设置系统int型TL变量",
+        "body": "SetSysTLInt(sVarName, nValue, time)",
+        "scope": "接口/变量相关/期限变量/设置系统int型TL变量"
+    },
+    "获取系统int型TL变量": {
+        "prefix": "GetSysTLInt",
+        "description": "获取系统int型TL变量",
+        "body": "GetSysTLInt(sVarName)",
+        "scope": "接口/变量相关/期限变量/获取系统int型TL变量"
+    },
+    "设置系统str型TL变量": {
+        "prefix": "SetSysTLStr",
+        "description": "设置系统str型TL变量",
+        "body": "SetSysTLStr(sVarName, nValue, time)",
+        "scope": "接口/变量相关/期限变量/设置系统str型TL变量"
+    },
+    "获取系统str型TL变量": {
+        "prefix": "GetSysTLStr",
+        "description": "获取系统str型TL变量",
+        "body": "GetSysTLStr(sVarName)",
+        "scope": "接口/变量相关/期限变量/获取系统str型TL变量"
+    },
+    "获取对象键值对变量值": {
+        "prefix": "GetKeyValue",
+        "description": "获取对象键值对变量值",
+        "body": "GetKeyValue(Type, actor, sVarName, Key)",
+        "scope": "接口/变量相关/键值对变量/获取对象键值对变量值"
+    },
+    "设置对象键值对变量值": {
+        "prefix": "SetKeyValue",
+        "description": "设置对象键值对变量值",
+        "body": "SetKeyValue(Type, actor, sVarName, Key, Value)",
+        "scope": "接口/变量相关/键值对变量/设置对象键值对变量值"
+    },
+    "创建国家": {
+        "prefix": "createnation",
+        "description": "创建国家",
+        "body": "createnation(nIndex, name, maxNum)",
+        "scope": "接口/国家系统/创建国家"
+    },
+    "判断国家是否存在": {
+        "prefix": "HasNation",
+        "description": "判断国家是否存在",
+        "body": "HasNation(nIdx)",
+        "scope": "接口/国家系统/判断国家是否存在"
+    },
+    "删除国家": {
+        "prefix": "delnation",
+        "description": "删除国家",
+        "body": "delnation(nId)",
+        "scope": "接口/国家系统/删除国家"
+    },
+    "加入/退出国家": {
+        "prefix": "JoinNation",
+        "description": "加入/退出国家",
+        "body": "JoinNation(actor, nIndex, JobIndex)",
+        "scope": "接口/国家系统/加入/退出国家"
+    },
+    "获取角色国家ID": {
+        "prefix": "GetPlayNation",
+        "description": "获取角色国家ID",
+        "body": "GetPlayNation(actor)",
+        "scope": "接口/国家系统/获取角色国家ID"
+    },
+    "获取角色在国家的职位": {
+        "prefix": "GetPlayNationRank",
+        "description": "获取角色在国家的职位",
+        "body": "GetPlayNationRank(actor)",
+        "scope": "接口/国家系统/获取角色在国家的职位"
+    },
+    "设置角色在国家的职位": {
+        "prefix": "SetPlayNationRank",
+        "description": "设置角色在国家的职位",
+        "body": "SetPlayNationRank(actor, jobIndex)",
+        "scope": "接口/国家系统/设置角色在国家的职位"
+    },
+    "修改国家职位名称": {
+        "prefix": "SetNationRank",
+        "description": "修改国家职位名称",
+        "body": "SetNationRank(nIndex, jobIndex, jobName)",
+        "scope": "接口/国家系统/修改国家职位名称"
+    },
+    "获取国家职位名称": {
+        "prefix": "GetNationRank",
+        "description": "获取国家职位名称",
+        "body": "GetNationRank(nIndex, jobIndex)",
+        "scope": "接口/国家系统/获取国家职位名称"
+    },
+    "获取国家成员数": {
+        "prefix": "GetNationMemberCount",
+        "description": "获取国家成员数",
+        "body": "GetNationMemberCount(nIndex)",
+        "scope": "接口/国家系统/获取国家成员数"
+    },
+    "获取国家名称": {
+        "prefix": "GetNationName",
+        "description": "获取国家名称",
+        "body": "GetNationName(nation_id)",
+        "scope": "接口/国家系统/获取国家名称"
+    },
+    "判断国家之间是否宣战": {
+        "prefix": "iswarnation",
+        "description": "判断国家之间是否宣战",
+        "body": "iswarnation(nationIDX1, nationIDX2)",
+        "scope": "接口/国家系统/判断国家之间是否宣战"
+    },
+    "添加镜像地图": {
+        "prefix": "addmirrormap",
+        "description": "添加镜像地图",
+        "body": "addmirrormap(oldMap, newMap, newName, time, backMap, miniMapId, posMX, posMY, range)",
+        "scope": "接口/地图相关/添加镜像地图"
+    },
+    "删除镜像地图": {
+        "prefix": "delmirrormap",
+        "description": "删除镜像地图",
+        "body": "delmirrormap(mapId)",
+        "scope": "接口/地图相关/删除镜像地图"
+    },
+    "获取/设置 镜像地图剩余时间": {
+        "prefix": "mirrormaptime",
+        "description": "获取/设置 镜像地图剩余时间",
+        "body": "mirrormaptime(mapId, time)",
+        "scope": "接口/地图相关/获取/设置 镜像地图剩余时间"
+    },
+    "检测镜像地图是否存在": {
+        "prefix": "checkmirrormap",
+        "description": "检测镜像地图是否存在",
+        "body": "checkmirrormap(mapId)",
+        "scope": "接口/地图相关/检测镜像地图是否存在"
+    },
+    "添加地图特效": {
+        "prefix": "mapeffect",
+        "description": "添加地图特效",
+        "body": "mapeffect(id, mapId, X, Y, effId, time, mode, actor, effectModel)",
+        "scope": "接口/地图相关/添加地图特效"
+    },
+    "删除地图特效": {
+        "prefix": "delmapeffect",
+        "description": "删除地图特效",
+        "body": "delmapeffect(id)",
+        "scope": "接口/地图相关/删除地图特效"
+    },
+    "在地图上放置物品": {
+        "prefix": "throwitem",
+        "description": "在地图上放置物品",
+        "body": "throwitem(actor, mapId, X, Y, range, itemName, count, time, hint, take, onlySelf, xyinOrder, overlap, isAuto)",
+        "scope": "接口/地图相关/在地图上放置物品"
+    },
+    "在地图上生成掉落物品": {
+        "prefix": "gendropitem",
+        "description": "在地图上生成掉落物品",
+        "body": "gendropitem(mapId, actor, X, Y, json, data)",
+        "scope": "接口/地图相关/在地图上生成掉落物品"
+    },
+    "清理地图上指定名字的物品": {
+        "prefix": "clearitemmap",
+        "description": "清理地图上指定名字的物品",
+        "body": "clearitemmap(mapId, X, Y, range, itemName)",
+        "scope": "接口/地图相关/清理地图上指定名字的物品"
+    },
+    "设定地图定时器": {
+        "prefix": "setenvirontimer",
+        "description": "设定地图定时器",
+        "body": "setenvirontimer(mapId, index, second, func)",
+        "scope": "接口/地图相关/设定地图定时器"
+    },
+    "关闭地图定时器": {
+        "prefix": "setenvirofftimer",
+        "description": "关闭地图定时器",
+        "body": "setenvirofftimer(mapId, index)",
+        "scope": "接口/地图相关/关闭地图定时器"
+    },
+    "判断地图定时器是否存在": {
+        "prefix": "hasenvirtimer",
+        "description": "判断地图定时器是否存在",
+        "body": "hasenvirtimer(mapId, timerId)",
+        "scope": "接口/地图相关/判断地图定时器是否存在"
+    },
+    "获取地图上指定范围内的对象": {
+        "prefix": "getobjectinmap",
+        "description": "获取地图上指定范围内的对象",
+        "body": "getobjectinmap(mapId, X, Y, range, flag)",
+        "scope": "接口/地图相关/获取地图上指定范围内的对象"
+    },
+    "获取怪物位置及复活时间(仅支持小地图上提示的怪物)": {
+        "prefix": "getmonrefresh",
+        "description": "获取怪物位置及复活时间(仅支持小地图上提示的怪物)",
+        "body": "getmonrefresh(mapId, model)",
+        "scope": "接口/地图相关/获取怪物位置及复活时间(仅支持小地图上提示的怪物)"
+    },
+    "增加动态地图连接": {
+        "prefix": "addmapgate",
+        "description": "增加动态地图连接",
+        "body": "addmapgate(name, mapFrom, X1, Y1, range, mapTo, X2, Y2, time)",
+        "scope": "接口/地图相关/增加动态地图连接"
+    },
+    "获取动态地图连接": {
+        "prefix": "getmapgate",
+        "description": "获取动态地图连接",
+        "body": "getmapgate(name, mapFrom)",
+        "scope": "接口/地图相关/获取动态地图连接"
+    },
+    "删除动态地图连接": {
+        "prefix": "delmapgate",
+        "description": "删除动态地图连接",
+        "body": "delmapgate(name, mapId)",
+        "scope": "接口/地图相关/删除动态地图连接"
+    },
+    "根据名称获取地图基础信息": {
+        "prefix": "getmapinfo",
+        "description": "根据名称获取地图基础信息",
+        "body": "getmapinfo(mapId, nIndex)",
+        "scope": "接口/地图相关/根据名称获取地图基础信息"
+    },
+    "判断地图坐标是否为空": {
+        "prefix": "isemptyinmap",
+        "description": "判断地图坐标是否为空",
+        "body": "isemptyinmap(mapid, nX, nY)",
+        "scope": "接口/地图相关/判断地图坐标是否为空"
+    },
+    "获取地图指定范围内的怪物对象列表": {
+        "prefix": "getmapmon",
+        "description": "获取地图指定范围内的怪物对象列表",
+        "body": "getmapmon(mapId, monName, nX, nY, nRange)",
+        "scope": "接口/地图相关/获取地图指定范围内的怪物对象列表"
+    },
+    "获取地图玩家对象列表": {
+        "prefix": "getplaycount",
+        "description": "获取地图玩家对象列表",
+        "body": "getplaycount(mapId, bIgnoreDied, bIgnoreDummy)",
+        "scope": "接口/地图相关/获取地图玩家对象列表"
+    },
+    "获取指定地图玩家数量": {
+        "prefix": "getplaycountinmap",
+        "description": "获取指定地图玩家数量",
+        "body": "getplaycountinmap(actor, mapId, isAllGain)",
+        "scope": "接口/地图相关/获取指定地图玩家数量"
+    },
+    "获取指定地图怪物数量": {
+        "prefix": "getmoncount",
+        "description": "获取指定地图怪物数量",
+        "body": "getmoncount(mapId, monId, isAllMon)",
+        "scope": "接口/地图相关/获取指定地图怪物数量"
+    },
+    "把某个地图中的玩家全部移动到另外一个地图": {
+        "prefix": "movemapplay",
+        "description": "把某个地图中的玩家全部移动到另外一个地图",
+        "body": "movemapplay(actor, aMapId, bMapId, X, Y, range)",
+        "scope": "接口/地图相关/把某个地图中的玩家全部移动到另外一个地图"
+    },
+    "设置地图杀怪经验倍数": {
+        "prefix": "mapkillmonexprate",
+        "description": "设置地图杀怪经验倍数",
+        "body": "mapkillmonexprate(actor, mapId, much)",
+        "scope": "接口/地图相关/设置地图杀怪经验倍数"
+    },
+    "随机杀死地图中的怪物": {
+        "prefix": "randomkillmon",
+        "description": "随机杀死地图中的怪物",
+        "body": "randomkillmon(mapId, monsterName, num, isDrop)",
+        "scope": "接口/地图相关/随机杀死地图中的怪物"
+    },
+    "编组地图传送": {
+        "prefix": "groupmapmove",
+        "description": "编组地图传送",
+        "body": "groupmapmove(actor, mapId, X, Y, level, value, obj)",
+        "scope": "接口/地图相关/编组地图传送"
+    },
+    "根据地图id返回地图名": {
+        "prefix": "getmapname",
+        "description": "根据地图id返回地图名",
+        "body": "getmapname(mapId)",
+        "scope": "接口/地图相关/根据地图id返回地图名"
+    },
+    "检测地图逻辑格": {
+        "prefix": "gridattr",
+        "description": "检测地图逻辑格",
+        "body": "gridattr(mapId, x, y, type)",
+        "scope": "接口/地图相关/检测地图逻辑格"
+    },
+    "获取当前地图行会成员数量": {
+        "prefix": "maphanghcyguild",
+        "description": "获取当前地图行会成员数量",
+        "body": "maphanghcyguild(mapId, guildName)",
+        "scope": "接口/地图相关/获取当前地图行会成员数量"
+    },
+    "获取当前地图怪物状态": {
+        "prefix": "mapbossinfo",
+        "description": "获取当前地图怪物状态",
+        "body": "mapbossinfo(mapId, monName, model, param)",
+        "scope": "接口/地图相关/获取当前地图怪物状态"
+    },
+    "开启/关闭地图参数": {
+        "prefix": "setmapmode",
+        "description": "开启/关闭地图参数",
+        "body": "setmapmode(mapId, mapEvent, model1, param2)",
+        "scope": "接口/地图相关/开启/关闭地图参数"
+    },
+    "增加天气": {
+        "prefix": "setweathereffect",
+        "description": "增加天气",
+        "body": "setweathereffect(mapId, model, time)",
+        "scope": "接口/地图相关/增加天气"
+    },
+    "删除天气": {
+        "prefix": "delweathereffect",
+        "description": "删除天气",
+        "body": "delweathereffect(mapId, model)",
+        "scope": "接口/地图相关/删除天气"
+    },
+    "获取当前地图随机xy坐标": {
+        "prefix": "GetMapRandXY",
+        "description": "获取当前地图随机xy坐标",
+        "body": "GetMapRandXY(actor, mapid)",
+        "scope": "接口/地图相关/获取当前地图随机xy坐标"
+    },
+    "设置杀怪经验倍数": {
+        "prefix": "killmonexprate",
+        "description": "设置杀怪经验倍数",
+        "body": "killmonexprate(actor, rate, time)",
+        "scope": "接口/地图相关/设置杀怪经验倍数"
+    },
+    "添加全局定时器": {
+        "prefix": "setontimerex",
+        "description": "添加全局定时器",
+        "body": "setontimerex(id, tick)",
+        "scope": "接口/定时器/添加全局定时器"
+    },
+    "移除定时器": {
+        "prefix": "setofftimerex",
+        "description": "移除定时器",
+        "body": "setofftimerex(id)",
+        "scope": "接口/定时器/移除定时器"
+    },
+    "判断全局定时器是否存在": {
+        "prefix": "hastimerex",
+        "description": "判断全局定时器是否存在",
+        "body": "hastimerex(timerId)",
+        "scope": "接口/定时器/判断全局定时器是否存在"
+    },
+    "添加个人定时器": {
+        "prefix": "setontimer",
+        "description": "添加个人定时器",
+        "body": "setontimer(actor, id, runTick, runTime)",
+        "scope": "接口/定时器/添加个人定时器"
+    },
+    "移除个人定时器": {
+        "prefix": "setofftimer",
+        "description": "移除个人定时器",
+        "body": "setofftimer(actor, id)",
+        "scope": "接口/定时器/移除个人定时器"
+    },
+    "判断玩家定时器是否存在": {
+        "prefix": "hastimer",
+        "description": "判断玩家定时器是否存在",
+        "body": "hastimer(actor, timerId)",
+        "scope": "接口/定时器/判断玩家定时器是否存在"
+    },
+    "创建宠物": {
+        "prefix": "createpet",
+        "description": "创建宠物",
+        "body": "createpet(actor, monName, level)",
+        "scope": "接口/宠物相关/创建宠物"
+    },
+    "召唤宠物": {
+        "prefix": "recallpet",
+        "description": "召唤宠物",
+        "body": "recallpet(actor, index)",
+        "scope": "接口/宠物相关/召唤宠物"
+    },
+    "获取宠物": {
+        "prefix": "getpet",
+        "description": "获取宠物",
+        "body": "getpet(actor, index)",
+        "scope": "接口/宠物相关/获取宠物"
+    },
+    "收回宠物": {
+        "prefix": "unrecallpet",
+        "description": "收回宠物",
+        "body": "unrecallpet(actor, index)",
+        "scope": "接口/宠物相关/收回宠物"
+    },
+    "删除宠物": {
+        "prefix": "delpet",
+        "description": "删除宠物",
+        "body": "delpet(actor, index)",
+        "scope": "接口/宠物相关/删除宠物"
+    },
+    "宠物穿装备": {
+        "prefix": "pettakeon",
+        "description": "宠物穿装备",
+        "body": "pettakeon(actor, index, item)",
+        "scope": "接口/宠物相关/宠物穿装备"
+    },
+    "宠物脱装备": {
+        "prefix": "pettakeoff",
+        "description": "宠物脱装备",
+        "body": "pettakeoff(actor, index, item)",
+        "scope": "接口/宠物相关/宠物脱装备"
+    },
+    "获取宠物数量": {
+        "prefix": "getpetcount",
+        "description": "获取宠物数量",
+        "body": "getpetcount(actor)",
+        "scope": "接口/宠物相关/获取宠物数量"
+    },
+    "获取宠物身上装备列表": {
+        "prefix": "getpetbodyitem",
+        "description": "获取宠物身上装备列表",
+        "body": "getpetbodyitem(actor, index)",
+        "scope": "接口/宠物相关/获取宠物身上装备列表"
+    },
+    "设置宠物模式": {
+        "prefix": "setpetmode",
+        "description": "设置宠物模式",
+        "body": "setpetmode(actor, mode)",
+        "scope": "接口/宠物相关/设置宠物模式"
+    },
+    "获取宠物状态": {
+        "prefix": "petstate",
+        "description": "获取宠物状态",
+        "body": "petstate(actor, index)",
+        "scope": "接口/宠物相关/获取宠物状态"
+    },
+    "增加宠物属性": {
+        "prefix": "addpetattlist",
+        "description": "增加宠物属性",
+        "body": "addpetattlist(actor, index, attrName, opt, attr)",
+        "scope": "接口/宠物相关/增加宠物属性"
+    },
+    "清除宠物属性": {
+        "prefix": "delpetattlist",
+        "description": "清除宠物属性",
+        "body": "delpetattlist(actor, index, attrName)",
+        "scope": "接口/宠物相关/清除宠物属性"
+    },
+    "置换宠物属性": {
+        "prefix": "petmon",
+        "description": "置换宠物属性",
+        "body": "petmon(actor, index, monIndex)",
+        "scope": "接口/宠物相关/置换宠物属性"
+    },
+    "改变宠物外观": {
+        "prefix": "setpetappr",
+        "description": "改变宠物外观",
+        "body": "setpetappr(actor, petIndex, appr)",
+        "scope": "接口/宠物相关/改变宠物外观"
+    },
+    "增加宠物攻击表现": {
+        "prefix": "addpetskill",
+        "description": "增加宠物攻击表现",
+        "body": "addpetskill(actor, index, skillId)",
+        "scope": "接口/宠物相关/增加宠物攻击表现"
+    },
+    "获取宠物蛋信息": {
+        "prefix": "getpetegglevel",
+        "description": "获取宠物蛋信息",
+        "body": "getpetegglevel(actor, itemMakeIndex, type)",
+        "scope": "接口/宠物相关/获取宠物蛋信息"
+    },
+    "设置宠物蛋等级": {
+        "prefix": "setpetegglevel",
+        "description": "设置宠物蛋等级",
+        "body": "setpetegglevel(actor, itemMakeIndex, level, zLevel, exp)",
+        "scope": "接口/宠物相关/设置宠物蛋等级"
+    },
+    "返回复活的宠物对象": {
+        "prefix": "realivepet",
+        "description": "返回复活的宠物对象",
+        "body": "realivepet(actor, index, nHp, type)",
+        "scope": "接口/宠物相关/返回复活的宠物对象"
+    },
+    "收回宠物为物品": {
+        "prefix": "retractpettoitem",
+        "description": "收回宠物为物品",
+        "body": "retractpettoitem(actor, index)",
+        "scope": "接口/宠物相关/收回宠物为物品"
+    },
+    "清除宠物所有技能": {
+        "prefix": "ClearPetSkill",
+        "description": "清除宠物所有技能",
+        "body": "ClearPetSkill(actor, index)",
+        "scope": "接口/宠物相关/清除宠物所有技能"
+    },
+    "解析文本": {
+        "prefix": "parsetext",
+        "description": "解析文本",
+        "body": "parsetext(text, actor)",
+        "scope": "接口/对象通用/解析文本"
+    },
+    "获取人物/怪物 相关信息": {
+        "prefix": "getbaseinfo",
+        "description": "获取人物/怪物 相关信息",
+        "body": "getbaseinfo(object, nID, param3)",
+        "scope": "接口/对象通用/获取人物/怪物 相关信息"
+    },
+    "设置人物/怪物相关信息": {
+        "prefix": "setbaseinfo",
+        "description": "设置人物/怪物相关信息",
+        "body": "setbaseinfo(object, nID, value)",
+        "scope": "接口/对象通用/设置人物/怪物相关信息"
+    },
+    "对象是否存在": {
+        "prefix": "isnotnull",
+        "description": "对象是否存在",
+        "body": "isnotnull(object)",
+        "scope": "接口/对象通用/对象是否存在"
+    },
+    "判断对象是否为玩家": {
+        "prefix": "isplayer",
+        "description": "判断对象是否为玩家",
+        "body": "isplayer(object)",
+        "scope": "接口/对象通用/判断对象是否为玩家"
+    },
+    "判断对象是否为人形怪": {
+        "prefix": "isplaymon",
+        "description": "判断对象是否为人形怪",
+        "body": "isplaymon(object)",
+        "scope": "接口/对象通用/判断对象是否为人形怪"
+    },
+    "判断对象是否为宝宝": {
+        "prefix": "ismob",
+        "description": "判断对象是否为宝宝",
+        "body": "ismob(object)",
+        "scope": "接口/对象通用/判断对象是否为宝宝"
+    },
+    "判断对象是否为怪物": {
+        "prefix": "ismon",
+        "description": "判断对象是否为怪物",
+        "body": "ismon(object)",
+        "scope": "接口/对象通用/判断对象是否为怪物"
+    },
+    "改变 人/怪物 状态": {
+        "prefix": "makeposion",
+        "description": "改变 人/怪物 状态",
+        "body": "makeposion(object, id, time, value, model)",
+        "scope": "接口/对象通用/改变 人/怪物 状态"
+    },
+    "检测 人/怪物 状态": {
+        "prefix": "checkhumanstate",
+        "description": "检测 人/怪物 状态",
+        "body": "checkhumanstate(object, type, forbid)",
+        "scope": "接口/对象通用/检测 人/怪物 状态"
+    },
+    "使用脚本命令解毒（红绿毒）": {
+        "prefix": "detoxifcation",
+        "description": "使用脚本命令解毒（红绿毒）",
+        "body": "detoxifcation(object, opt)",
+        "scope": "接口/对象通用/使用脚本命令解毒（红绿毒）"
+    },
+    "回到最近经过的城市安全区": {
+        "prefix": "gohome",
+        "description": "回到最近经过的城市安全区",
+        "body": "gohome(actor)",
+        "scope": "接口/对象通用/回到最近经过的城市安全区"
+    },
+    "在线泡点经验": {
+        "prefix": "setautogetexp",
+        "description": "在线泡点经验",
+        "body": "setautogetexp(actor, eveTime, experience, isSafe, mapId, opt, allTime, level)",
+        "scope": "接口/对象通用/在线泡点经验"
+    },
+    "播放音乐声音": {
+        "prefix": "playsound",
+        "description": "播放音乐声音",
+        "body": "playsound(actor, index, times, flag)",
+        "scope": "接口/对象通用/播放音乐声音"
+    },
+    "表格转换成字符串": {
+        "prefix": "tbl2json",
+        "description": "表格转换成字符串",
+        "body": "tbl2json(data)",
+        "scope": "接口/对象通用/表格转换成字符串"
+    },
+    "字符串转换成表格": {
+        "prefix": "json2tbl",
+        "description": "字符串转换成表格",
+        "body": "json2tbl(str)",
+        "scope": "接口/对象通用/字符串转换成表格"
+    },
+    "拉取客户端充值接口": {
+        "prefix": "pullpay",
+        "description": "拉取客户端充值接口",
+        "body": "pullpay(actor, money, type, falgId, productId)",
+        "scope": "接口/对象通用/拉取客户端充值接口"
+    },
+    "执行GM命令": {
+        "prefix": "gmexecute",
+        "description": "执行GM命令",
+        "body": "gmexecute(actor, GM, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)",
+        "scope": "接口/对象通用/执行GM命令"
+    },
+    "播放屏幕特效": {
+        "prefix": "screffects",
+        "description": "播放屏幕特效",
+        "body": "screffects(actor, id, effectId, X, Y, speed, times, type)",
+        "scope": "接口/对象通用/播放屏幕特效"
+    },
+    "关闭屏幕特效": {
+        "prefix": "deleffects",
+        "description": "关闭屏幕特效",
+        "body": "deleffects(actor, id, type)",
+        "scope": "接口/对象通用/关闭屏幕特效"
+    },
+    "获取常量": {
+        "prefix": "getconst",
+        "description": "获取常量",
+        "body": "getconst(actor, varName)",
+        "scope": "接口/对象通用/获取常量"
+    },
+    "屏幕震动": {
+        "prefix": "scenevibration",
+        "description": "屏幕震动",
+        "body": "scenevibration(actor, type, level, num, mapId)",
+        "scope": "接口/对象通用/屏幕震动"
+    },
+    "客户端复制": {
+        "prefix": "mircopy",
+        "description": "客户端复制",
+        "body": "mircopy(actor, str)",
+        "scope": "接口/对象通用/客户端复制"
+    },
+    "游戏中打开网站": {
+        "prefix": "openwebsite",
+        "description": "游戏中打开网站",
+        "body": "openwebsite(actor, web)",
+        "scope": "接口/对象通用/游戏中打开网站"
+    },
+    "MD5加密": {
+        "prefix": "md5str",
+        "description": "MD5加密",
+        "body": "md5str(str)",
+        "scope": "接口/对象通用/MD5加密"
+    },
+    "等概率或者按权限随机获取分割字符串": {
+        "prefix": "ransjstr",
+        "description": "等概率或者按权限随机获取分割字符串",
+        "body": "ransjstr(str, param1, param2)",
+        "scope": "接口/对象通用/等概率或者按权限随机获取分割字符串"
+    },
+    "自定义日志": {
+        "prefix": "logact",
+        "description": "自定义日志",
+        "body": "logact(actor, logAct, logInfo, param1, param2, param3, param4, param5)",
+        "scope": "接口/对象通用/自定义日志"
+    },
+    "日志上报接口": {
+        "prefix": "senddiymsg",
+        "description": "日志上报接口",
+        "body": "senddiymsg(actor, jsonStr)",
+        "scope": "接口/对象通用/日志上报接口"
+    },
+    "打印脚本总耗时(微秒)": {
+        "prefix": "printusetime",
+        "description": "打印脚本总耗时(微秒)",
+        "body": "printusetime(actor, onoff)",
+        "scope": "接口/对象通用/打印脚本总耗时(微秒)"
+    },
+    "前端勾选面板控制命令": {
+        "prefix": "clientswitch",
+        "description": "前端勾选面板控制命令",
+        "body": "clientswitch(actor, type, time)",
+        "scope": "接口/对象通用/前端勾选面板控制命令"
+    },
+    "拉起微信和qq等功能": {
+        "prefix": "sendforqqwx",
+        "description": "拉起微信和qq等功能",
+        "body": "sendforqqwx(actor, model, param1, param2)",
+        "scope": "接口/对象通用/拉起微信和qq等功能"
+    },
+    "发送邮件": {
+        "prefix": "sendmail",
+        "description": "发送邮件",
+        "body": "sendmail(userId, id, label, memo, rewards)",
+        "scope": "接口/对象通用/发送邮件"
+    },
+    "获取对象类型": {
+        "prefix": "GetObjType",
+        "description": "获取对象类型",
+        "body": "GetObjType(object)",
+        "scope": "接口/对象通用/获取对象类型"
+    },
+    "表格转换成字符串(保留主键)": {
+        "prefix": "tbl2jsonex",
+        "description": "表格转换成字符串(保留主键)",
+        "body": "tbl2jsonex(str)",
+        "scope": "接口/对象通用/表格转换成字符串(保留主键)"
+    },
+    "字符串转换成表格(序列化)": {
+        "prefix": "json2tblex",
+        "description": "字符串转换成表格(序列化)",
+        "body": "json2tblex(str)",
+        "scope": "接口/对象通用/字符串转换成表格(序列化)"
+    },
+    "刷怪": {
+        "prefix": "genmon",
+        "description": "刷怪",
+        "body": "genmon(mapId, x, y, monName, range, count, color)",
+        "scope": "接口/怪物相关/刷怪"
+    },
+    "杀怪1": {
+        "prefix": "killmonsters",
+        "description": "杀怪1",
+        "body": "killmonsters(mapId, monName, count, drop, trigger)",
+        "scope": "接口/怪物相关/杀怪1"
+    },
+    "杀怪2": {
+        "prefix": "killmonbyobj",
+        "description": "杀怪2",
+        "body": "killmonbyobj(actor, mon, drop, trigger, showDie)",
+        "scope": "接口/怪物相关/杀怪2"
+    },
+    "清掉地图某范围的怪物": {
+        "prefix": "killmapmon",
+        "description": "清掉地图某范围的怪物",
+        "body": "killmapmon(mapId, X, Y, range, monName, isDrop, isClear)",
+        "scope": "接口/怪物相关/清掉地图某范围的怪物"
+    },
+    "杀怪物品再爆": {
+        "prefix": "monitems",
+        "description": "杀怪物品再爆",
+        "body": "monitems(actor, count)",
+        "scope": "接口/怪物相关/杀怪物品再爆"
+    },
+    "指定怪物的爆出": {
+        "prefix": "monitemsex",
+        "description": "指定怪物的爆出",
+        "body": "monitemsex(actor, itemName, value, delayTime)",
+        "scope": "接口/怪物相关/指定怪物的爆出"
+    },
+    "召唤宝宝": {
+        "prefix": "recallmob",
+        "description": "召唤宝宝",
+        "body": "recallmob(actor, monName, level, time, param1, param2, param3)",
+        "scope": "接口/怪物相关/召唤宝宝"
+    },
+    "召唤宝宝2": {
+        "prefix": "recallmobex",
+        "description": "召唤宝宝2",
+        "body": "recallmobex(actor, Name, x, y, lv, num, time, color, count, upgard, hide_name, attr, hp_value, buff_id)",
+        "scope": "接口/怪物相关/召唤宝宝2"
+    },
+    "把怪物设置成宝宝": {
+        "prefix": "setmonmaster",
+        "description": "把怪物设置成宝宝",
+        "body": "setmonmaster(mon, actor, time)",
+        "scope": "接口/怪物相关/把怪物设置成宝宝"
+    },
+    "遍历宠物(宝宝)列表": {
+        "prefix": "getslavebyindex",
+        "description": "遍历宠物(宝宝)列表",
+        "body": "getslavebyindex(actor, nIndex)",
+        "scope": "接口/怪物相关/遍历宠物(宝宝)列表"
+    },
+    "修改宝宝名称": {
+        "prefix": "changemonname",
+        "description": "修改宝宝名称",
+        "body": "changemonname(mon, name)",
+        "scope": "接口/怪物相关/修改宝宝名称"
+    },
+    "修改宝宝属性值": {
+        "prefix": "changemobability",
+        "description": "修改宝宝属性值",
+        "body": "changemobability(actor, mon, attr, method, value, time)",
+        "scope": "接口/怪物相关/修改宝宝属性值"
+    },
+    "获取宝宝等级": {
+        "prefix": "getslavelevel",
+        "description": "获取宝宝等级",
+        "body": "getslavelevel(mon)",
+        "scope": "接口/怪物相关/获取宝宝等级"
+    },
+    "修改宝宝等级": {
+        "prefix": "changeslavelevel",
+        "description": "修改宝宝等级",
+        "body": "changeslavelevel(actor, mon, operate, nLevel)",
+        "scope": "接口/怪物相关/修改宝宝等级"
+    },
+    "根据唯一id获取怪物对象": {
+        "prefix": "getmonbyuserid",
+        "description": "根据唯一id获取怪物对象",
+        "body": "getmonbyuserid(mapId, monUserId)",
+        "scope": "接口/怪物相关/根据唯一id获取怪物对象"
+    },
+    "返回怪物基础信息": {
+        "prefix": "getmonbaseinfo",
+        "description": "返回怪物基础信息",
+        "body": "getmonbaseinfo(index, id)",
+        "scope": "接口/怪物相关/返回怪物基础信息"
+    },
+    "检测范围内怪物数量": {
+        "prefix": "checkrangemoncount",
+        "description": "检测范围内怪物数量",
+        "body": "checkrangemoncount(mapId, monName, nX, nY, nRange)",
+        "scope": "接口/怪物相关/检测范围内怪物数量"
+    },
+    "召唤小精灵": {
+        "prefix": "createsprite",
+        "description": "召唤小精灵",
+        "body": "createsprite(actor, monName)",
+        "scope": "接口/怪物相关/召唤小精灵"
+    },
+    "检测小精灵": {
+        "prefix": "checkspritelevel",
+        "description": "检测小精灵",
+        "body": "checkspritelevel(actor, monName)",
+        "scope": "接口/怪物相关/检测小精灵"
+    },
+    "回收小精灵": {
+        "prefix": "releasesprite",
+        "description": "回收小精灵",
+        "body": "releasesprite(actor)",
+        "scope": "接口/怪物相关/回收小精灵"
+    },
+    "小精灵拾取模式": {
+        "prefix": "pickupitems",
+        "description": "小精灵拾取模式",
+        "body": "pickupitems(actor, mode, range, interval)",
+        "scope": "接口/怪物相关/小精灵拾取模式"
+    },
+    "小精灵停止拾取": {
+        "prefix": "stoppickupitems",
+        "description": "小精灵停止拾取",
+        "body": "stoppickupitems(actor)",
+        "scope": "接口/怪物相关/小精灵停止拾取"
+    },
+    "在指定位置优先打指定的怪": {
+        "prefix": "killmobappoint",
+        "description": "在指定位置优先打指定的怪",
+        "body": "killmobappoint(actor, map, X, Y, monName)",
+        "scope": "接口/怪物相关/在指定位置优先打指定的怪"
+    },
+    "临时增加怪物爆出物品": {
+        "prefix": "additemtodroplist",
+        "description": "临时增加怪物爆出物品",
+        "body": "additemtodroplist(obj, mon, itemName)",
+        "scope": "接口/怪物相关/临时增加怪物爆出物品"
+    },
+    "嘲讽怪物": {
+        "prefix": "dotaunt",
+        "description": "嘲讽怪物",
+        "body": "dotaunt(actor, distance, grade)",
+        "scope": "接口/怪物相关/嘲讽怪物"
+    },
+    "单独嘲讽怪物": {
+        "prefix": "dotauntex",
+        "description": "单独嘲讽怪物",
+        "body": "dotauntex(actor, monster_obj)",
+        "scope": "接口/怪物相关/单独嘲讽怪物"
+    },
+    "宝宝嘲讽": {
+        "prefix": "mobdotaunt",
+        "description": "宝宝嘲讽",
+        "body": "mobdotaunt(actor, index, range, levelMax)",
+        "scope": "接口/怪物相关/宝宝嘲讽"
+    },
+    "调整宝宝攻击人物的威力倍率": {
+        "prefix": "changeslaveattackhumpowerrate",
+        "description": "调整宝宝攻击人物的威力倍率",
+        "body": "changeslaveattackhumpowerrate(actor, petName, pro)",
+        "scope": "接口/怪物相关/调整宝宝攻击人物的威力倍率"
+    },
+    "怪物寻路/巡逻": {
+        "prefix": "monmission",
+        "description": "怪物寻路/巡逻",
+        "body": "monmission(actor, posX, posY, model)",
+        "scope": "接口/怪物相关/怪物寻路/巡逻"
+    },
+    "命令移动怪物": {
+        "prefix": "movemontopos",
+        "description": "命令移动怪物",
+        "body": "movemontopos(monName, mapId, posX1, posY1, posX2, posY2)",
+        "scope": "接口/怪物相关/命令移动怪物"
+    },
+    "获取怪物原始各项数据库字段值参数": {
+        "prefix": "getdbmonfieldvalue",
+        "description": "获取怪物原始各项数据库字段值参数",
+        "body": "getdbmonfieldvalue(monInfo, fieldName)",
+        "scope": "接口/怪物相关/获取怪物原始各项数据库字段值参数"
+    },
+    "重置怪物生成计时器": {
+        "prefix": "resetmongentick",
+        "description": "重置怪物生成计时器",
+        "body": "resetmongentick(mapId, monPosX, monPosY, monName)",
+        "scope": "接口/怪物相关/重置怪物生成计时器"
+    },
+    "让怪物释放自定义技能": {
+        "prefix": "mon_docustommagic",
+        "description": "让怪物释放自定义技能",
+        "body": "mon_docustommagic(mon, skillId, X, Y, target)",
+        "scope": "接口/怪物相关/让怪物释放自定义技能"
+    },
+    "添加自定义怪物攻击表现": {
+        "prefix": "addmonattack",
+        "description": "添加自定义怪物攻击表现",
+        "body": "addmonattack(mon, skillId)",
+        "scope": "接口/怪物相关/添加自定义怪物攻击表现"
+    },
+    "设置宝宝叛变时间": {
+        "prefix": "setmobtreachery",
+        "description": "设置宝宝叛变时间",
+        "body": "setmobtreachery(mon, time)",
+        "scope": "接口/怪物相关/设置宝宝叛变时间"
+    },
+    "获取宝宝叛变时间": {
+        "prefix": "getmobtreachery",
+        "description": "获取宝宝叛变时间",
+        "body": "getmobtreachery(mon)",
+        "scope": "接口/怪物相关/获取宝宝叛变时间"
+    },
+    "单独吸引怪物": {
+        "prefix": "monmoveex",
+        "description": "单独吸引怪物",
+        "body": "monmoveex(actor, monster_obj, isMove, unLimit)",
+        "scope": "接口/怪物相关/单独吸引怪物"
+    },
+    "获取玩家沙巴克身份": {
+        "prefix": "castleidentity",
+        "description": "获取玩家沙巴克身份",
+        "body": "castleidentity(actor)",
+        "scope": "接口/攻城/获取玩家沙巴克身份"
+    },
+    "沙巴克基本信息": {
+        "prefix": "castleinfo",
+        "description": "沙巴克基本信息",
+        "body": "castleinfo(nID)",
+        "scope": "接口/攻城/沙巴克基本信息"
+    },
+    "脚本命令设置沙巴克归属": {
+        "prefix": "setcastleguild",
+        "description": "脚本命令设置沙巴克归属",
+        "body": "setcastleguild(guild, param)",
+        "scope": "接口/攻城/脚本命令设置沙巴克归属"
+    },
+    "获取攻城列表": {
+        "prefix": "getcastlewarlist",
+        "description": "获取攻城列表",
+        "body": "getcastlewarlist()",
+        "scope": "接口/攻城/获取攻城列表"
+    },
+    "把行会添加到攻城列表": {
+        "prefix": "addtocastlewarlist",
+        "description": "把行会添加到攻城列表",
+        "body": "addtocastlewarlist(name, day)",
+        "scope": "接口/攻城/把行会添加到攻城列表"
+    },
+    "强制把行会添加到攻城列表": {
+        "prefix": "addtocastlewarlistex",
+        "description": "强制把行会添加到攻城列表",
+        "body": "addtocastlewarlistex(name)",
+        "scope": "接口/攻城/强制把行会添加到攻城列表"
+    },
+    "所有行会在当晚同时攻城": {
+        "prefix": "addattacksabukall",
+        "description": "所有行会在当晚同时攻城",
+        "body": "addattacksabukall()",
+        "scope": "接口/攻城/所有行会在当晚同时攻城"
+    },
+    "修复城门,城墙等": {
+        "prefix": "repaircastle",
+        "description": "修复城门,城墙等",
+        "body": "repaircastle()",
+        "scope": "接口/攻城/修复城门,城墙等"
+    },
+    "雇佣沙巴克弓箭手/卫士": {
+        "prefix": "castlearchergen",
+        "description": "雇佣沙巴克弓箭手/卫士",
+        "body": "castlearchergen(monId, monType)",
+        "scope": "接口/攻城/雇佣沙巴克弓箭手/卫士"
+    },
+    "清理沙巴克归属": {
+        "prefix": "resetcastle",
+        "description": "清理沙巴克归属",
+        "body": "resetcastle()",
+        "scope": "接口/攻城/清理沙巴克归属"
+    },
+    "删除Envir目录下的指定文件": {
+        "prefix": "delfile",
+        "description": "删除Envir目录下的指定文件",
+        "body": "delfile(path)",
+        "scope": "接口/文本操作/删除Envir目录下的指定文件"
+    },
+    "获取Envir文件夹下文件列表": {
+        "prefix": "getenvirfilelist",
+        "description": "获取Envir文件夹下文件列表",
+        "body": "getenvirfilelist()",
+        "scope": "接口/文本操作/获取Envir文件夹下文件列表"
+    },
+    "加载csv表格内容": {
+        "prefix": "newreadcsv",
+        "description": "加载csv表格内容",
+        "body": "newreadcsv(fileName)",
+        "scope": "接口/文本操作/加载csv表格内容"
+    },
+    "读取表里面的第几行第几列内容(0行0列开始)": {
+        "prefix": "newdqcsv",
+        "description": "读取表里面的第几行第几列内容(0行0列开始)",
+        "body": "newdqcsv(fileName, row, col)",
+        "scope": "接口/文本操作/读取表里面的第几行第几列内容(0行0列开始)"
+    },
+    "获取当前表格最大行数、和获取表格最大列数": {
+        "prefix": "gethlcsv",
+        "description": "获取当前表格最大行数、和获取表格最大列数",
+        "body": "gethlcsv(fileName, type)",
+        "scope": "接口/文本操作/获取当前表格最大行数、和获取表格最大列数"
+    },
+    "取字符串在csv表格中的行号": {
+        "prefix": "getgjcsv",
+        "description": "取字符串在csv表格中的行号",
+        "body": "getgjcsv(fileName, str, rowLimit, col, findType)",
+        "scope": "接口/文本操作/取字符串在csv表格中的行号"
+    },
+    "读取表格": {
+        "prefix": "readexcel",
+        "description": "读取表格",
+        "body": "readexcel(path)",
+        "scope": "接口/文本操作/读取表格"
+    },
+    "敏感词汇检测": {
+        "prefix": "exisitssensitiveword",
+        "description": "敏感词汇检测",
+        "body": "exisitssensitiveword(str)",
+        "scope": "接口/文本操作/敏感词汇检测"
+    },
+    "获取文件列表": {
+        "prefix": "GetFileList",
+        "description": "获取文件列表",
+        "body": "GetFileList(path)",
+        "scope": "接口/文本操作/获取文件列表"
+    },
+    "gbk 转 utf-8": {
+        "prefix": "gbktoutf8",
+        "description": "gbk 转 utf-8",
+        "body": "gbktoutf8(str)",
+        "scope": "接口/文本操作/gbk 转 utf-8"
+    },
+    "utf-8 转 gbk": {
+        "prefix": "utf8togbk",
+        "description": "utf-8 转 gbk",
+        "body": "utf8togbk(str)",
+        "scope": "接口/文本操作/utf-8 转 gbk"
+    },
+    "读取Ini文件中的字段值（带Cache）": {
+        "prefix": "readinibycache",
+        "description": "读取Ini文件中的字段值（带Cache）",
+        "body": "readinibycache(fileName, section, item)",
+        "scope": "接口/文本操作/读取Ini文件中的字段值（带Cache）"
+    },
+    "写入Ini文件中的字段值（带Cache）": {
+        "prefix": "writeinibycache",
+        "description": "写入Ini文件中的字段值（带Cache）",
+        "body": "writeinibycache(fileName, section, item, value)",
+        "scope": "接口/文本操作/写入Ini文件中的字段值（带Cache）"
+    },
+    "删除Ini文件配置区（带Cache）": {
+        "prefix": "delinisectionbycache",
+        "description": "删除Ini文件配置区（带Cache）",
+        "body": "delinisectionbycache(fileName, section)",
+        "scope": "接口/文本操作/删除Ini文件配置区（带Cache）"
+    },
+    "删除Ini文件配置项（带Cache）": {
+        "prefix": "deliniitembycache",
+        "description": "删除Ini文件配置项（带Cache）",
+        "body": "deliniitembycache(fileName, section, item)",
+        "scope": "接口/文本操作/删除Ini文件配置项（带Cache）"
+    },
+    "创建文本文件": {
+        "prefix": "createfile",
+        "description": "创建文本文件",
+        "body": "createfile(path)",
+        "scope": "接口/文本操作/创建文本文件"
+    },
+    "写入指定文本文件": {
+        "prefix": "addtextlist",
+        "description": "写入指定文本文件",
+        "body": "addtextlist(path, str, line)",
+        "scope": "接口/文本操作/写入指定文本文件"
+    },
+    "从文件中随机获取一行字符串": {
+        "prefix": "getrandomtext",
+        "description": "从文件中随机获取一行字符串",
+        "body": "getrandomtext(path, line)",
+        "scope": "接口/文本操作/从文件中随机获取一行字符串"
+    },
+    "获取文本文件指定行的内容": {
+        "prefix": "getliststring",
+        "description": "获取文本文件指定行的内容",
+        "body": "getliststring(path, line)",
+        "scope": "接口/文本操作/获取文本文件指定行的内容"
+    },
+    "获取文本文件指定行的内容[根据符号分割]": {
+        "prefix": "getliststringex",
+        "description": "获取文本文件指定行的内容[根据符号分割]",
+        "body": "getliststringex(path, line, symbol)",
+        "scope": "接口/文本操作/获取文本文件指定行的内容[根据符号分割]"
+    },
+    "读取Ini文件中的字段值": {
+        "prefix": "readini",
+        "description": "读取Ini文件中的字段值",
+        "body": "readini(filename, section, item)",
+        "scope": "接口/文本操作/读取Ini文件中的字段值"
+    },
+    "写入Ini文件中的字段值": {
+        "prefix": "writeini",
+        "description": "写入Ini文件中的字段值",
+        "body": "writeini(filename, section, item, value)",
+        "scope": "接口/文本操作/写入Ini文件中的字段值"
+    },
+    "删除Ini文件配置区": {
+        "prefix": "delinisection",
+        "description": "删除Ini文件配置区",
+        "body": "delinisection(filename, section)",
+        "scope": "接口/文本操作/删除Ini文件配置区"
+    },
+    "删除Ini文件配置项": {
+        "prefix": "deliniitem",
+        "description": "删除Ini文件配置项",
+        "body": "deliniitem(filename, section, item)",
+        "scope": "接口/文本操作/删除Ini文件配置项"
+    },
+    "取字符串在列表中的下标": {
+        "prefix": "getstringpos",
+        "description": "取字符串在列表中的下标",
+        "body": "getstringpos(path, str)",
+        "scope": "接口/文本操作/取字符串在列表中的下标"
+    },
+    "删除文本文件的内容": {
+        "prefix": "deltextlist",
+        "description": "删除文本文件的内容",
+        "body": "deltextlist(path, line, model)",
+        "scope": "接口/文本操作/删除文本文件的内容"
+    },
+    "清除列表内容": {
+        "prefix": "clearnamelist",
+        "description": "清除列表内容",
+        "body": "clearnamelist(path)",
+        "scope": "接口/文本操作/清除列表内容"
+    },
+    "检查字符串是否在指定文件中": {
+        "prefix": "checkcontainstextlist",
+        "description": "检查字符串是否在指定文件中",
+        "body": "checkcontainstextlist(path, str, model)",
+        "scope": "接口/文本操作/检查字符串是否在指定文件中"
+    },
+    "给物品": {
+        "prefix": "giveitem",
+        "description": "给物品",
+        "body": "giveitem(actor, itemName, qty, bind, desc)",
+        "scope": "接口/物品操作/给物品"
+    },
+    "给物品直接装备": {
+        "prefix": "giveonitem",
+        "description": "给物品直接装备",
+        "body": "giveonitem(actor, where, itemName, qty, bind, desc)",
+        "scope": "接口/物品操作/给物品直接装备"
+    },
+    "拿物品": {
+        "prefix": "takeitem",
+        "description": "拿物品",
+        "body": "takeitem(actor, itemName, itemNum, ignoreJP, desc)",
+        "scope": "接口/物品操作/拿物品"
+    },
+    "拿物品(拓展)": {
+        "prefix": "takeitemex",
+        "description": "拿物品(拓展)",
+        "body": "takeitemex(actor, itemName, itemNum, bind, desc)",
+        "scope": "接口/物品操作/拿物品(拓展)"
+    },
+    "根据唯一ID删除仓库物品": {
+        "prefix": "delstorageitem",
+        "description": "根据唯一ID删除仓库物品",
+        "body": "delstorageitem(actor, itemMakeId)",
+        "scope": "接口/物品操作/根据唯一ID删除仓库物品"
+    },
+    "根据idx删除仓库物品": {
+        "prefix": "delstorageitembyidx",
+        "description": "根据idx删除仓库物品",
+        "body": "delstorageitembyidx(actor, itemIndex)",
+        "scope": "接口/物品操作/根据idx删除仓库物品"
+    },
+    "获取物品信息": {
+        "prefix": "getiteminfo",
+        "description": "获取物品信息",
+        "body": "getiteminfo(actor, makeIndex, id)",
+        "scope": "接口/物品操作/获取物品信息"
+    },
+    "获取物品基础信息": {
+        "prefix": "getstditeminfo",
+        "description": "获取物品基础信息",
+        "body": "getstditeminfo(iteminfo, id)",
+        "scope": "接口/物品操作/获取物品基础信息"
+    },
+    "获取物品基础属性": {
+        "prefix": "getstditematt",
+        "description": "获取物品基础属性",
+        "body": "getstditematt(itemId, id)",
+        "scope": "接口/物品操作/获取物品基础属性"
+    },
+    "刷新物品信息到前端": {
+        "prefix": "refreshitem",
+        "description": "刷新物品信息到前端",
+        "body": "refreshitem(actor, makeIndex)",
+        "scope": "接口/物品操作/刷新物品信息到前端"
+    },
+    "根据物品唯一id替换模板数据": {
+        "prefix": "changeitemidx",
+        "description": "根据物品唯一id替换模板数据",
+        "body": "changeitemidx(actor, itemMakeId, itemIndex)",
+        "scope": "接口/物品操作/根据物品唯一id替换模板数据"
+    },
+    "增加限次使用物品的次数": {
+        "prefix": "addfunitemdura",
+        "description": "增加限次使用物品的次数",
+        "body": "addfunitemdura(actor, itemMakeId, num)",
+        "scope": "接口/物品操作/增加限次使用物品的次数"
+    },
+    "获取物品持久度": {
+        "prefix": "getdura",
+        "description": "获取物品持久度",
+        "body": "getdura(actor, itemMakeId)",
+        "scope": "接口/物品操作/获取物品持久度"
+    },
+    "修改物品持久度": {
+        "prefix": "setdura",
+        "description": "修改物品持久度",
+        "body": "setdura(actor, itemMakeId, char, dura)",
+        "scope": "接口/物品操作/修改物品持久度"
+    },
+    "修改装备内观Looks值": {
+        "prefix": "setitemlooks",
+        "description": "修改装备内观Looks值",
+        "body": "setitemlooks(actor, itemPos, char, picture, makeIndex)",
+        "scope": "接口/物品操作/修改装备内观Looks值"
+    },
+    "通过物品唯一id拿走物品": {
+        "prefix": "delitembymakeindex",
+        "description": "通过物品唯一id拿走物品",
+        "body": "delitembymakeindex(actor, ids, count, desc)",
+        "scope": "接口/物品操作/通过物品唯一id拿走物品"
+    },
+    "使用物品（吃药、使用特殊物品等）": {
+        "prefix": "eatitem",
+        "description": "使用物品（吃药、使用特殊物品等）",
+        "body": "eatitem(actor, itemName, count)",
+        "scope": "接口/物品操作/使用物品（吃药、使用特殊物品等）"
+    },
+    "设置物品来源（使用物品唯一Id）": {
+        "prefix": "setthrowitemly2",
+        "description": "设置物品来源（使用物品唯一Id）",
+        "body": "setthrowitemly2(actor, makeIndex, source)",
+        "scope": "接口/物品操作/设置物品来源（使用物品唯一Id）"
+    },
+    "设置物品来源": {
+        "prefix": "setthrowitemly",
+        "description": "设置物品来源",
+        "body": "setthrowitemly(source)",
+        "scope": "接口/物品操作/设置物品来源"
+    },
+    "获取物品来源（使用物品唯一Id）": {
+        "prefix": "getthrowitemly",
+        "description": "获取物品来源（使用物品唯一Id）",
+        "body": "getthrowitemly(actor, makeIndex)",
+        "scope": "接口/物品操作/获取物品来源（使用物品唯一Id）"
+    },
+    "设置物品特效": {
+        "prefix": "setitemeffect",
+        "description": "设置物品特效",
+        "body": "setitemeffect(actor, itemPos, bagEffectId, inEffectId, order1, order2, makeIndex)",
+        "scope": "接口/物品操作/设置物品特效"
+    },
+    "根据物品获取Json": {
+        "prefix": "getitemjson",
+        "description": "根据物品获取Json",
+        "body": "getitemjson(actor, makeIndex)",
+        "scope": "接口/物品操作/根据物品获取Json"
+    },
+    "根据json字符串给物品": {
+        "prefix": "giveitembyjson",
+        "description": "根据json字符串给物品",
+        "body": "giveitembyjson(actor, json, desc, saveType)",
+        "scope": "接口/物品操作/根据json字符串给物品"
+    },
+    "根据物品获取前端显示的Json": {
+        "prefix": "getitemjsonex",
+        "description": "根据物品获取前端显示的Json",
+        "body": "getitemjsonex(actor, makeIndex)",
+        "scope": "接口/物品操作/根据物品获取前端显示的Json"
+    },
+    "关闭指定装备对比提示": {
+        "prefix": "nothintitem",
+        "description": "关闭指定装备对比提示",
+        "body": "nothintitem(actor, order, str)",
+        "scope": "接口/物品操作/关闭指定装备对比提示"
+    },
+    "设置物品绑定状态": {
+        "prefix": "setitemstate",
+        "description": "设置物品绑定状态",
+        "body": "setitemstate(actor, makeIndex, bind, state)",
+        "scope": "接口/物品操作/设置物品绑定状态"
+    },
+    "判断绑定状态": {
+        "prefix": "checkitemstate",
+        "description": "判断绑定状态",
+        "body": "checkitemstate(actor, makeIndex, bind)",
+        "scope": "接口/物品操作/判断绑定状态"
+    },
+    "判断角色是否有该物品": {
+        "prefix": "hasitem",
+        "description": "判断角色是否有该物品",
+        "body": "hasitem(actor, itemMakeIndex)",
+        "scope": "接口/物品操作/判断角色是否有该物品"
+    },
+    "修复所有装备": {
+        "prefix": "repairall",
+        "description": "修复所有装备",
+        "body": "repairall(actor)",
+        "scope": "接口/物品操作/修复所有装备"
+    },
+    "调整人物身上物品装备名字颜色": {
+        "prefix": "changeitemnamecolor",
+        "description": "调整人物身上物品装备名字颜色",
+        "body": "changeitemnamecolor(actor, makeIndex, color)",
+        "scope": "接口/物品操作/调整人物身上物品装备名字颜色"
+    },
+    "获取装备名字的颜色": {
+        "prefix": "getitemnamecolor",
+        "description": "获取装备名字的颜色",
+        "body": "getitemnamecolor(actor, makeIndex)",
+        "scope": "接口/物品操作/获取装备名字的颜色"
+    },
+    "修改物品/装备名称": {
+        "prefix": "changeitemname",
+        "description": "修改物品/装备名称",
+        "body": "changeitemname(actor, itemMakeIndex, itemName)",
+        "scope": "接口/物品操作/修改物品/装备名称"
+    },
+    "获取物品原始各项数据库字段值参数": {
+        "prefix": "getdbitemfieldvalue",
+        "description": "获取物品原始各项数据库字段值参数",
+        "body": "getdbitemfieldvalue(itemData, fieldName)",
+        "scope": "接口/物品操作/获取物品原始各项数据库字段值参数"
+    },
+    "获取背包物品数量": {
+        "prefix": "getbagitemcount",
+        "description": "获取背包物品数量",
+        "body": "getbagitemcount(actor, itemName, model)",
+        "scope": "接口/物品操作/获取背包物品数量"
+    },
+    "根据索引返回背包物品信息": {
+        "prefix": "getiteminfobyindex",
+        "description": "根据索引返回背包物品信息",
+        "body": "getiteminfobyindex(actor, index)",
+        "scope": "接口/物品操作/根据索引返回背包物品信息"
+    },
+    "整理背包里的物品": {
+        "prefix": "refreshbag",
+        "description": "整理背包里的物品",
+        "body": "refreshbag(actor)",
+        "scope": "接口/物品操作/整理背包里的物品"
+    },
+    "获取仓库所有物品": {
+        "prefix": "getstorageitems",
+        "description": "获取仓库所有物品",
+        "body": "getstorageitems(actor)",
+        "scope": "接口/物品操作/获取仓库所有物品"
+    },
+    "获取背包物品列表": {
+        "prefix": "getbagitems",
+        "description": "获取背包物品列表",
+        "body": "getbagitems(actor, itemName, isBind)",
+        "scope": "接口/物品操作/获取背包物品列表"
+    },
+    "从装备位扣除物品": {
+        "prefix": "delbodyitem",
+        "description": "从装备位扣除物品",
+        "body": "delbodyitem(actor, where, desc)",
+        "scope": "接口/物品操作/从装备位扣除物品"
+    },
+    "根据StdMode获取装备位": {
+        "prefix": "getposbystdmode",
+        "description": "根据StdMode获取装备位",
+        "body": "getposbystdmode(stdMode)",
+        "scope": "接口/物品操作/根据StdMode获取装备位"
+    },
+    "批量检测背包物品": {
+        "prefix": "checkitems",
+        "description": "批量检测背包物品",
+        "body": "checkitems(actor, itemStr, isBind, model, desc)",
+        "scope": "接口/物品操作/批量检测背包物品"
+    },
+    "批量拿走背包物品": {
+        "prefix": "takes",
+        "description": "批量拿走背包物品",
+        "body": "takes(actor, itemStr, isBind, model, isBindFirst, desc)",
+        "scope": "接口/物品操作/批量拿走背包物品"
+    },
+    "扣除角色穿戴的装备": {
+        "prefix": "takew",
+        "description": "扣除角色穿戴的装备",
+        "body": "takew(actor, itemName, num, desc)",
+        "scope": "接口/物品操作/扣除角色穿戴的装备"
+    },
+    "批量给予物品": {
+        "prefix": "gives",
+        "description": "批量给予物品",
+        "body": "gives(actor, itemStr, desc)",
+        "scope": "接口/物品操作/批量给予物品"
+    },
+    "检测身上佩戴的装备": {
+        "prefix": "checkitemw",
+        "description": "检测身上佩戴的装备",
+        "body": "checkitemw(actor, item_name, item_num)",
+        "scope": "接口/物品操作/检测身上佩戴的装备"
+    },
+    "返回前端面板消息[合成系统]": {
+        "prefix": "sendactionofjson",
+        "description": "返回前端面板消息[合成系统]",
+        "body": "sendactionofjson(actor, index, json)",
+        "scope": "接口/物品操作/返回前端面板消息[合成系统]"
+    },
+    "增加回收组别": {
+        "prefix": "addrecyclingtype",
+        "description": "增加回收组别",
+        "body": "addrecyclingtype(actor, recyclingType)",
+        "scope": "接口/物品操作/增加回收组别"
+    },
+    "删除回收组别": {
+        "prefix": "delrecyclingtype",
+        "description": "删除回收组别",
+        "body": "delrecyclingtype(actor, index)",
+        "scope": "接口/物品操作/删除回收组别"
+    },
+    "执行回收": {
+        "prefix": "execrecycling",
+        "description": "执行回收",
+        "body": "execrecycling(actor)",
+        "scope": "接口/物品操作/执行回收"
+    },
+    "执行自动回收": {
+        "prefix": "autorecycling",
+        "description": "执行自动回收",
+        "body": "autorecycling(actor, interval, maxBagSpace)",
+        "scope": "接口/物品操作/执行自动回收"
+    },
+    "装备加自定义属性": {
+        "prefix": "additemattr",
+        "description": "装备加自定义属性",
+        "body": "additemattr(actor, itemmakeid, type, job, attId, attVar)",
+        "scope": "接口/物品操作/装备加自定义属性"
+    },
+    "物品加自定义属性表": {
+        "prefix": "additemattrEX",
+        "description": "物品加自定义属性表",
+        "body": "additemattrEX(actor, itemmakeid, type, job, attTab)",
+        "scope": "接口/物品操作/物品加自定义属性表"
+    },
+    "获取物品自定义属性": {
+        "prefix": "getitemattr",
+        "description": "获取物品自定义属性",
+        "body": "getitemattr(actor, itemmakeid, type)",
+        "scope": "接口/物品操作/获取物品自定义属性"
+    },
+    "获取物品自定义属性组": {
+        "prefix": "getitemattrtype",
+        "description": "获取物品自定义属性组",
+        "body": "getitemattrtype(actor, makeid)",
+        "scope": "接口/物品操作/获取物品自定义属性组"
+    },
+    "删除物品自定义属性": {
+        "prefix": "delitemattr",
+        "description": "删除物品自定义属性",
+        "body": "delitemattr(actor, makeIndex, type, attVar)",
+        "scope": "接口/物品操作/删除物品自定义属性"
+    },
+    "根据装备位置获取装备唯一id": {
+        "prefix": "GetItemByPos",
+        "description": "根据装备位置获取装备唯一id",
+        "body": "GetItemByPos(actor, type)",
+        "scope": "接口/物品操作/根据装备位置获取装备唯一id"
+    },
+    "物品设置标记": {
+        "prefix": "SetItemFlag",
+        "description": "物品设置标记",
+        "body": "SetItemFlag(actor, makeIndex, index, flag, str)",
+        "scope": "接口/物品操作/物品设置标记"
+    },
+    "物品获取标记": {
+        "prefix": "GetItemFlag",
+        "description": "物品获取标记",
+        "body": "GetItemFlag(actor, makeIndex, index)",
+        "scope": "接口/物品操作/物品获取标记"
+    },
+    "物品设置投保次数": {
+        "prefix": "SetInsurance",
+        "description": "物品设置投保次数",
+        "body": "SetInsurance(actor, makeIndex, num)",
+        "scope": "接口/物品操作/物品设置投保次数"
+    },
+    "物品获取投保次数": {
+        "prefix": "GetInsurance",
+        "description": "物品获取投保次数",
+        "body": "GetInsurance(actor, makeIndex)",
+        "scope": "接口/物品操作/物品获取投保次数"
+    },
+    "物品设置剩余时间": {
+        "prefix": "SetItemLife",
+        "description": "物品设置剩余时间",
+        "body": "SetItemLife(actor, makeIndex, time)",
+        "scope": "接口/物品操作/物品设置剩余时间"
+    },
+    "物品获取剩余时间": {
+        "prefix": "GetItemLife",
+        "description": "物品获取剩余时间",
+        "body": "GetItemLife(actor, makeIndex)",
+        "scope": "接口/物品操作/物品获取剩余时间"
+    },
+    "物品设置星级": {
+        "prefix": "SetItemStar",
+        "description": "物品设置星级",
+        "body": "SetItemStar(actor, makeIndex, starNum)",
+        "scope": "接口/物品操作/物品设置星级"
+    },
+    "物品获取星级": {
+        "prefix": "GetItemStar",
+        "description": "物品获取星级",
+        "body": "GetItemStar(actor, makeIndex)",
+        "scope": "接口/物品操作/物品获取星级"
+    },
+    "获取玩家身上所有装备": {
+        "prefix": "GetAllEquip",
+        "description": "获取玩家身上所有装备",
+        "body": "GetAllEquip(actor)",
+        "scope": "接口/物品操作/获取玩家身上所有装备"
+    },
+    "设置物品幸运值": {
+        "prefix": "SetItemLuck",
+        "description": "设置物品幸运值",
+        "body": "SetItemLuck(actor, makeIndex, value)",
+        "scope": "接口/物品操作/设置物品幸运值"
+    },
+    "获取物品幸运值": {
+        "prefix": "GetItemLuck",
+        "description": "获取物品幸运值",
+        "body": "GetItemLuck(actor, makeIndex)",
+        "scope": "接口/物品操作/获取物品幸运值"
+    },
+    "设置装备开孔状态": {
+        "prefix": "SetInlayCell",
+        "description": "设置装备开孔状态",
+        "body": "SetInlayCell(actor, makeIndex, cellPos, type)",
+        "scope": "接口/物品操作/设置装备开孔状态"
+    },
+    "获取开孔状态": {
+        "prefix": "GetInlayCell",
+        "description": "获取开孔状态",
+        "body": "GetInlayCell(actor, makeIndex, cellPos)",
+        "scope": "接口/物品操作/获取开孔状态"
+    },
+    "镶嵌/拆卸宝石": {
+        "prefix": "SetInlayGem",
+        "description": "镶嵌/拆卸宝石",
+        "body": "SetInlayGem(actor, makeIndex, cellPos, type)",
+        "scope": "接口/物品操作/镶嵌/拆卸宝石"
+    },
+    "获取宝石镶嵌": {
+        "prefix": "GetInlayGem",
+        "description": "获取宝石镶嵌",
+        "body": "GetInlayGem(actor, itemMakeIndex, cellPos)",
+        "scope": "接口/物品操作/获取宝石镶嵌"
+    },
+    "获取装备镶嵌情况": {
+        "prefix": "GetInlayInfo",
+        "description": "获取装备镶嵌情况",
+        "body": "GetInlayInfo(actor, makeIndex)",
+        "scope": "接口/物品操作/获取装备镶嵌情况"
+    },
+    "获取物品最大持久度": {
+        "prefix": "GetMaxDura",
+        "description": "获取物品最大持久度",
+        "body": "GetMaxDura(actor, makeIndex)",
+        "scope": "接口/物品操作/获取物品最大持久度"
+    },
+    "修改物品最大持久度": {
+        "prefix": "SetMaxDura",
+        "description": "修改物品最大持久度",
+        "body": "SetMaxDura(actor, makeIndex, type, value)",
+        "scope": "接口/物品操作/修改物品最大持久度"
+    },
+    "删除物品": {
+        "prefix": "DelItem",
+        "description": "删除物品",
+        "body": "DelItem(actor, itemtab, bind, istype, desc)",
+        "scope": "接口/物品操作/删除物品"
+    },
+    "附加随机极品属性": {
+        "prefix": "SetItemQuality",
+        "description": "附加随机极品属性",
+        "body": "SetItemQuality(actor, item, id, num, type)",
+        "scope": "接口/物品操作/附加随机极品属性"
+    },
+    "附加固定极品属性": {
+        "prefix": "SetQuality",
+        "description": "附加固定极品属性",
+        "body": "SetQuality(actor, item, operate, att)",
+        "scope": "接口/物品操作/附加固定极品属性"
+    },
+    "获取极品属性": {
+        "prefix": "GetQuality",
+        "description": "获取极品属性",
+        "body": "GetQuality(actor, makeIndex)",
+        "scope": "接口/物品操作/获取极品属性"
+    },
+    "标记物品为极品": {
+        "prefix": "SetItemJP",
+        "description": "标记物品为极品",
+        "body": "SetItemJP(actor, item, isJp)",
+        "scope": "接口/物品操作/标记物品为极品"
+    },
+    "判定物品是否极品": {
+        "prefix": "isitemjp",
+        "description": "判定物品是否极品",
+        "body": "isitemjp(actor, item)",
+        "scope": "接口/物品操作/判定物品是否极品"
+    },
+    "绑定角色掉落规则设置": {
+        "prefix": "SetDropBindState",
+        "description": "绑定角色掉落规则设置",
+        "body": "SetDropBindState(actor, param1)",
+        "scope": "接口/物品操作/绑定角色掉落规则设置"
+    },
+    "设置物品自定义属性显示": {
+        "prefix": "customitemtext",
+        "description": "设置物品自定义属性显示",
+        "body": "customitemtext(actor, itemmakeid, type, desc)",
+        "scope": "接口/物品操作/设置物品自定义属性显示"
+    },
+    "精准爆率是否允许掉落": {
+        "prefix": "AllowDrop",
+        "description": "精准爆率是否允许掉落",
+        "body": "AllowDrop(actor, param)",
+        "scope": "接口/物品操作/精准爆率是否允许掉落"
+    },
+    "发送视野内广播消息": {
+        "prefix": "sendrefluamsg",
+        "description": "发送视野内广播消息",
+        "body": "sendrefluamsg(actor, msgId, param1, param2, param3, sMsg)",
+        "scope": "接口/系统/发送视野内广播消息"
+    },
+    "发送地图消息": {
+        "prefix": "sendmapmsg",
+        "description": "发送地图消息",
+        "body": "sendmapmsg(mapId, msg)",
+        "scope": "接口/系统/发送地图消息"
+    },
+    "设置聊天前缀": {
+        "prefix": "setchatprefix",
+        "description": "设置聊天前缀",
+        "body": "setchatprefix(actor, prefix, color)",
+        "scope": "接口/系统/设置聊天前缀"
+    },
+    "打印消息到控制台": {
+        "prefix": "release_print",
+        "description": "打印消息到控制台",
+        "body": "release_print(...)",
+        "scope": "接口/系统/打印消息到控制台"
+    },
+    "发送自定义颜色的文字信息": {
+        "prefix": "guildnoticemsg",
+        "description": "发送自定义颜色的文字信息",
+        "body": "guildnoticemsg(actor, FColor, BColor, Msg, flag)",
+        "scope": "接口/系统/发送自定义颜色的文字信息"
+    },
+    "发送聊天框固顶信息": {
+        "prefix": "sendtopchatboardmsg",
+        "description": "发送聊天框固顶信息",
+        "body": "sendtopchatboardmsg(actor, type, FColor, BColor, time, msg, shoeFlag)",
+        "scope": "接口/系统/发送聊天框固顶信息"
+    },
+    "发送屏幕中间大字体信息": {
+        "prefix": "sendcentermsg",
+        "description": "发送屏幕中间大字体信息",
+        "body": "sendcentermsg(actor, FColor, BColor, Msg, flag, time, func)",
+        "scope": "接口/系统/发送屏幕中间大字体信息"
+    },
+    "发送屏幕滚动信息": {
+        "prefix": "sendmovemsg",
+        "description": "发送屏幕滚动信息",
+        "body": "sendmovemsg(actor, type, FColor, BColor, Y, scroll, msg)",
+        "scope": "接口/系统/发送屏幕滚动信息"
+    },
+    "屏幕任意坐标发送公告信息": {
+        "prefix": "sendcustommsg",
+        "description": "屏幕任意坐标发送公告信息",
+        "body": "sendcustommsg(actor, type, msg, FColor, BColor, X, Y)",
+        "scope": "接口/系统/屏幕任意坐标发送公告信息"
+    },
+    "主屏幕弹出公告": {
+        "prefix": "sendmsgnew",
+        "description": "主屏幕弹出公告",
+        "body": "sendmsgnew(actor, FColor, BColor, msg, type, time)",
+        "scope": "接口/系统/主屏幕弹出公告"
+    },
+    "显示倒计时信息提示": {
+        "prefix": "senddelaymsg",
+        "description": "显示倒计时信息提示",
+        "body": "senddelaymsg(actor, msg, time, FColor, mapdelete, tag, X)",
+        "scope": "接口/系统/显示倒计时信息提示"
+    },
+    "过滤全服提示信息": {
+        "prefix": "filterglobalmsg",
+        "description": "过滤全服提示信息",
+        "body": "filterglobalmsg(actor, flag)",
+        "scope": "接口/系统/过滤全服提示信息"
+    },
+    "弹出窗口消息": {
+        "prefix": "messagebox",
+        "description": "弹出窗口消息",
+        "body": "messagebox(actor, info, flag1, flag2)",
+        "scope": "接口/系统/弹出窗口消息"
+    },
+    "调用触发": {
+        "prefix": "gotolabel",
+        "description": "调用触发",
+        "body": "gotolabel(actor, type, label, range)",
+        "scope": "接口/系统/调用触发"
+    },
+    "新手界面引导功能": {
+        "prefix": "navigation",
+        "description": "新手界面引导功能",
+        "body": "navigation(actor, NPCIndex, btnIndex, sMsg)",
+        "scope": "接口/系统/新手界面引导功能"
+    },
+    "查看别人面板信息": {
+        "prefix": "viewplayer",
+        "description": "查看别人面板信息",
+        "body": "viewplayer(actor, useId, winId)",
+        "scope": "接口/系统/查看别人面板信息"
+    },
+    "调用TXT脚本命令": {
+        "prefix": "callscript",
+        "description": "调用TXT脚本命令",
+        "body": "callscript(actor, filename, label)",
+        "scope": "接口/系统/调用TXT脚本命令"
+    },
+    "调用传奇脚本命令": {
+        "prefix": "callscriptex",
+        "description": "调用传奇脚本命令",
+        "body": "callscriptex(actor, scriptname, ...)",
+        "scope": "接口/系统/调用传奇脚本命令"
+    },
+    "调用传奇脚本命令2": {
+        "prefix": "callcheckscriptex",
+        "description": "调用传奇脚本命令2",
+        "body": "callcheckscriptex(actor, scriptName, ...)",
+        "scope": "接口/系统/调用传奇脚本命令2"
+    },
+    "获取全局信息": {
+        "prefix": "globalinfo",
+        "description": "获取全局信息",
+        "body": "globalinfo(id)",
+        "scope": "接口/系统/获取全局信息"
+    },
+    "获取服务器上64位时间戳": {
+        "prefix": "gettcount64",
+        "description": "获取服务器上64位时间戳",
+        "body": "gettcount64()",
+        "scope": "接口/系统/获取服务器上64位时间戳"
+    },
+    "加载文件1": {
+        "prefix": "include",
+        "description": "加载文件1",
+        "body": "include(path)",
+        "scope": "接口/系统/加载文件1"
+    },
+    "加载文件2": {
+        "prefix": "require",
+        "description": "加载文件2",
+        "body": "require(path)",
+        "scope": "接口/系统/加载文件2"
+    },
+    "微秒定时器初始化": {
+        "prefix": "mmsreset",
+        "description": "微秒定时器初始化",
+        "body": "mmsreset()",
+        "scope": "接口/系统/微秒定时器初始化"
+    },
+    "获取微秒定时器经过时间": {
+        "prefix": "mmspass",
+        "description": "获取微秒定时器经过时间",
+        "body": "mmspass(type)",
+        "scope": "接口/系统/获取微秒定时器经过时间"
+    },
+    "HTTP请求(post)": {
+        "prefix": "httppost",
+        "description": "HTTP请求(post)",
+        "body": "httppost(url, format, param1, param2, param3, param4)",
+        "scope": "接口/系统/HTTP请求(post)"
+    },
+    "是否满足指定条件显示（canshowshopitem触发中使用）": {
+        "prefix": "notallowshow",
+        "description": "是否满足指定条件显示（canshowshopitem触发中使用）",
+        "body": "notallowshow(actor, canShow)",
+        "scope": "接口/系统/是否满足指定条件显示（canshowshopitem触发中使用）"
+    },
+    "是否满足指定条件购买（canbuyshopitem触发中使用）": {
+        "prefix": "notallowbuy",
+        "description": "是否满足指定条件购买（canbuyshopitem触发中使用）",
+        "body": "notallowbuy(actor, canBuy)",
+        "scope": "接口/系统/是否满足指定条件购买（canbuyshopitem触发中使用）"
+    },
+    "获取IP地址下所有的在线角色名称列表": {
+        "prefix": "getplaylistbyip",
+        "description": "获取IP地址下所有的在线角色名称列表",
+        "body": "getplaylistbyip(IPAddress, getAllPlayers)",
+        "scope": "接口/系统/获取IP地址下所有的在线角色名称列表"
+    },
+    "发送登陆信息[反外挂]": {
+        "prefix": "sendloginmsg",
+        "description": "发送登陆信息[反外挂]",
+        "body": "sendloginmsg(userId)",
+        "scope": "接口/系统/发送登陆信息[反外挂]"
+    },
+    "检测登陆信息[反外挂]": {
+        "prefix": "logincheckent",
+        "description": "检测登陆信息[反外挂]",
+        "body": "logincheckent(userId)",
+        "scope": "接口/系统/检测登陆信息[反外挂]"
+    },
+    "发送聊天框消息": {
+        "prefix": "sendmsg",
+        "description": "发送聊天框消息",
+        "body": "sendmsg(actor, type, msg)",
+        "scope": "接口/系统/发送聊天框消息"
+    },
+    "注册虚拟机index": {
+        "prefix": "SetSysIndex",
+        "description": "注册虚拟机index",
+        "body": "SetSysIndex(idx, scriptfile)",
+        "scope": "接口/系统/注册虚拟机index"
+    },
+    "获取当前虚拟机编号": {
+        "prefix": "GetSysIndex",
+        "description": "获取当前虚拟机编号",
+        "body": "GetSysIndex()",
+        "scope": "接口/系统/获取当前虚拟机编号"
+    },
+    "获取服务器名称": {
+        "prefix": "GetServerName",
+        "description": "获取服务器名称",
+        "body": "GetServerName()",
+        "scope": "接口/系统/获取服务器名称"
+    },
+    "获取区服部署时间常量": {
+        "prefix": "GetCreateServerTime",
+        "description": "获取区服部署时间常量",
+        "body": "GetCreateServerTime()",
+        "scope": "接口/系统/获取区服部署时间常量"
+    },
+    "获取区服测试区时间常量": {
+        "prefix": "GetTestServerTime",
+        "description": "获取区服测试区时间常量",
+        "body": "GetTestServerTime()",
+        "scope": "接口/系统/获取区服测试区时间常量"
+    },
+    "获取区服正式区时间常量": {
+        "prefix": "GetStartServerTime",
+        "description": "获取区服正式区时间常量",
+        "body": "GetStartServerTime()",
+        "scope": "接口/系统/获取区服正式区时间常量"
+    },
+    "获取客户端载体": {
+        "prefix": "GetClientFlag",
+        "description": "获取客户端载体",
+        "body": "GetClientFlag(actor)",
+        "scope": "接口/系统/获取客户端载体"
+    },
+    "获取实时登录渠道ID": {
+        "prefix": "GetBoxVar",
+        "description": "获取实时登录渠道ID",
+        "body": "GetBoxVar(actor)",
+        "scope": "接口/系统/获取实时登录渠道ID"
+    },
+    "获取服务器id": {
+        "prefix": "GetServerIDX",
+        "description": "获取服务器id",
+        "body": "GetServerIDX()",
+        "scope": "接口/系统/获取服务器id"
+    },
+    "获取GameID": {
+        "prefix": "GetGameID",
+        "description": "获取GameID",
+        "body": "GetGameID()",
+        "scope": "接口/系统/获取GameID"
+    },
+    "获取ip地址": {
+        "prefix": "GetIPAddr",
+        "description": "获取ip地址",
+        "body": "GetIPAddr(actor)",
+        "scope": "接口/系统/获取ip地址"
+    },
+    "获取登录时间": {
+        "prefix": "GetLogInTime",
+        "description": "获取登录时间",
+        "body": "GetLogInTime(actor)",
+        "scope": "接口/系统/获取登录时间"
+    },
+    "获取登录时长": {
+        "prefix": "GetLogInLong",
+        "description": "获取登录时长",
+        "body": "GetLogInLong(actor)",
+        "scope": "接口/系统/获取登录时长"
+    },
+    "脚本开启变量日志开关": {
+        "prefix": "setvarlog",
+        "description": "脚本开启变量日志开关",
+        "body": "setvarlog(type, switch)",
+        "scope": "接口/系统/脚本开启变量日志开关"
+    },
+    "请求微信公众号KEY": {
+        "prefix": "SetWX",
+        "description": "请求微信公众号KEY",
+        "body": "SetWX(actor, type)",
+        "scope": "接口/系统/请求微信公众号KEY"
+    },
+    "获取英雄对象": {
+        "prefix": "gethero",
+        "description": "获取英雄对象",
+        "body": "gethero(actor)",
+        "scope": "接口/英雄-分身/获取英雄对象"
+    },
+    "是否有英雄": {
+        "prefix": "hashero",
+        "description": "是否有英雄",
+        "body": "hashero(actor)",
+        "scope": "接口/英雄-分身/是否有英雄"
+    },
+    "判断对象是否为英雄": {
+        "prefix": "ishero",
+        "description": "判断对象是否为英雄",
+        "body": "ishero(object)",
+        "scope": "接口/英雄-分身/判断对象是否为英雄"
+    },
+    "判断英雄是否为唤出状态": {
+        "prefix": "isherorecall",
+        "description": "判断英雄是否为唤出状态",
+        "body": "isherorecall(actor)",
+        "scope": "接口/英雄-分身/判断英雄是否为唤出状态"
+    },
+    "设置英雄名称": {
+        "prefix": "checkheroname",
+        "description": "设置英雄名称",
+        "body": "checkheroname(actor, name)",
+        "scope": "接口/英雄-分身/设置英雄名称"
+    },
+    "创建英雄": {
+        "prefix": "createhero",
+        "description": "创建英雄",
+        "body": "createhero(actor, name, job, sex)",
+        "scope": "接口/英雄-分身/创建英雄"
+    },
+    "删除英雄": {
+        "prefix": "delhero",
+        "description": "删除英雄",
+        "body": "delhero(actor)",
+        "scope": "接口/英雄-分身/删除英雄"
+    },
+    "召唤英雄": {
+        "prefix": "recallhero",
+        "description": "召唤英雄",
+        "body": "recallhero(actor)",
+        "scope": "接口/英雄-分身/召唤英雄"
+    },
+    "收回英雄": {
+        "prefix": "unrecallhero",
+        "description": "收回英雄",
+        "body": "unrecallhero(actor)",
+        "scope": "接口/英雄-分身/收回英雄"
+    },
+    "英雄改名接口": {
+        "prefix": "changeheroname",
+        "description": "英雄改名接口",
+        "body": "changeheroname(actor, heroName)",
+        "scope": "接口/英雄-分身/英雄改名接口"
+    },
+    "获取英雄模式": {
+        "prefix": "getherosta",
+        "description": "获取英雄模式",
+        "body": "getherosta(actor)",
+        "scope": "接口/英雄-分身/获取英雄模式"
+    },
+    "设置英雄模式": {
+        "prefix": "setherosta",
+        "description": "设置英雄模式",
+        "body": "setherosta(actor, model)",
+        "scope": "接口/英雄-分身/设置英雄模式"
+    },
+    "英雄传送到主体身边": {
+        "prefix": "herofollow",
+        "description": "英雄传送到主体身边",
+        "body": "herofollow(actor)",
+        "scope": "接口/英雄-分身/英雄传送到主体身边"
+    },
+    "召唤自身分身": {
+        "prefix": "recallself",
+        "description": "召唤自身分身",
+        "body": "recallself(actor, time, num, attrPro, color, dressLook, weaponLook, dressEffect, weaponEffect, hpMax, buffId)",
+        "scope": "接口/英雄-分身/召唤自身分身"
+    },
+    "获取角色所有分身": {
+        "prefix": "clonelist",
+        "description": "获取角色所有分身",
+        "body": "clonelist(actor)",
+        "scope": "接口/英雄-分身/获取角色所有分身"
+    },
+    "杀死角色所有分身": {
+        "prefix": "killcopyself",
+        "description": "杀死角色所有分身",
+        "body": "killcopyself(actor)",
+        "scope": "接口/英雄-分身/杀死角色所有分身"
+    },
+    "设置英雄忠诚度": {
+        "prefix": "setheroluck",
+        "description": "设置英雄忠诚度",
+        "body": "setheroluck(hero, value)",
+        "scope": "接口/英雄-分身/设置英雄忠诚度"
+    },
+    "获取英雄忠诚度": {
+        "prefix": "getheroluck",
+        "description": "获取英雄忠诚度",
+        "body": "getheroluck(hero)",
+        "scope": "接口/英雄-分身/获取英雄忠诚度"
+    },
+    "创建行会": {
+        "prefix": "buildguild",
+        "description": "创建行会",
+        "body": "buildguild(actor, guildName)",
+        "scope": "接口/行会-组队/创建行会"
+    },
+    "获取人物所在行会成员数量": {
+        "prefix": "getguildmembercount",
+        "description": "获取人物所在行会成员数量",
+        "body": "getguildmembercount(actor)",
+        "scope": "接口/行会-组队/获取人物所在行会成员数量"
+    },
+    "设置行会成员人数上限": {
+        "prefix": "changeguildmemberlimit",
+        "description": "设置行会成员人数上限",
+        "body": "changeguildmemberlimit(guild, operate, num)",
+        "scope": "接口/行会-组队/设置行会成员人数上限"
+    },
+    "获取玩家所在的行会对象": {
+        "prefix": "getmyguild",
+        "description": "获取玩家所在的行会对象",
+        "body": "getmyguild(actor)",
+        "scope": "接口/行会-组队/获取玩家所在的行会对象"
+    },
+    "搜索行会": {
+        "prefix": "findguild",
+        "description": "搜索行会",
+        "body": "findguild(index, key)",
+        "scope": "接口/行会-组队/搜索行会"
+    },
+    "获取行会信息": {
+        "prefix": "getguildinfo",
+        "description": "获取行会信息",
+        "body": "getguildinfo(guild, index)",
+        "scope": "接口/行会-组队/获取行会信息"
+    },
+    "设置行会信息": {
+        "prefix": "setguildinfo",
+        "description": "设置行会信息",
+        "body": "setguildinfo(guild, index, value)",
+        "scope": "接口/行会-组队/设置行会信息"
+    },
+    "获取所有行会对象": {
+        "prefix": "getallguild",
+        "description": "获取所有行会对象",
+        "body": "getallguild()",
+        "scope": "接口/行会-组队/获取所有行会对象"
+    },
+    "加入行会": {
+        "prefix": "addguildmember",
+        "description": "加入行会",
+        "body": "addguildmember(actor, guildName)",
+        "scope": "接口/行会-组队/加入行会"
+    },
+    "退出行会": {
+        "prefix": "delguildmember",
+        "description": "退出行会",
+        "body": "delguildmember(actorInfo, guildName, type)",
+        "scope": "接口/行会-组队/退出行会"
+    },
+    "设置行会成员在行会中的职位": {
+        "prefix": "setplayguildlevel",
+        "description": "设置行会成员在行会中的职位",
+        "body": "setplayguildlevel(actor, pos)",
+        "scope": "接口/行会-组队/设置行会成员在行会中的职位"
+    },
+    "获取行会成员在行会中的职位": {
+        "prefix": "getplayguildlevel",
+        "description": "获取行会成员在行会中的职位",
+        "body": "getplayguildlevel(actor)",
+        "scope": "接口/行会-组队/获取行会成员在行会中的职位"
+    },
+    "改变行会名称": {
+        "prefix": "changeguildname",
+        "description": "改变行会名称",
+        "body": "changeguildname(actor, guildName, newGuildName)",
+        "scope": "接口/行会-组队/改变行会名称"
+    },
+    "创建队伍": {
+        "prefix": "creategroup",
+        "description": "创建队伍",
+        "body": "creategroup(actor)",
+        "scope": "接口/行会-组队/创建队伍"
+    },
+    "添加队员": {
+        "prefix": "addgroupmember",
+        "description": "添加队员",
+        "body": "addgroupmember(actor, memberId)",
+        "scope": "接口/行会-组队/添加队员"
+    },
+    "删除队员": {
+        "prefix": "delgroupmember",
+        "description": "删除队员",
+        "body": "delgroupmember(actor, memberId)",
+        "scope": "接口/行会-组队/删除队员"
+    },
+    "获取队员列表": {
+        "prefix": "getgroupmember",
+        "description": "获取队员列表",
+        "body": "getgroupmember(actor)",
+        "scope": "接口/行会-组队/获取队员列表"
+    },
+    "发起行会战": {
+        "prefix": "setguildwar",
+        "description": "发起行会战",
+        "body": "setguildwar(guildName1, guildName2, time)",
+        "scope": "接口/行会-组队/发起行会战"
+    },
+    "判断行会之间是否宣战": {
+        "prefix": "iswarguild",
+        "description": "判断行会之间是否宣战",
+        "body": "iswarguild(guildName1, guildName2)",
+        "scope": "接口/行会-组队/判断行会之间是否宣战"
+    },
+    "判断行会之间是否结盟": {
+        "prefix": "isallyguild",
+        "description": "判断行会之间是否结盟",
+        "body": "isallyguild(guildName1, guildName2)",
+        "scope": "接口/行会-组队/判断行会之间是否结盟"
+    },
+    "解散行会": {
+        "prefix": "CloseGuild",
+        "description": "解散行会",
+        "body": "CloseGuild(guild)",
+        "scope": "接口/行会-组队/解散行会"
+    },
+    "添加计划任务": {
+        "prefix": "AddScheduled",
+        "description": "添加计划任务",
+        "body": "AddScheduled(id, name, itype, strtime, strfun, param)",
+        "scope": "接口/计划任务/添加计划任务"
+    },
+    "删除计划任务": {
+        "prefix": "DelScheduled",
+        "description": "删除计划任务",
+        "body": "DelScheduled(scheduledID)",
+        "scope": "接口/计划任务/删除计划任务"
+    },
+    "判断计划任务是否存在": {
+        "prefix": "HasScheduled",
+        "description": "判断计划任务是否存在",
+        "body": "HasScheduled(scheduledID)",
+        "scope": "接口/计划任务/判断计划任务是否存在"
+    },
+    "跨服通知触发本服QF": {
+        "prefix": "kfbackcall",
+        "description": "跨服通知触发本服QF",
+        "body": "kfbackcall(id, userId, paramA, paramB)",
+        "scope": "接口/跨服/跨服通知触发本服QF"
+    },
+    "本服通知触发跨服QF": {
+        "prefix": "bfbackcall",
+        "description": "本服通知触发跨服QF",
+        "body": "bfbackcall(id, userId, paramA, paramB)",
+        "scope": "接口/跨服/本服通知触发跨服QF"
+    },
+    "检测当前服务器是否为跨服服务器": {
+        "prefix": "iskuafuserver",
+        "description": "检测当前服务器是否为跨服服务器",
+        "body": "iskuafuserver()",
+        "scope": "接口/跨服/检测当前服务器是否为跨服服务器"
+    },
+    "检查跨服连接是否正常连接": {
+        "prefix": "kuafuconnected",
+        "description": "检查跨服连接是否正常连接",
+        "body": "kuafuconnected()",
+        "scope": "接口/跨服/检查跨服连接是否正常连接"
+    },
+    "检测当前人物是否在跨服的地图": {
+        "prefix": "checkkuafu",
+        "description": "检测当前人物是否在跨服的地图",
+        "body": "checkkuafu(actor)",
+        "scope": "接口/跨服/检测当前人物是否在跨服的地图"
+    },
+    "所有跨服玩家回本服 根据执行区服自行处理": {
+        "prefix": "kuafuusergohome",
+        "description": "所有跨服玩家回本服 根据执行区服自行处理",
+        "body": "kuafuusergohome(mapid, x, y, range)",
+        "scope": "接口/跨服/所有跨服玩家回本服 根据执行区服自行处理"
+    },
+    "同步行会信息到跨服": {
+        "prefix": "SynGuildToKuafu",
+        "description": "同步行会信息到跨服",
+        "body": "SynGuildToKuafu()",
+        "scope": "接口/跨服/同步行会信息到跨服"
+    },
+    "通区写入内容": {
+        "prefix": "tongwritekey",
+        "description": "通区写入内容",
+        "body": "tongwritekey(type, idx, obj, key, value)",
+        "scope": "接口/通区系统/通区写入内容"
+    },
+    "通区读取内容": {
+        "prefix": "tongreadkey",
+        "description": "通区读取内容",
+        "body": "tongreadkey(type, num, obj, key)",
+        "scope": "接口/通区系统/通区读取内容"
+    },
+    "通区上传文件": {
+        "prefix": "tongupload",
+        "description": "通区上传文件",
+        "body": "tongupload(num, file, name)",
+        "scope": "接口/通区系统/通区上传文件"
+    },
+    "通区下载文件": {
+        "prefix": "tongdownload",
+        "description": "通区下载文件",
+        "body": "tongdownload(num, name, path)",
+        "scope": "接口/通区系统/通区下载文件"
+    },
+    "批量操作": {
+        "prefix": "tongclearkeyex",
+        "description": "批量操作",
+        "body": "tongclearkeyex(operate, value)",
+        "scope": "接口/通区系统/批量操作"
+    },
+    "获取所有Key": {
+        "prefix": "tonggetkeylistex",
+        "description": "获取所有Key",
+        "body": "tonggetkeylistex()",
+        "scope": "接口/通区系统/获取所有Key"
+    },
+    "设置阵营ID": {
+        "prefix": "setcamp",
+        "description": "设置阵营ID",
+        "body": "setcamp(actor, campid)",
+        "scope": "接口/阵营系统/设置阵营ID"
+    },
+    "获取阵营ID": {
+        "prefix": "getcamp",
+        "description": "获取阵营ID",
+        "body": "getcamp(actor)",
+        "scope": "接口/阵营系统/获取阵营ID"
+    },
+    "玩家buff操作触发": {
+        "prefix": "buffchange",
+        "description": "玩家buff操作触发",
+        "body": "buffchange(actor, buffId, groupId, model)",
+        "scope": "触发/BUFF/玩家buff操作触发"
+    },
+    "英雄buff操作触发": {
+        "prefix": "herobuffchange",
+        "description": "英雄buff操作触发",
+        "body": "herobuffchange(actor, hero, buffId, groupId, model)",
+        "scope": "触发/BUFF/英雄buff操作触发"
+    },
+    "buff触发血量改变时": {
+        "prefix": "bufftriggerhpchange",
+        "description": "buff触发血量改变时",
+        "body": "bufftriggerhpchange(actor, buffId, buffGroup, HP, buffHost, mon)",
+        "scope": "触发/BUFF/buff触发血量改变时"
+    },
+    "接取任务触发": {
+        "prefix": "picktask",
+        "description": "接取任务触发",
+        "body": "picktask(actor, taskId)",
+        "scope": "触发/任务/接取任务触发"
+    },
+    "点击任务触发": {
+        "prefix": "clicknewtask",
+        "description": "点击任务触发",
+        "body": "clicknewtask(actor, taskId)",
+        "scope": "触发/任务/点击任务触发"
+    },
+    "刷新任务触发": {
+        "prefix": "changetask",
+        "description": "刷新任务触发",
+        "body": "changetask(actor, taskId)",
+        "scope": "触发/任务/刷新任务触发"
+    },
+    "完成任务触发": {
+        "prefix": "completetask",
+        "description": "完成任务触发",
+        "body": "completetask(actor, taskId)",
+        "scope": "触发/任务/完成任务触发"
+    },
+    "删除任务触发": {
+        "prefix": "deletetask",
+        "description": "删除任务触发",
+        "body": "deletetask(actor, taskId)",
+        "scope": "触发/任务/删除任务触发"
+    },
+    "客户端发起建立关系请求时触发": {
+        "prefix": "on_invite_united",
+        "description": "客户端发起建立关系请求时触发",
+        "body": "on_invite_united(actor, netid, role)",
+        "scope": "触发/关系相关/客户端发起建立关系请求时触发"
+    },
+    "客户端发起召集请求时触发": {
+        "prefix": "on_convene_united",
+        "description": "客户端发起召集请求时触发",
+        "body": "on_convene_united(actor, netIndex, level, netId)",
+        "scope": "触发/关系相关/客户端发起召集请求时触发"
+    },
+    "客户端发起踢除某成员关系请求时触发": {
+        "prefix": "on_getout_united",
+        "description": "客户端发起踢除某成员关系请求时触发",
+        "body": "on_getout_united(actor, netIndex, netid, role)",
+        "scope": "触发/关系相关/客户端发起踢除某成员关系请求时触发"
+    },
+    "客户端发起解散关系请求时触发": {
+        "prefix": "on_dissolve_united",
+        "description": "客户端发起解散关系请求时触发",
+        "body": "on_dissolve_united(actor, netIndex, netid)",
+        "scope": "触发/关系相关/客户端发起解散关系请求时触发"
+    },
+    "客户端发起退出请求时触发": {
+        "prefix": "on_exit_united",
+        "description": "客户端发起退出请求时触发",
+        "body": "on_exit_united(actor, userId, netIndex, netId)",
+        "scope": "触发/关系相关/客户端发起退出请求时触发"
+    },
+    "拍卖行上架触发": {
+        "prefix": "canpaimaiitem",
+        "description": "拍卖行上架触发",
+        "body": "canpaimaiitem(actor, itemIndex, itemMakeIndex, moneyType, price1, price2)",
+        "scope": "触发/拍卖行/拍卖行上架触发"
+    },
+    "拍卖行重新上架前触发": {
+        "prefix": "canrepaimaiitem",
+        "description": "拍卖行重新上架前触发",
+        "body": "canrepaimaiitem(actor, itemIndex, itemMakeIndex, moneyType, price1, price2)",
+        "scope": "触发/拍卖行/拍卖行重新上架前触发"
+    },
+    "拍卖行下架触发": {
+        "prefix": "cangetbackpaimaiitem",
+        "description": "拍卖行下架触发",
+        "body": "cangetbackpaimaiitem(actor)",
+        "scope": "触发/拍卖行/拍卖行下架触发"
+    },
+    "领取拍卖货币触发": {
+        "prefix": "getpaimaiitem",
+        "description": "领取拍卖货币触发",
+        "body": "getpaimaiitem(actor)",
+        "scope": "触发/拍卖行/领取拍卖货币触发"
+    },
+    "拍卖购买物品触发": {
+        "prefix": "buypaimaiitem",
+        "description": "拍卖购买物品触发",
+        "body": "buypaimaiitem(actor, itemIndex, itemMakeIndex, moneyType, price)",
+        "scope": "触发/拍卖行/拍卖购买物品触发"
+    },
+    "拍卖行竞价触发": {
+        "prefix": "biddingpaimaiitem",
+        "description": "拍卖行竞价触发",
+        "body": "biddingpaimaiitem(actor, itemIndex, itemMakeIndex, moneyType, price)",
+        "scope": "触发/拍卖行/拍卖行竞价触发"
+    },
+    "自定义排行榜刷新触发": {
+        "prefix": "inisort",
+        "description": "自定义排行榜刷新触发",
+        "body": "inisort(sysObj)",
+        "scope": "触发/排行榜/自定义排行榜刷新触发"
+    },
+    "自定义排行榜切换玩家和英雄的页签触发": {
+        "prefix": "clicksortbutton",
+        "description": "自定义排行榜切换玩家和英雄的页签触发",
+        "body": "clicksortbutton(actor, isHero)",
+        "scope": "触发/排行榜/自定义排行榜切换玩家和英雄的页签触发"
+    },
+    "自定义排行榜点击排名触发": {
+        "prefix": "clicksortno",
+        "description": "自定义排行榜点击排名触发",
+        "body": "clicksortno(actor, ranking)",
+        "scope": "触发/排行榜/自定义排行榜点击排名触发"
+    },
+    "求购上架前触发": {
+        "prefix": "beforeaddqiugou",
+        "description": "求购上架前触发",
+        "body": "beforeaddqiugou(actor, itemName, itemIndex, needNum, price)",
+        "scope": "触发/求购行/求购上架前触发"
+    },
+    "求购上架成功触发": {
+        "prefix": "addqiugou",
+        "description": "求购上架成功触发",
+        "body": "addqiugou(actor, itemName, itemIndex, needNum, price)",
+        "scope": "触发/求购行/求购上架成功触发"
+    },
+    "出售前触发": {
+        "prefix": "beforesellqiugou",
+        "description": "出售前触发",
+        "body": "beforesellqiugou(actor, itemName, itemIndex, needNum, price)",
+        "scope": "触发/求购行/出售前触发"
+    },
+    "卖出成功触发": {
+        "prefix": "sellqiugou",
+        "description": "卖出成功触发",
+        "body": "sellqiugou(actor, itemName, itemIndex, needNum, price)",
+        "scope": "触发/求购行/卖出成功触发"
+    },
+    "玩家登录触发": {
+        "prefix": "login",
+        "description": "玩家登录触发",
+        "body": "login(actor)",
+        "scope": "触发/玩家/玩家登录触发"
+    },
+    "收到私聊信息触发": {
+        "prefix": "privatechat",
+        "description": "收到私聊信息触发",
+        "body": "privatechat(actor, sMsg, chat,target)",
+        "scope": "触发/玩家/收到私聊信息触发"
+    },
+    "角色穿戴装备前触发": {
+        "prefix": "takeonbeforeex",
+        "description": "角色穿戴装备前触发",
+        "body": "takeonbeforeex(actor, makeIndex, where, idx)",
+        "scope": "触发/玩家/角色穿戴装备前触发"
+    },
+    "角色脱下装备前触发": {
+        "prefix": "takeoffbeforeex",
+        "description": "角色脱下装备前触发",
+        "body": "takeoffbeforeex(actor, makeIndex, where, idx)",
+        "scope": "触发/玩家/角色脱下装备前触发"
+    },
+    "角色穿戴X装备前触发": {
+        "prefix": "takeonbeforeX",
+        "description": "角色穿戴X装备前触发",
+        "body": "takeonbeforeX(actor, makeIndex, idx)",
+        "scope": "触发/玩家/角色穿戴X装备前触发"
+    },
+    "角色脱下X装备前触发": {
+        "prefix": "takeoffbeforeX",
+        "description": "角色脱下X装备前触发",
+        "body": "takeoffbeforeX(actor, makeIndex, idx)",
+        "scope": "触发/玩家/角色脱下X装备前触发"
+    },
+    "角色穿戴装备后触发": {
+        "prefix": "takeonex",
+        "description": "角色穿戴装备后触发",
+        "body": "takeonex(actor, makeIndex, where, itemName, idx)",
+        "scope": "触发/玩家/角色穿戴装备后触发"
+    },
+    "角色脱下装备后触发": {
+        "prefix": "takeoffex",
+        "description": "角色脱下装备后触发",
+        "body": "takeoffex(actor, makeIndex, where, itemName, idx)",
+        "scope": "触发/玩家/角色脱下装备后触发"
+    },
+    "角色穿戴X装备后触发": {
+        "prefix": "takeonX",
+        "description": "角色穿戴X装备后触发",
+        "body": "takeonX(actor, makeIndex, idx)",
+        "scope": "触发/玩家/角色穿戴X装备后触发"
+    },
+    "角色脱下X装备后触发": {
+        "prefix": "takeoffX",
+        "description": "角色脱下X装备后触发",
+        "body": "takeoffX(actor, makeIndex, idx)",
+        "scope": "触发/玩家/角色脱下X装备后触发"
+    },
+    "人物死亡装备掉落前触发": {
+        "prefix": "checkdropuseitems",
+        "description": "人物死亡装备掉落前触发",
+        "body": "checkdropuseitems(actor, where, itemIndex)",
+        "scope": "触发/玩家/人物死亡装备掉落前触发"
+    },
+    "参照装备投保已投保装备掉落触发": {
+        "prefix": "dropuseitemsX",
+        "description": "参照装备投保已投保装备掉落触发",
+        "body": "dropuseitemsX(actor, makeIndex)",
+        "scope": "触发/玩家/参照装备投保已投保装备掉落触发"
+    },
+    "角色装备过期触发": {
+        "prefix": "itemexpired",
+        "description": "角色装备过期触发",
+        "body": "itemexpired(actor, makeIndex, itemName, itemid)",
+        "scope": "触发/玩家/角色装备过期触发"
+    },
+    "角色脱下装备进入背包前触发": {
+        "prefix": "takeoffexchange",
+        "description": "角色脱下装备进入背包前触发",
+        "body": "takeoffexchange(actor, makeIndex, where)",
+        "scope": "触发/玩家/角色脱下装备进入背包前触发"
+    },
+    "装备持久消失触发": {
+        "prefix": "itemdamageX",
+        "description": "装备持久消失触发",
+        "body": "itemdamageX(actor, makeIndex)",
+        "scope": "触发/玩家/装备持久消失触发"
+    },
+    "武器加诅咒前触发": {
+        "prefix": "makeweaponunluck",
+        "description": "武器加诅咒前触发",
+        "body": "makeweaponunluck(actor, makeIndex)",
+        "scope": "触发/玩家/武器加诅咒前触发"
+    },
+    "双击类道具触发": {
+        "prefix": "stdmodefuncX",
+        "description": "双击类道具触发",
+        "body": "stdmodefuncX(actor, makeIndex, itemIdx, nOverLap)",
+        "scope": "触发/玩家/双击类道具触发"
+    },
+    "双击类道具触发2": {
+        "prefix": "stdmodefunc",
+        "description": "双击类道具触发2",
+        "body": "stdmodefunc(actor, Anicount, makeIndex, itemIdx, nOverLap)",
+        "scope": "触发/玩家/双击类道具触发2"
+    },
+    "双击使用道具前触发": {
+        "prefix": "beforeeatitem",
+        "description": "双击使用道具前触发",
+        "body": "beforeeatitem(actor, itemMakeIndex, itemIndex, itemNum, stdMode)",
+        "scope": "触发/玩家/双击使用道具前触发"
+    },
+    "货币改变触发": {
+        "prefix": "moneychangeX",
+        "description": "货币改变触发",
+        "body": "moneychangeX(actor)",
+        "scope": "触发/玩家/货币改变触发"
+    },
+    "物品进包前触发": {
+        "prefix": "addbagbefore",
+        "description": "物品进包前触发",
+        "body": "addbagbefore(actor, itemMakeIndex, itemIndex)",
+        "scope": "触发/玩家/物品进包前触发"
+    },
+    "物品进包触发": {
+        "prefix": "addbag",
+        "description": "物品进包触发",
+        "body": "addbag(actor, makeIndex, index)",
+        "scope": "触发/玩家/物品进包触发"
+    },
+    "角色扔掉任意物品前触发": {
+        "prefix": "dropitemfrontex",
+        "description": "角色扔掉任意物品前触发",
+        "body": "dropitemfrontex(actor, makeIndex, itemName, model)",
+        "scope": "触发/玩家/角色扔掉任意物品前触发"
+    },
+    "扔掉任意物品后触发": {
+        "prefix": "dropitemex",
+        "description": "扔掉任意物品后触发",
+        "body": "dropitemex(actor, makeIndex, itemName)",
+        "scope": "触发/玩家/扔掉任意物品后触发"
+    },
+    "暴击触发": {
+        "prefix": "crittrigger",
+        "description": "暴击触发",
+        "body": "crittrigger(actor, attack, damage, magicId)",
+        "scope": "触发/玩家/暴击触发"
+    },
+    "伤害反弹触发": {
+        "prefix": "reboundhurt",
+        "description": "伤害反弹触发",
+        "body": "reboundhurt(actor, hitter, damage, magicId)",
+        "scope": "触发/玩家/伤害反弹触发"
+    },
+    "人物攻击前触发": {
+        "prefix": "attackdamage",
+        "description": "人物攻击前触发",
+        "body": "attackdamage(actor, target, hitter, magicId, damage, model)",
+        "scope": "触发/玩家/人物攻击前触发"
+    },
+    "玩家物理攻击后": {
+        "prefix": "attack",
+        "description": "玩家物理攻击后",
+        "body": "attack(actor, target, hitter, magicId)",
+        "scope": "触发/玩家/玩家物理攻击后"
+    },
+    "玩家魔法攻击后": {
+        "prefix": "magicattack",
+        "description": "玩家魔法攻击后",
+        "body": "magicattack(actor, target, hitter, magicId)",
+        "scope": "触发/玩家/玩家魔法攻击后"
+    },
+    "玩家受击前": {
+        "prefix": "struckdamage",
+        "description": "玩家受击前",
+        "body": "struckdamage(actor, hitter, target, magicId, damage)",
+        "scope": "触发/玩家/玩家受击前"
+    },
+    "玩家物理受击后": {
+        "prefix": "struck",
+        "description": "玩家物理受击后",
+        "body": "struck(actor, target, hitter, magicId)",
+        "scope": "触发/玩家/玩家物理受击后"
+    },
+    "玩家魔法受击后": {
+        "prefix": "magicstruck",
+        "description": "玩家魔法受击后",
+        "body": "magicstruck(actor, target, hitter, magicId)",
+        "scope": "触发/玩家/玩家魔法受击后"
+    },
+    "自身使用技能触发": {
+        "prefix": "magselffuncX",
+        "description": "自身使用技能触发",
+        "body": "magselffuncX(actor)",
+        "scope": "触发/玩家/自身使用技能触发"
+    },
+    "对目标人物使用技能时自身触发": {
+        "prefix": "magtagfuncX",
+        "description": "对目标人物使用技能时自身触发",
+        "body": "magtagfuncX(actor, roleObject)",
+        "scope": "触发/玩家/对目标人物使用技能时自身触发"
+    },
+    "对目标怪物使用技能时自身触发": {
+        "prefix": "magmonfuncX",
+        "description": "对目标怪物使用技能时自身触发",
+        "body": "magmonfuncX(actor, monObject)",
+        "scope": "触发/玩家/对目标怪物使用技能时自身触发"
+    },
+    "玩家自身使用任意技能前触发": {
+        "prefix": "beginmagic",
+        "description": "玩家自身使用任意技能前触发",
+        "body": "beginmagic(actor, magicId, magicName, target, x, y)",
+        "scope": "触发/玩家/玩家自身使用任意技能前触发"
+    },
+    "玩家推动技能施法前触发": {
+        "prefix": "canpush",
+        "description": "玩家推动技能施法前触发",
+        "body": "canpush(actor, target, hitter, magicId)",
+        "scope": "触发/玩家/玩家推动技能施法前触发"
+    },
+    "自定义技能处理伤害前触发": {
+        "prefix": "custommagicdamageX",
+        "description": "自定义技能处理伤害前触发",
+        "body": "custommagicdamageX(hitter, target)",
+        "scope": "触发/玩家/自定义技能处理伤害前触发"
+    },
+    "杀死人物触发": {
+        "prefix": "killplay",
+        "description": "杀死人物触发",
+        "body": "killplay(actor, killed)",
+        "scope": "触发/玩家/杀死人物触发"
+    },
+    "玩家被杀": {
+        "prefix": "playdie",
+        "description": "玩家被杀",
+        "body": "playdie(actor, hitter)",
+        "scope": "触发/玩家/玩家被杀"
+    },
+    "杀死怪物或人物，爆物品触发": {
+        "prefix": "scatterbagitems",
+        "description": "杀死怪物或人物，爆物品触发",
+        "body": "scatterbagitems(actor, dropRole)",
+        "scope": "触发/玩家/杀死怪物或人物，爆物品触发"
+    },
+    "充值触发": {
+        "prefix": "recharge",
+        "description": "充值触发",
+        "body": "recharge(actor, gold, productId, moneyId, isReal, orderTime, rechargeAmount, giftAmount, refundAmount)",
+        "scope": "触发/玩家/充值触发"
+    },
+    "NPC点击触发": {
+        "prefix": "clicknpc",
+        "description": "NPC点击触发",
+        "body": "clicknpc(actor, npcId, script)",
+        "scope": "触发/玩家/NPC点击触发"
+    },
+    "玩家跳转地图触发": {
+        "prefix": "entermap",
+        "description": "玩家跳转地图触发",
+        "body": "entermap(actor, mapId, x, y, mapId2)",
+        "scope": "触发/玩家/玩家跳转地图触发"
+    },
+    "玩家离开地图触发": {
+        "prefix": "leavemap",
+        "description": "玩家离开地图触发",
+        "body": "leavemap(actor, mapId, x, y, mapId2)",
+        "scope": "触发/玩家/玩家离开地图触发"
+    },
+    "镜像地图销毁前触发": {
+        "prefix": "mirrormapend",
+        "description": "镜像地图销毁前触发",
+        "body": "mirrormapend(sysobj, mapId)",
+        "scope": "触发/玩家/镜像地图销毁前触发"
+    },
+    "进入连接点(跳转点)前触发": {
+        "prefix": "beforeroute",
+        "description": "进入连接点(跳转点)前触发",
+        "body": "beforeroute(actor, mapid, x, y)",
+        "scope": "触发/玩家/进入连接点(跳转点)前触发"
+    },
+    "捡取触发": {
+        "prefix": "pickupitemex",
+        "description": "捡取触发",
+        "body": "pickupitemex(actor, itemMakeIndex, itemIndex)",
+        "scope": "触发/玩家/捡取触发"
+    },
+    "骑马跑步触发": {
+        "prefix": "horserun",
+        "description": "骑马跑步触发",
+        "body": "horserun(actor)",
+        "scope": "触发/玩家/骑马跑步触发"
+    },
+    "跑步触发": {
+        "prefix": "run",
+        "description": "跑步触发",
+        "body": "run(actor)",
+        "scope": "触发/玩家/跑步触发"
+    },
+    "走路触发": {
+        "prefix": "walk",
+        "description": "走路触发",
+        "body": "walk(actor)",
+        "scope": "触发/玩家/走路触发"
+    },
+    "开始挂机触发": {
+        "prefix": "startautoplaygame",
+        "description": "开始挂机触发",
+        "body": "startautoplaygame(actor)",
+        "scope": "触发/玩家/开始挂机触发"
+    },
+    "停止挂机触发": {
+        "prefix": "stopautoplaygame",
+        "description": "停止挂机触发",
+        "body": "stopautoplaygame(actor)",
+        "scope": "触发/玩家/停止挂机触发"
+    },
+    "属性变化时触发": {
+        "prefix": "sendability",
+        "description": "属性变化时触发",
+        "body": "sendability(actor)",
+        "scope": "触发/玩家/属性变化时触发"
+    },
+    "角色获取经验前触发": {
+        "prefix": "getexp",
+        "description": "角色获取经验前触发",
+        "body": "getexp(actor, exp)",
+        "scope": "触发/玩家/角色获取经验前触发"
+    },
+    "拾取前触发": {
+        "prefix": "pickupitemfrontex",
+        "description": "拾取前触发",
+        "body": "pickupitemfrontex(actor, makeIndex)",
+        "scope": "触发/玩家/拾取前触发"
+    },
+    "点击背包锁头触发": {
+        "prefix": "closedbagitemclick",
+        "description": "点击背包锁头触发",
+        "body": "closedbagitemclick(actor)",
+        "scope": "触发/玩家/点击背包锁头触发"
+    },
+    "套装激活触发": {
+        "prefix": "groupitemonX",
+        "description": "套装激活触发",
+        "body": "groupitemonX(actor, suitIndex)",
+        "scope": "触发/玩家/套装激活触发"
+    },
+    "穿套装触发": {
+        "prefix": "groupitemonex",
+        "description": "穿套装触发",
+        "body": "groupitemonex(actor, suiId)",
+        "scope": "触发/玩家/穿套装触发"
+    },
+    "脱套装触发": {
+        "prefix": "groupitemoffex",
+        "description": "脱套装触发",
+        "body": "groupitemoffex(actor, suiId)",
+        "scope": "触发/玩家/脱套装触发"
+    },
+    "交易前触发": {
+        "prefix": "dealbefore",
+        "description": "交易前触发",
+        "body": "dealbefore(acceptActor, launchActor)",
+        "scope": "触发/玩家/交易前触发"
+    },
+    "交易后触发": {
+        "prefix": "dealend",
+        "description": "交易后触发",
+        "body": "dealend(actor, buyer, itemjson)",
+        "scope": "触发/玩家/交易后触发"
+    },
+    "摆摊触发": {
+        "prefix": "startmyshop",
+        "description": "摆摊触发",
+        "body": "startmyshop(actor)",
+        "scope": "触发/玩家/摆摊触发"
+    },
+    "摆摊成功触发": {
+        "prefix": "startmyshopok",
+        "description": "摆摊成功触发",
+        "body": "startmyshopok(actor)",
+        "scope": "触发/玩家/摆摊成功触发"
+    },
+    "摆摊结束触发": {
+        "prefix": "stopmyshop",
+        "description": "摆摊结束触发",
+        "body": "stopmyshop(actor)",
+        "scope": "触发/玩家/摆摊结束触发"
+    },
+    "摆摊购买前触发": {
+        "prefix": "buyusershopitem",
+        "description": "摆摊购买前触发",
+        "body": "buyusershopitem(actor, seller, moneyType, moneyNum, itemIndex, makeindex,sellactor)",
+        "scope": "触发/玩家/摆摊购买前触发"
+    },
+    "摆摊卖出物品触发": {
+        "prefix": "sellstallitem",
+        "description": "摆摊卖出物品触发",
+        "body": "sellstallitem(actor, itemname, overlap, moneytype, moneyNum)",
+        "scope": "触发/玩家/摆摊卖出物品触发"
+    },
+    "摆摊购买物品触发": {
+        "prefix": "buystallitem",
+        "description": "摆摊购买物品触发",
+        "body": "buystallitem(actor, itemname, overlap, moneytype, moneyNum, makeindex,sellactor)",
+        "scope": "触发/玩家/摆摊购买物品触发"
+    },
+    "商城购买后触发": {
+        "prefix": "buyshopitem",
+        "description": "商城购买后触发",
+        "body": "buyshopitem(actor, makeIndexList, itemName, itemNum, money_list)",
+        "scope": "触发/玩家/商城购买后触发"
+    },
+    "人物勾选外显时装生效触发": {
+        "prefix": "showfashion",
+        "description": "人物勾选外显时装生效触发",
+        "body": "showfashion(actor)",
+        "scope": "触发/玩家/人物勾选外显时装生效触发"
+    },
+    "人物取消外显时装生效触发": {
+        "prefix": "notshowfashion",
+        "description": "人物取消外显时装生效触发",
+        "body": "notshowfashion(actor)",
+        "scope": "触发/玩家/人物取消外显时装生效触发"
+    },
+    "加好友前触发": {
+        "prefix": "addfriendrequest",
+        "description": "加好友前触发",
+        "body": "addfriendrequest(actor)",
+        "scope": "触发/玩家/加好友前触发"
+    },
+    "角色pk值变化触发": {
+        "prefix": "pkpointchanged",
+        "description": "角色pk值变化触发",
+        "body": "pkpointchanged(actor, pkpoint)",
+        "scope": "触发/玩家/角色pk值变化触发"
+    },
+    "人物死亡之前": {
+        "prefix": "nextdie",
+        "description": "人物死亡之前",
+        "body": "nextdie(actor, hitter, isplayer)",
+        "scope": "触发/玩家/人物死亡之前"
+    },
+    "查看别人装备触发": {
+        "prefix": "lookhuminfo",
+        "description": "查看别人装备触发",
+        "body": "lookhuminfo(actor, actorInsId, name)",
+        "scope": "触发/玩家/查看别人装备触发"
+    },
+    "阅读邮件触发": {
+        "prefix": "readmail",
+        "description": "阅读邮件触发",
+        "body": "readmail(actor, mailID, mailTitle)",
+        "scope": "触发/玩家/阅读邮件触发"
+    },
+    "邮件提取触发": {
+        "prefix": "getmailitem",
+        "description": "邮件提取触发",
+        "body": "getmailitem(actor, mainID, mailTitle, itemJson,diyid)",
+        "scope": "触发/玩家/邮件提取触发"
+    },
+    "传送戒指传送前触发": {
+        "prefix": "beginteleport",
+        "description": "传送戒指传送前触发",
+        "body": "beginteleport(actor, X, Y)",
+        "scope": "触发/玩家/传送戒指传送前触发"
+    },
+    "绑定背包满触发": {
+        "prefix": "bindevent",
+        "description": "绑定背包满触发",
+        "body": "bindevent(actor, bindingType, isOpen, callbackFunc)",
+        "scope": "触发/玩家/绑定背包满触发"
+    },
+    "回收触发": {
+        "prefix": "recycling",
+        "description": "回收触发",
+        "body": "recycling(actor)",
+        "scope": "触发/玩家/回收触发"
+    },
+    "寻路开启触发": {
+        "prefix": "findpathbegin",
+        "description": "寻路开启触发",
+        "body": "findpathbegin(actor)",
+        "scope": "触发/玩家/寻路开启触发"
+    },
+    "寻路中断触发": {
+        "prefix": "findpathstop",
+        "description": "寻路中断触发",
+        "body": "findpathstop(actor)",
+        "scope": "触发/玩家/寻路中断触发"
+    },
+    "寻路结束触发": {
+        "prefix": "findpathend",
+        "description": "寻路结束触发",
+        "body": "findpathend(actor)",
+        "scope": "触发/玩家/寻路结束触发"
+    },
+    "玩家捡取物品前触发(X=物品idx)": {
+        "prefix": "pickupitemfrontX",
+        "description": "玩家捡取物品前触发(X=物品idx)",
+        "body": "pickupitemfrontX(actor, makeIndex)",
+        "scope": "触发/玩家/玩家捡取物品前触发(X=物品idx)"
+    },
+    "装备从背包掉落前触发": {
+        "prefix": "itemdropfrombagbefore",
+        "description": "装备从背包掉落前触发",
+        "body": "itemdropfrombagbefore(actor, makeIndex)",
+        "scope": "触发/玩家/装备从背包掉落前触发"
+    },
+    "称号改变触发": {
+        "prefix": "titlechangedex",
+        "description": "称号改变触发",
+        "body": "titlechangedex(actor, titleIndex)",
+        "scope": "触发/玩家/称号改变触发"
+    },
+    "称号卸下触发": {
+        "prefix": "untitledex",
+        "description": "称号卸下触发",
+        "body": "untitledex(actor, titleIndex)",
+        "scope": "触发/玩家/称号卸下触发"
+    },
+    "人物复活时": {
+        "prefix": "revival",
+        "description": "人物复活时",
+        "body": "revival(actor)",
+        "scope": "触发/玩家/人物复活时"
+    },
+    "人物改变称号X时触发": {
+        "prefix": "titlechanged_X",
+        "description": "人物改变称号X时触发",
+        "body": "titlechanged_X(actor)",
+        "scope": "触发/玩家/人物改变称号X时触发"
+    },
+    "人物卸下称号X时触发": {
+        "prefix": "titlechanged_X",
+        "description": "人物卸下称号X时触发",
+        "body": "titlechanged_X(actor)",
+        "scope": "触发/玩家/人物卸下称号X时触发"
+    },
+    "杀怪获取经验触发": {
+        "prefix": "getexpbykillmon",
+        "description": "杀怪获取经验触发",
+        "body": "getexpbykillmon(actor, killer, mon, exp)",
+        "scope": "触发/玩家/杀怪获取经验触发"
+    },
+    "玩家跨天登录触发": {
+        "prefix": "resetday",
+        "description": "玩家跨天登录触发",
+        "body": "resetday(actor)",
+        "scope": "触发/玩家/玩家跨天登录触发"
+    },
+    "前端请求打开ui界面触发": {
+        "prefix": "clientbeforeopenpanel",
+        "description": "前端请求打开ui界面触发",
+        "body": "clientbeforeopenpanel(actor, id)",
+        "scope": "触发/玩家/前端请求打开ui界面触发"
+    },
+    "扔掉丢弃金币前触发": {
+        "prefix": "dropgoldfront",
+        "description": "扔掉丢弃金币前触发",
+        "body": "dropgoldfront(actor, goldNum, result)",
+        "scope": "触发/玩家/扔掉丢弃金币前触发"
+    },
+    "人物复活前触发(复活类技能)": {
+        "prefix": "revivalex",
+        "description": "人物复活前触发(复活类技能)",
+        "body": "revivalex(actor, hiter)",
+        "scope": "触发/玩家/人物复活前触发(复活类技能)"
+    },
+    "忽视防御触发": {
+        "prefix": "ignoredef",
+        "description": "忽视防御触发",
+        "body": "ignoredef(actor, target, damage, magicId)",
+        "scope": "触发/玩家/忽视防御触发"
+    },
+    "击退前触发(自定义推动技能）": {
+        "prefix": "on_push_pre",
+        "description": "击退前触发(自定义推动技能）",
+        "body": "on_push_pre(actor, target, skillid, SysCanPush)",
+        "scope": "触发/玩家/击退前触发(自定义推动技能）"
+    },
+    "监听消息": {
+        "prefix": "handlerequest",
+        "description": "监听消息",
+        "body": "handlerequest(actor, msgId, param1, param2, param3, sMsg)",
+        "scope": "触发/系统/监听消息"
+    },
+    "服务端启动触发": {
+        "prefix": "startup",
+        "description": "服务端启动触发",
+        "body": "startup()",
+        "scope": "触发/系统/服务端启动触发"
+    },
+    "聊天内容聊天触发": {
+        "prefix": "triggerchat",
+        "description": "聊天内容聊天触发",
+        "body": "triggerchat(self, sMsg, chat, msgType)",
+        "scope": "触发/系统/聊天内容聊天触发"
+    },
+    "小退触发": {
+        "prefix": "playreconnection",
+        "description": "小退触发",
+        "body": "playreconnection(actor)",
+        "scope": "触发/系统/小退触发"
+    },
+    "大退与关闭客户端触发": {
+        "prefix": "playoffline",
+        "description": "大退与关闭客户端触发",
+        "body": "playoffline(actor)",
+        "scope": "触发/系统/大退与关闭客户端触发"
+    },
+    "攻城开始时触发": {
+        "prefix": "castlewarstart",
+        "description": "攻城开始时触发",
+        "body": "castlewarstart()",
+        "scope": "触发/系统/攻城开始时触发"
+    },
+    "攻城结束时触发": {
+        "prefix": "castlewarend",
+        "description": "攻城结束时触发",
+        "body": "castlewarend()",
+        "scope": "触发/系统/攻城结束时触发"
+    },
+    "占领沙巴克触发": {
+        "prefix": "getcastle0",
+        "description": "占领沙巴克触发",
+        "body": "getcastle0()",
+        "scope": "触发/系统/占领沙巴克触发"
+    },
+    "公众号获取KEY成功触发": {
+        "prefix": "bindwechat",
+        "description": "公众号获取KEY成功触发",
+        "body": "bindwechat(actor, key)",
+        "scope": "触发/系统/公众号获取KEY成功触发"
+    },
+    "公众号成功验证触发": {
+        "prefix": "bindrewechat",
+        "description": "公众号成功验证触发",
+        "body": "bindrewechat(actor, key, inputkey, name, openid)",
+        "scope": "触发/系统/公众号成功验证触发"
+    },
+    "收到请求离线玩家变量时": {
+        "prefix": "on_offline_var",
+        "description": "收到请求离线玩家变量时",
+        "body": "on_offline_var(SysID, UserID, UserName, varName, varValue)",
+        "scope": "触发/系统/收到请求离线玩家变量时"
+    },
+    "QFunction-0重载前触发": {
+        "prefix": "qfloadbegin",
+        "description": "QFunction-0重载前触发",
+        "body": "qfloadbegin()",
+        "scope": "触发/系统/QFunction-0重载前触发"
+    },
+    "QFunction-0重载后触发": {
+        "prefix": "qfloadend",
+        "description": "QFunction-0重载后触发",
+        "body": "qfloadend()",
+        "scope": "触发/系统/QFunction-0重载后触发"
+    },
+    "玩家穴位点击触发": {
+        "prefix": "pulse",
+        "description": "玩家穴位点击触发",
+        "body": "pulse(actor)",
+        "scope": "触发/经络/玩家穴位点击触发"
+    },
+    "英雄穴位点击触发": {
+        "prefix": "heropulse",
+        "description": "英雄穴位点击触发",
+        "body": "heropulse(actor)",
+        "scope": "触发/经络/英雄穴位点击触发"
+    },
+    "玩家修炼经络触发": {
+        "prefix": "pulselvupX",
+        "description": "玩家修炼经络触发",
+        "body": "pulselvupX(actor)",
+        "scope": "触发/经络/玩家修炼经络触发"
+    },
+    "英雄修炼经络触发": {
+        "prefix": "heropulselvupX",
+        "description": "英雄修炼经络触发",
+        "body": "heropulselvupX(actor)",
+        "scope": "触发/经络/英雄修炼经络触发"
+    },
+    "英雄穿戴装备触发": {
+        "prefix": "herotakeonex",
+        "description": "英雄穿戴装备触发",
+        "body": "herotakeonex(actor, hero, makeIndex, where, itemName, idx)",
+        "scope": "触发/英雄-宠物/英雄穿戴装备触发"
+    },
+    "英雄脱下装备触发": {
+        "prefix": "herotakeoffex",
+        "description": "英雄脱下装备触发",
+        "body": "herotakeoffex(actor, hero, makeIndex, where, itemName, idx)",
+        "scope": "触发/英雄-宠物/英雄脱下装备触发"
+    },
+    "英雄装备过期触发": {
+        "prefix": "heroitemexpired",
+        "description": "英雄装备过期触发",
+        "body": "heroitemexpired(actor, hero, makeIndex, itemName)",
+        "scope": "触发/英雄-宠物/英雄装备过期触发"
+    },
+    "英雄脱下装备进入背包前触发": {
+        "prefix": "herotakeoffexchange",
+        "description": "英雄脱下装备进入背包前触发",
+        "body": "herotakeoffexchange(actor, hero, makeIndex)",
+        "scope": "触发/英雄-宠物/英雄脱下装备进入背包前触发"
+    },
+    "添加英雄背包触发": {
+        "prefix": "addherobag",
+        "description": "添加英雄背包触发",
+        "body": "addherobag(actor, hero, makeIndex)",
+        "scope": "触发/英雄-宠物/添加英雄背包触发"
+    },
+    "英雄扔掉X物品前触发": {
+        "prefix": "herodropitemfrontX",
+        "description": "英雄扔掉X物品前触发",
+        "body": "herodropitemfrontX(actor, hero, makeIndex)",
+        "scope": "触发/英雄-宠物/英雄扔掉X物品前触发"
+    },
+    "英雄扔掉X物品后触发": {
+        "prefix": "herodropitemX",
+        "description": "英雄扔掉X物品后触发",
+        "body": "herodropitemX(actor, hero, makeIndex)",
+        "scope": "触发/英雄-宠物/英雄扔掉X物品后触发"
+    },
+    "英雄扔掉物品前触发": {
+        "prefix": "herodropitemfrontex",
+        "description": "英雄扔掉物品前触发",
+        "body": "herodropitemfrontex(actor, hero, makeIndex)",
+        "scope": "触发/英雄-宠物/英雄扔掉物品前触发"
+    },
+    "英雄扔掉物品后触发": {
+        "prefix": "herodropitemex",
+        "description": "英雄扔掉物品后触发",
+        "body": "herodropitemex(actor, hero, makeIndex)",
+        "scope": "触发/英雄-宠物/英雄扔掉物品后触发"
+    },
+    "宝宝攻击前触发": {
+        "prefix": "attackdamagebb",
+        "description": "宝宝攻击前触发",
+        "body": "attackdamagebb(actor, target, hitter, magicId, damage)",
+        "scope": "触发/英雄-宠物/宝宝攻击前触发"
+    },
+    "英雄攻击前触发": {
+        "prefix": "heroattackdamage",
+        "description": "英雄攻击前触发",
+        "body": "heroattackdamage(actor, target, hitter, magicId, damage)",
+        "scope": "触发/英雄-宠物/英雄攻击前触发"
+    },
+    "英雄宝宝攻击前触发": {
+        "prefix": "heroattackdamagebb",
+        "description": "英雄宝宝攻击前触发",
+        "body": "heroattackdamagebb(actor, target, hitter, magicId, damage)",
+        "scope": "触发/英雄-宠物/英雄宝宝攻击前触发"
+    },
+    "宝宝物理攻击后": {
+        "prefix": "attackpet",
+        "description": "宝宝物理攻击后",
+        "body": "attackpet(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/宝宝物理攻击后"
+    },
+    "宝宝魔法攻击后": {
+        "prefix": "magicattackpet",
+        "description": "宝宝魔法攻击后",
+        "body": "magicattackpet(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/宝宝魔法攻击后"
+    },
+    "英雄物理攻击后": {
+        "prefix": "heroattack",
+        "description": "英雄物理攻击后",
+        "body": "heroattack(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/英雄物理攻击后"
+    },
+    "英雄魔法攻击后": {
+        "prefix": "heromagicattack",
+        "description": "英雄魔法攻击后",
+        "body": "heromagicattack(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/英雄魔法攻击后"
+    },
+    "英雄宝宝物理攻击后": {
+        "prefix": "heroattackpet",
+        "description": "英雄宝宝物理攻击后",
+        "body": "heroattackpet(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/英雄宝宝物理攻击后"
+    },
+    "英雄宝宝魔法攻击后": {
+        "prefix": "heromagicattackpet",
+        "description": "英雄宝宝魔法攻击后",
+        "body": "heromagicattackpet(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/英雄宝宝魔法攻击后"
+    },
+    "宝宝受击前": {
+        "prefix": "struckdamagebb",
+        "description": "宝宝受击前",
+        "body": "struckdamagebb(actor, hitter, target, magicId, damage)",
+        "scope": "触发/英雄-宠物/宝宝受击前"
+    },
+    "英雄受击前": {
+        "prefix": "herostruckdamage",
+        "description": "英雄受击前",
+        "body": "herostruckdamage(actor, hitter, target, magicId, damage)",
+        "scope": "触发/英雄-宠物/英雄受击前"
+    },
+    "英雄宝宝受击前": {
+        "prefix": "herostruckdamagebb",
+        "description": "英雄宝宝受击前",
+        "body": "herostruckdamagebb(actor, hitter, target, magicId, damage)",
+        "scope": "触发/英雄-宠物/英雄宝宝受击前"
+    },
+    "宝宝物理受击后": {
+        "prefix": "struckpet",
+        "description": "宝宝物理受击后",
+        "body": "struckpet(actor, hitter, target, magicId)",
+        "scope": "触发/英雄-宠物/宝宝物理受击后"
+    },
+    "宝宝魔法受击后": {
+        "prefix": "magicstruckpet",
+        "description": "宝宝魔法受击后",
+        "body": "magicstruckpet(actor, hitter, target, magicId)",
+        "scope": "触发/英雄-宠物/宝宝魔法受击后"
+    },
+    "英雄物理受击后": {
+        "prefix": "herostruck",
+        "description": "英雄物理受击后",
+        "body": "herostruck(actor, hitter, target, magicId)",
+        "scope": "触发/英雄-宠物/英雄物理受击后"
+    },
+    "英雄魔法受击后": {
+        "prefix": "heromagicstruck",
+        "description": "英雄魔法受击后",
+        "body": "heromagicstruck(actor, hitter, target, magicId)",
+        "scope": "触发/英雄-宠物/英雄魔法受击后"
+    },
+    "英雄宝宝魔法受击后": {
+        "prefix": "heromagicstruckpet",
+        "description": "英雄宝宝魔法受击后",
+        "body": "heromagicstruckpet(actor, hitter, target, magicId)",
+        "scope": "触发/英雄-宠物/英雄宝宝魔法受击后"
+    },
+    "英雄宝宝物理受击后": {
+        "prefix": "herostruckpet",
+        "description": "英雄宝宝物理受击后",
+        "body": "herostruckpet(actor, hitter, target, magicId)",
+        "scope": "触发/英雄-宠物/英雄宝宝物理受击后"
+    },
+    "英雄自身使用任意技能前触发": {
+        "prefix": "herobeginmagic",
+        "description": "英雄自身使用任意技能前触发",
+        "body": "herobeginmagic(actor, hero, magicId, magicName, target, x, y)",
+        "scope": "触发/英雄-宠物/英雄自身使用任意技能前触发"
+    },
+    "英雄推动技能施法前触发": {
+        "prefix": "herocanpush",
+        "description": "英雄推动技能施法前触发",
+        "body": "herocanpush(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/英雄推动技能施法前触发"
+    },
+    "宠物推动技能施法前触发": {
+        "prefix": "petcanpush",
+        "description": "宠物推动技能施法前触发",
+        "body": "petcanpush(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/宠物推动技能施法前触发"
+    },
+    "宝宝推动技能施法前触发": {
+        "prefix": "bbcanpush",
+        "description": "宝宝推动技能施法前触发",
+        "body": "bbcanpush(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/宝宝推动技能施法前触发"
+    },
+    "英雄宝宝推动技能施法前触发": {
+        "prefix": "herobbcanpush",
+        "description": "英雄宝宝推动技能施法前触发",
+        "body": "herobbcanpush(actor, target, hitter, magicId)",
+        "scope": "触发/英雄-宠物/英雄宝宝推动技能施法前触发"
+    },
+    "宝宝死亡触发，触发对象 主人": {
+        "prefix": "selfkillslave",
+        "description": "宝宝死亡触发，触发对象 主人",
+        "body": "selfkillslave(actor, mon)",
+        "scope": "触发/英雄-宠物/宝宝死亡触发，触发对象 主人"
+    },
+    "杀掉宝宝触发，触发对象 攻击者": {
+        "prefix": "killslave",
+        "description": "杀掉宝宝触发，触发对象 攻击者",
+        "body": "killslave(actor, mon)",
+        "scope": "触发/英雄-宠物/杀掉宝宝触发，触发对象 攻击者"
+    },
+    "杀怪触发": {
+        "prefix": "killmon",
+        "description": "杀怪触发",
+        "body": "killmon(actor, mon, itype, kill, monName, mapID)",
+        "scope": "触发/英雄-宠物/杀怪触发"
+    },
+    "杀怪触发(需要在mapinfo地图参数增加onkillmon)": {
+        "prefix": "onkillmob",
+        "description": "杀怪触发(需要在mapinfo地图参数增加onkillmon)",
+        "body": "onkillmob(actor, mon)",
+        "scope": "触发/英雄-宠物/杀怪触发(需要在mapinfo地图参数增加onkillmon)"
+    },
+    "英雄被杀触发": {
+        "prefix": "herodie",
+        "description": "英雄被杀触发",
+        "body": "herodie(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄被杀触发"
+    },
+    "怪物掉落物品触发": {
+        "prefix": "mondropitemex",
+        "description": "怪物掉落物品触发",
+        "body": "mondropitemex(actor, makeIndex, mon, nX, nY, index)",
+        "scope": "触发/英雄-宠物/怪物掉落物品触发"
+    },
+    "宝宝升级触发": {
+        "prefix": "slaveupgrade",
+        "description": "宝宝升级触发",
+        "body": "slaveupgrade(actor, mon, level)",
+        "scope": "触发/英雄-宠物/宝宝升级触发"
+    },
+    "角色获得宝宝触发": {
+        "prefix": "slavebb",
+        "description": "角色获得宝宝触发",
+        "body": "slavebb(actor, mon)",
+        "scope": "触发/英雄-宠物/角色获得宝宝触发"
+    },
+    "英雄获得宝宝触发": {
+        "prefix": "heroslavebb",
+        "description": "英雄获得宝宝触发",
+        "body": "heroslavebb(actor, hero, mon)",
+        "scope": "触发/英雄-宠物/英雄获得宝宝触发"
+    },
+    "角色宝宝叛变触发": {
+        "prefix": "mobtreachery",
+        "description": "角色宝宝叛变触发",
+        "body": "mobtreachery(actor, mon)",
+        "scope": "触发/英雄-宠物/角色宝宝叛变触发"
+    },
+    "英雄宝宝叛变触发": {
+        "prefix": "heromobtreachery",
+        "description": "英雄宝宝叛变触发",
+        "body": "heromobtreachery(actor, hero, mon)",
+        "scope": "触发/英雄-宠物/英雄宝宝叛变触发"
+    },
+    "英雄穿套装触发": {
+        "prefix": "herogroupitemonex",
+        "description": "英雄穿套装触发",
+        "body": "herogroupitemonex(actor, hero, suitId)",
+        "scope": "触发/英雄-宠物/英雄穿套装触发"
+    },
+    "英雄脱套装触发": {
+        "prefix": "herogroupitemoffex",
+        "description": "英雄脱套装触发",
+        "body": "herogroupitemoffex(actor, hero, suitId)",
+        "scope": "触发/英雄-宠物/英雄脱套装触发"
+    },
+    "英雄套装激活触发": {
+        "prefix": "herogroupitemonX",
+        "description": "英雄套装激活触发",
+        "body": "herogroupitemonX(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄套装激活触发"
+    },
+    "英雄开启首饰盒触发(神佑/生肖)": {
+        "prefix": "heroopensndaitembox",
+        "description": "英雄开启首饰盒触发(神佑/生肖)",
+        "body": "heroopensndaitembox(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄开启首饰盒触发(神佑/生肖)"
+    },
+    "英雄忠诚度改变触发": {
+        "prefix": "heroluck",
+        "description": "英雄忠诚度改变触发",
+        "body": "heroluck(actor, hero, luckNum)",
+        "scope": "触发/英雄-宠物/英雄忠诚度改变触发"
+    },
+    "英雄勾选外显时装生效触发": {
+        "prefix": "heroshowfashion",
+        "description": "英雄勾选外显时装生效触发",
+        "body": "heroshowfashion(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄勾选外显时装生效触发"
+    },
+    "英雄取消外显时装生效触发": {
+        "prefix": "heronotshowfashion",
+        "description": "英雄取消外显时装生效触发",
+        "body": "heronotshowfashion(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄取消外显时装生效触发"
+    },
+    "英雄登陆触发": {
+        "prefix": "herologin",
+        "description": "英雄登陆触发",
+        "body": "herologin(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄登陆触发"
+    },
+    "角色升级触发": {
+        "prefix": "playlevelup",
+        "description": "角色升级触发",
+        "body": "playlevelup(actor, level)",
+        "scope": "触发/英雄-宠物/角色升级触发"
+    },
+    "英雄升级触发": {
+        "prefix": "herolevelup",
+        "description": "英雄升级触发",
+        "body": "herolevelup(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄升级触发"
+    },
+    "英雄创建触发": {
+        "prefix": "createherook",
+        "description": "英雄创建触发",
+        "body": "createherook(actor)",
+        "scope": "触发/英雄-宠物/英雄创建触发"
+    },
+    "英雄取名成功触发": {
+        "prefix": "checkusernameok",
+        "description": "英雄取名成功触发",
+        "body": "checkusernameok(actor)",
+        "scope": "触发/英雄-宠物/英雄取名成功触发"
+    },
+    "英雄取名失败触发": {
+        "prefix": "checkusernameno",
+        "description": "英雄取名失败触发",
+        "body": "checkusernameno(actor)",
+        "scope": "触发/英雄-宠物/英雄取名失败触发"
+    },
+    "宠物升级触发": {
+        "prefix": "petlevelup",
+        "description": "宠物升级触发",
+        "body": "petlevelup(actor, petIndex, level, zsLevel)",
+        "scope": "触发/英雄-宠物/宠物升级触发"
+    },
+    "获得宠物触发[人物上线首次加载宠物时也会触发]": {
+        "prefix": "getnewpet",
+        "description": "获得宠物触发[人物上线首次加载宠物时也会触发]",
+        "body": "getnewpet(actor, petIndex)",
+        "scope": "触发/英雄-宠物/获得宠物触发[人物上线首次加载宠物时也会触发]"
+    },
+    "使用宠物蛋触发": {
+        "prefix": "usepetitem",
+        "description": "使用宠物蛋触发",
+        "body": "usepetitem(actor, makeIndex, itemIndex)",
+        "scope": "触发/英雄-宠物/使用宠物蛋触发"
+    },
+    "宠物死亡触发": {
+        "prefix": "petdie",
+        "description": "宠物死亡触发",
+        "body": "petdie(actor, petIndex)",
+        "scope": "触发/英雄-宠物/宠物死亡触发"
+    },
+    "宠物变蛋触发": {
+        "prefix": "pettoitem",
+        "description": "宠物变蛋触发",
+        "body": "pettoitem(actor, makeIndex)",
+        "scope": "触发/英雄-宠物/宠物变蛋触发"
+    },
+    "宠物攻击触发": {
+        "prefix": "attackbypet",
+        "description": "宠物攻击触发",
+        "body": "attackbypet(actor, petIndex, target, magicId, isImportant)",
+        "scope": "触发/英雄-宠物/宠物攻击触发"
+    },
+    "宠物攻击伤害前触发": {
+        "prefix": "attackdamagepet",
+        "description": "宠物攻击伤害前触发",
+        "body": "attackdamagepet(actor, target, petObj, magicId, damage, isImportant, model)",
+        "scope": "触发/英雄-宠物/宠物攻击伤害前触发"
+    },
+    "宠物被攻击前触发": {
+        "prefix": "struckdamagepet",
+        "description": "宠物被攻击前触发",
+        "body": "struckdamagepet(actor, hitter, petIndex, magicId, damage)",
+        "scope": "触发/英雄-宠物/宠物被攻击前触发"
+    },
+    "宠物被物理攻击触发": {
+        "prefix": "struckofpet",
+        "description": "宠物被物理攻击触发",
+        "body": "struckofpet(actor, petIndex, hitter, magicId)",
+        "scope": "触发/英雄-宠物/宠物被物理攻击触发"
+    },
+    "宠物被魔法攻击触发": {
+        "prefix": "magicstruckofpet",
+        "description": "宠物被魔法攻击触发",
+        "body": "magicstruckofpet(actor, petIndex, hitter, magicId)",
+        "scope": "触发/英雄-宠物/宠物被魔法攻击触发"
+    },
+    "英雄脱下装备前触发": {
+        "prefix": "herotakeoffbeforeex",
+        "description": "英雄脱下装备前触发",
+        "body": "herotakeoffbeforeex(actor, hero, makeIndex, where, idx)",
+        "scope": "触发/英雄-宠物/英雄脱下装备前触发"
+    },
+    "英雄穿戴装备前触发(带装备位置)": {
+        "prefix": "herotakeonbeforeex",
+        "description": "英雄穿戴装备前触发(带装备位置)",
+        "body": "herotakeonbeforeex(actor, hero, makeIndex, where, idx)",
+        "scope": "触发/英雄-宠物/英雄穿戴装备前触发(带装备位置)"
+    },
+    "英雄穿戴装备前触发": {
+        "prefix": "herotakeonbeforeX",
+        "description": "英雄穿戴装备前触发",
+        "body": "herotakeonbeforeX(actor, hero, makeIndex, idx)",
+        "scope": "触发/英雄-宠物/英雄穿戴装备前触发"
+    },
+    "英雄脱下装备前触发(X=装备位置)": {
+        "prefix": "herotakeoffbeforeX",
+        "description": "英雄脱下装备前触发(X=装备位置)",
+        "body": "herotakeoffbeforeX(actor, hero, makeIndex, idx)",
+        "scope": "触发/英雄-宠物/英雄脱下装备前触发(X=装备位置)"
+    },
+    "英雄脱下装备触发(X=装备位置)": {
+        "prefix": "herotakeoffX",
+        "description": "英雄脱下装备触发(X=装备位置)",
+        "body": "herotakeoffX(actor, hero, makeIndex, idx)",
+        "scope": "触发/英雄-宠物/英雄脱下装备触发(X=装备位置)"
+    },
+    "英雄物品进包前触发": {
+        "prefix": "addherobagbefore",
+        "description": "英雄物品进包前触发",
+        "body": "addherobagbefore(actor, itemMakeIndex, itemIndex)",
+        "scope": "触发/英雄-宠物/英雄物品进包前触发"
+    },
+    "英雄穿戴装备触发(X=装备位置)": {
+        "prefix": "herotakeonX",
+        "description": "英雄穿戴装备触发(X=装备位置)",
+        "body": "herotakeonX(actor, hero, makeIndex, idx)",
+        "scope": "触发/英雄-宠物/英雄穿戴装备触发(X=装备位置)"
+    },
+    "英雄属性改变时触发": {
+        "prefix": "herosendability",
+        "description": "英雄属性改变时触发",
+        "body": "herosendability(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄属性改变时触发"
+    },
+    "英雄死亡装备掉落前触发": {
+        "prefix": "herocheckdropuseitems",
+        "description": "英雄死亡装备掉落前触发",
+        "body": "herocheckdropuseitems(actor, hero, where, itemIndex)",
+        "scope": "触发/英雄-宠物/英雄死亡装备掉落前触发"
+    },
+    "英雄死亡前触发": {
+        "prefix": "heronextdie",
+        "description": "英雄死亡前触发",
+        "body": "heronextdie(actor, hero, hitter, isplayer)",
+        "scope": "触发/英雄-宠物/英雄死亡前触发"
+    },
+    "英雄套装失效触发": {
+        "prefix": "herogroupitemoffX",
+        "description": "英雄套装失效触发",
+        "body": "herogroupitemoffX(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄套装失效触发"
+    },
+    "英雄复活时触发": {
+        "prefix": "herorevival",
+        "description": "英雄复活时触发",
+        "body": "herorevival(actor, hero)",
+        "scope": "触发/英雄-宠物/英雄复活时触发"
+    },
+    "英雄双击使用道具前触发": {
+        "prefix": "herobeforeeatitem",
+        "description": "英雄双击使用道具前触发",
+        "body": "herobeforeeatitem(actor, itemMakeIndex, itemIndex, itemNum, stdMode)",
+        "scope": "触发/英雄-宠物/英雄双击使用道具前触发"
+    },
+    "英雄双击类道具触发": {
+        "prefix": "herostdmodefuncX",
+        "description": "英雄双击类道具触发",
+        "body": "herostdmodefuncX(actor, hero, makeIndex)",
+        "scope": "触发/英雄-宠物/英雄双击类道具触发"
+    },
+    "随从被攻击触发": {
+        "prefix": "slavedamage",
+        "description": "随从被攻击触发",
+        "body": "slavedamage(actor, hitter, retinue)",
+        "scope": "触发/英雄-宠物/随从被攻击触发"
+    },
+    "攻击别人随从触发": {
+        "prefix": "hitslave",
+        "description": "攻击别人随从触发",
+        "body": "hitslave(actor, master, retinue)",
+        "scope": "触发/英雄-宠物/攻击别人随从触发"
+    },
+    "创建行会前触发": {
+        "prefix": "checkbuildguild",
+        "description": "创建行会前触发",
+        "body": "checkbuildguild(actor, guildName)",
+        "scope": "触发/行会组队/创建行会前触发"
+    },
+    "创建行会时触发": {
+        "prefix": "loadguild",
+        "description": "创建行会时触发",
+        "body": "loadguild(actor, guild)",
+        "scope": "触发/行会组队/创建行会时触发"
+    },
+    "更新行会公告触发": {
+        "prefix": "updateguildnotice",
+        "description": "更新行会公告触发",
+        "body": "updateguildnotice(actor)",
+        "scope": "触发/行会组队/更新行会公告触发"
+    },
+    "加入行会前触发": {
+        "prefix": "guildaddmember",
+        "description": "加入行会前触发",
+        "body": "guildaddmember(actor, guild)",
+        "scope": "触发/行会组队/加入行会前触发"
+    },
+    "加入行会后触发": {
+        "prefix": "guildaddmemberafter",
+        "description": "加入行会后触发",
+        "body": "guildaddmemberafter(actor, guild, guildName)",
+        "scope": "触发/行会组队/加入行会后触发"
+    },
+    "退出行会前触发": {
+        "prefix": "guilddelmemberbefore",
+        "description": "退出行会前触发",
+        "body": "guilddelmemberbefore(actor)",
+        "scope": "触发/行会组队/退出行会前触发"
+    },
+    "退出行会时触发": {
+        "prefix": "guilddelmember",
+        "description": "退出行会时触发",
+        "body": "guilddelmember(actor)",
+        "scope": "触发/行会组队/退出行会时触发"
+    },
+    "解散行会前触发": {
+        "prefix": "guildclosebefore",
+        "description": "解散行会前触发",
+        "body": "guildclosebefore(actor)",
+        "scope": "触发/行会组队/解散行会前触发"
+    },
+    "解散行会后触发": {
+        "prefix": "guildclose",
+        "description": "解散行会后触发",
+        "body": "guildclose(actor)",
+        "scope": "触发/行会组队/解散行会后触发"
+    },
+    "请求行会联盟前触发": {
+        "prefix": "guildapplybefore",
+        "description": "请求行会联盟前触发",
+        "body": "guildapplybefore(actor, guildName, time, moneyType, moneyNum)",
+        "scope": "触发/行会组队/请求行会联盟前触发"
+    },
+    "行会编辑封号前触发": {
+        "prefix": "setranknameX",
+        "description": "行会编辑封号前触发",
+        "body": "setranknameX(actor)",
+        "scope": "触发/行会组队/行会编辑封号前触发"
+    },
+    "行会任命职务前触发": {
+        "prefix": "setguildrankX",
+        "description": "行会任命职务前触发",
+        "body": "setguildrankX(actor, target, targetName)",
+        "scope": "触发/行会组队/行会任命职务前触发"
+    },
+    "掌门踢出行会成员前触发": {
+        "prefix": "guildchiefdelmember",
+        "description": "掌门踢出行会成员前触发",
+        "body": "guildchiefdelmember(actor, userId)",
+        "scope": "触发/行会组队/掌门踢出行会成员前触发"
+    },
+    "创建组队前触发": {
+        "prefix": "startgroup",
+        "description": "创建组队前触发",
+        "body": "startgroup(actor)",
+        "scope": "触发/行会组队/创建组队前触发"
+    },
+    "创建组队后触发": {
+        "prefix": "groupcreate",
+        "description": "创建组队后触发",
+        "body": "groupcreate(actor)",
+        "scope": "触发/行会组队/创建组队后触发"
+    },
+    "添加组队成员触发": {
+        "prefix": "groupaddmember",
+        "description": "添加组队成员触发",
+        "body": "groupaddmember(actor, leader)",
+        "scope": "触发/行会组队/添加组队成员触发"
+    },
+    "邀请组队前触发": {
+        "prefix": "invitegroup",
+        "description": "邀请组队前触发",
+        "body": "invitegroup(actor1, actor2)",
+        "scope": "触发/行会组队/邀请组队前触发"
+    },
+    "离开队伍时触发(退组)": {
+        "prefix": "leavegroup",
+        "description": "离开队伍时触发(退组)",
+        "body": "leavegroup(actor, leader)",
+        "scope": "触发/行会组队/离开队伍时触发(退组)"
+    },
+    "删除组队成员触发": {
+        "prefix": "groupdelmember",
+        "description": "删除组队成员触发",
+        "body": "groupdelmember(actor, name)",
+        "scope": "触发/行会组队/删除组队成员触发"
+    },
+    "组队杀死怪物时触发": {
+        "prefix": "groupkillmon",
+        "description": "组队杀死怪物时触发",
+        "body": "groupkillmon(actor, leader)",
+        "scope": "触发/行会组队/组队杀死怪物时触发"
+    },
+    "组队人数改变触发": {
+        "prefix": "groupchange",
+        "description": "组队人数改变触发",
+        "body": "groupchange(actor, type, groupnum, actorname)",
+        "scope": "触发/行会组队/组队人数改变触发"
+    },
+    "进入跨服触发": {
+        "prefix": "kflogin",
+        "description": "进入跨服触发",
+        "body": "kflogin(actor)",
+        "scope": "触发/跨服/进入跨服触发"
+    },
+    "退出跨服触发": {
+        "prefix": "kfend",
+        "description": "退出跨服触发",
+        "body": "kfend(actor)",
+        "scope": "触发/跨服/退出跨服触发"
+    },
+    "读取全局触发": {
+        "prefix": "TongReadKeyXX",
+        "description": "读取全局触发",
+        "body": "TongReadKeyXX(Param1, Param2, Param3)",
+        "scope": "触发/通区/读取全局触发"
+    },
+    "读取玩家角色/账号触发": {
+        "prefix": "TongReadKeyTouSerXX",
+        "description": "读取玩家角色/账号触发",
+        "body": "TongReadKeyTouSerXX(actor, key, id, value)",
+        "scope": "触发/通区/读取玩家角色/账号触发"
+    },
+    "通区下载文件触发": {
+        "prefix": "TongFileState",
+        "description": "通区下载文件触发",
+        "body": "TongFileState(type, path)",
+        "scope": "触发/通区/通区下载文件触发"
+    },
+    "获取key列表触发": {
+        "prefix": "TongGetKeyList",
+        "description": "获取key列表触发",
+        "body": "TongGetKeyList(len, content)",
+        "scope": "触发/通区/获取key列表触发"
+    },
+    "获取key数量触发": {
+        "prefix": "TongQueryKeyConut",
+        "description": "获取key数量触发",
+        "body": "TongQueryKeyConut(len)",
+        "scope": "触发/通区/获取key数量触发"
+    },
+    "批量操作触发": {
+        "prefix": "TongClearKey",
+        "description": "批量操作触发",
+        "body": "TongClearKey(Param1)",
+        "scope": "触发/通区/批量操作触发"
+    },
+    "采集前触发": {
+        "prefix": "collectmonex",
+        "description": "采集前触发",
+        "body": "collectmonex(actor, monIndex, monName, monMakeIndex)",
+        "scope": "触发/采集怪-镖车/采集前触发"
+    },
+    "玩家点击采集怪物将会触发": {
+        "prefix": "collectmonX",
+        "description": "玩家点击采集怪物将会触发",
+        "body": "collectmonX(actor, mon)",
+        "scope": "触发/采集怪-镖车/玩家点击采集怪物将会触发"
+    },
+    "镖车到达指定位置触发": {
+        "prefix": "carpathend",
+        "description": "镖车到达指定位置触发",
+        "body": "carpathend(actor)",
+        "scope": "触发/采集怪-镖车/镖车到达指定位置触发"
+    },
+    "镖车切换地图触发": {
+        "prefix": "leavedart",
+        "description": "镖车切换地图触发",
+        "body": "leavedart(actor)",
+        "scope": "触发/采集怪-镖车/镖车切换地图触发"
+    },
+    "镖车进入自动寻路范围触发": {
+        "prefix": "carfindmaster",
+        "description": "镖车进入自动寻路范围触发",
+        "body": "carfindmaster(actor)",
+        "scope": "触发/采集怪-镖车/镖车进入自动寻路范围触发"
+    },
+    "丢失镖车触发": {
+        "prefix": "losercar",
+        "description": "丢失镖车触发",
+        "body": "losercar(actor, car)",
+        "scope": "触发/采集怪-镖车/丢失镖车触发"
+    },
+    "镖车死亡触发": {
+        "prefix": "cardie",
+        "description": "镖车死亡触发",
+        "body": "cardie(actor, car)",
+        "scope": "触发/采集怪-镖车/镖车死亡触发"
+    }
+}
