@@ -1763,8 +1763,8 @@ function SL:Get_IS_PICKABLE_DROPITEM(actorID, mainPlayerID) end
 ---PC 按坐标选中actor
 ---* posx 世界坐标x
 ---* posy 世界坐标y
----@param posx integer
----@param posy integer
+---@param posx number
+---@param posy number
 ---@return integer "actor"
 ---```lua
 ---local actorID = SL:Get_USER_ID()
@@ -6056,7 +6056,7 @@ function SL:QuickSelectTarget(data) end
 ---* metaValue 传入已配置元变量的字符串 <br>&<元变量KEY/参数>& <br>例 : <br> 红点变量U91: &<REDKEY/U91>& <br>角色名: &<USER_NAME>&
 ---* widget 文本控件 Text
 ---@param metaValue string
----@param widget table
+---@param widget userdata
 ---```lua
 ---local Text_count = GUI:Text_Create(GUI:Attach_LeftBottom(), "MONEY_COUNT", 200, 100, 16, "#00FF00", "")
 ---SL:CustomAttrWidgetAdd("元宝数量: &&", Text_count)
@@ -7180,7 +7180,7 @@ function SL:CreateRedPoint(targetNode, offset) end
 ---设置文本样式(按钮、文本)
 ---* widget 按钮或者文本对象
 ---* colorID 0 - 255 色值ID
----@param widget table
+---@param widget userdata
 ---@param colorID number
 ---```lua
 ---local Btn = GUI:Button_Create(GUI:Attach_Bottom(), "Btn", 200, 200, "res/public/061302.PNG")
@@ -7716,7 +7716,7 @@ function SL:onLUAEvent(eventID, data) end
 ---* desc 描述
 ---* msgtype 窗体事件id
 ---* callback 回调函数
----@param widget table
+---@param widget userdata
 ---@param desc string
 ---@param msgtype integer
 ---@param callback function
@@ -7751,7 +7751,7 @@ function SL:RegisterWndEvent(widget, desc, msgtype, callback) end
 ---* widget 控件对象
 ---* desc 描述
 ---* msgtype 窗体事件id
----@param widget table
+---@param widget userdata
 ---@param desc string
 ---@param msgtype integer
 ---```lua
@@ -7764,7 +7764,7 @@ function SL:UnRegisterWndEvent(widget, desc, msgtype) end
 ---* desc 描述
 ---* key 属性名称
 ---* value 属性值
----@param widget table
+---@param widget userdata
 ---@param desc string
 ---@param key string
 ---@param value any
@@ -7777,7 +7777,7 @@ function SL:AddWndProperty(widget, desc, key, value) end
 ---* widget 控件对象
 ---* desc 描述
 ---* key 属性名称
----@param widget table
+---@param widget userdata
 ---@param desc string
 ---@param key string
 ---```lua
@@ -7792,7 +7792,7 @@ function SL:DelWndProperty(widget, desc, key) end
 ---* widget 控件对象
 ---* desc 描述
 ---* key 属性名称
----@param widget table
+---@param widget userdata
 ---@param desc string
 ---@param key string
 ---@return any "窗体控件自定义属性"
@@ -7812,7 +7812,7 @@ function SL:GetWndProperty(widget, desc, key) end
 ---@param eventID string
 ---@param eventTag string
 ---@param eventCB function
----@param widget table
+---@param widget userdata
 ---```lua
 ---SL:RegisterLUAEvent(LUA_EVENT_ONPLAYLEVELUP, "属性刷新", shuxing)
 ---```
@@ -7962,8 +7962,8 @@ function SL:RequestOpenWX() end
 ---@param ID integer
 ---@param mapID string
 ---@param sfxId integer
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param loop boolean
 ---@param showType integer
 ---@param time integer
@@ -8051,7 +8051,7 @@ function SL:SendLuaNetMsg(msgID, p1, p2, p3, sendStr) end
 ---* widget 绑定的界面(win)对象， 界面关闭则注销接收回调
 ---@param msgID integer
 ---@param networkCB function
----@param widget table
+---@param widget userdata
 ---```lua
 ----- 客户端注册 接收消息
 ---local function networkCB(msgID, p1, p2, p3, msgData)
@@ -8093,7 +8093,7 @@ function SL:SendNetMsg(msgID, p1, p2, p3, sendStr) end
 ---* widget 绑定的界面(win)对象， 界面关闭则注销接收回调
 ---@param msgID integer
 ---@param networkCB function
----@param widget table
+---@param widget userdata
 ---```lua
 ----- 客户端注册 接收消息
 ---local function networkCB(msgID, msgData)
@@ -8721,7 +8721,7 @@ function SL:RequestOnOffSkill(skillID) end
 
 ---模拟左键点击事件
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---SL:WinClick(widget)
 ---```
@@ -9803,7 +9803,7 @@ function SL:OpenURL(url) end
 ---@param NpcID integer
 ---@param Type integer
 ---@param enterFunc function
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```tips
 ---1. 此接口创建控件只作父控件使用
 ---   2. 此控件ID唯一且不可重复
@@ -9820,12 +9820,12 @@ function GUI:Win_Create(ID, X, Y, W, H, Main, Last, NV, EscC, IsRev, NpcID, Type
 ---* X 控件位置的横坐标
 ---* Y 控件位置的纵坐标
 ---* nimg 图片路径
----@param Parent table
+---@param Parent userdata
 ---@param ID string
 ---@param X integer
 ---@param Y integer
 ---@param nimg string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local pBg = GUI:Image_Create(testWin, "pBg", 100, 100, "res/public/061201.JPG")
 ---print("GUI:Image_Create(Parent,ID,X,Y,nimg)-----",type(pBg),pBg)
@@ -9844,7 +9844,7 @@ function GUI:Image_Create(Parent, ID, X, Y, nimg) end
 ---* endY 结束坐标y
 ---* color 颜色
 ---* alpha 透明度
----@param Parent table
+---@param Parent userdata
 ---@param ID string
 ---@param X integer
 ---@param Y integer
@@ -9855,7 +9855,7 @@ function GUI:Image_Create(Parent, ID, X, Y, nimg) end
 ---@param endY integer
 ---@param color string
 ---@param alpha integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```tips
 ---类似删除线的功能,在控件上绘制一条横线，
 ---```
@@ -9873,12 +9873,12 @@ function GUI:DrawLine_Create(Parent, ID, X, Y, width, startX, startY, endX, endY
 ---* X 控件位置的横坐标
 ---* Y 控件位置的纵坐标
 ---* nimg 图片路径
----@param Parent table
+---@param Parent userdata
 ---@param ID string
 ---@param X integer
 ---@param Y integer
 ---@param nimg string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
 ---```
@@ -9892,14 +9892,14 @@ function GUI:Button_Create(Parent, ID, X, Y, nimg) end
 ---* fontSize 字体大小
 ---* fontColor 字体颜色
 ---* str 文本
----@param Parent table
+---@param Parent userdata
 ---@param ID string
 ---@param X integer
 ---@param Y integer
 ---@param fontSize integer
 ---@param fontColor string
 ---@param str string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local str = "我的名字" or ""
 ---local Text_name = GUI:Text_Create(parent, "Text_name", 0, 0, 16, "#ffffff", str)
@@ -9914,14 +9914,14 @@ function GUI:Text_Create(Parent, ID, X, Y, fontSize, fontColor, str) end
 ---* fontColor 字体颜色,支持传空
 ---* str 文本
 ---* fontPath 字体文件路径, 例：`"fonts/stfont.fnt"`
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param fontColor string
 ---@param str string
 ---@param fontPath string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local str = "我的名字" or ""
 ---local Text_name = GUI:BmpText_Create(pBg, "Text_name", 0, 0, "#ffffff", str)
@@ -9940,17 +9940,17 @@ function GUI:BmpText_Create(parent, ID, x, y, fontColor, str, fontPath) end
 ---* itemHeight 单个字体高度
 ---* startCharMap 起始字符设置("/")
 ---* sheet 字体内容(H5专属)<br>比如图片文字是“+-0123456789”,那这个sheet的值就是"+-0123456789"
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param stringValue string
 ---@param charMapFile string
 ---@param itemWidth integer
 ---@param itemHeight integer
 ---@param startCharMap string
 ---@param sheet string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local artPath = "res/public/TextAtlasPicture.png"
 ---local Text_name = GUI:TextAtlas_Create(testWin, "Text_name", 200, 200, "2734816", artPath, 19, 25, "0")
@@ -9970,10 +9970,10 @@ function GUI:TextAtlas_Create(parent, ID, x, y, stringValue, charMapFile, itemWi
 ---* vspace 富文本行间距
 ---* hyperlinkCB 超链回调函数
 ---* defaultFontFace 默认字体
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param str string
 ---@param width integer
 ---@param fontSize integer
@@ -9981,7 +9981,7 @@ function GUI:TextAtlas_Create(parent, ID, x, y, stringValue, charMapFile, itemWi
 ---@param vspace integer
 ---@param hyperlinkCB function
 ---@param defaultFontFace string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local text ="<font color='#C0C0C0' size='16'>证明：</font>"
 ---text = text .."<br>".. "<a href='openwin#boss'><font color = '#ff0000'> 证明： </font> </a>" --链接
@@ -10015,10 +10015,10 @@ function GUI:RichText_Create(parent, ID, x, y, str, width, fontSize, fontColor, 
 ---* hyperlinkCB 超链回调函数
 ---* fontPath 字体文件路径
 ---* outlineParam 描边参数 <br>outlineSize: 描边大小 <br>outlineColor: 描边颜色 C3B <br> (描边颜色 例 : <br>`SL:ConvertColorFromHexString("#FFFFFF")`)
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param str string
 ---@param width integer
 ---@param fontSize integer
@@ -10027,7 +10027,7 @@ function GUI:RichText_Create(parent, ID, x, y, str, width, fontSize, fontColor, 
 ---@param hyperlinkCB function
 ---@param fontPath string
 ---@param outlineParam table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local returnVal=GUI:RichTextFCOLOR_Create(testWin, "rich", 300, 300, "<灼伤：%s几率灼烧目标/FCOLOR=254>\\<每秒燃烧目标5%生命值/FCOLOR=249>", 600, 16, "#28EF01", 5)
 ---print("GUI:RichTextFCOLOR_Create(parent, ID, x, y, str, width, fontSize, color, vspace, hyperlinkCB, fontPath, outlineParam)--------",type(returnVal),returnVal)
@@ -10041,13 +10041,13 @@ function GUI:RichTextFCOLOR_Create(parent, ID, x, y, str, width, fontSize, color
 ---* y 位置 纵坐标
 ---* width 富文本控件最大宽度
 ---* vspace 富文本行间距
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param vspace integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local returnVal=GUI:RichTextCombine_Create(testWin, "richTxt", 300, 300, 300, 5)
 ---print("GUI:RichTextCombine_Create(parent, ID, x, y, width, vspace)--------",type(returnVal),returnVal)
@@ -10090,13 +10090,13 @@ function GUI:RichTextCombine_Create(parent, ID, x, y, width, vspace) end
 ---* y 位置 纵坐标
 ---* type cell类型 <br> 文本类型：1或TEXT<br>节点类型：2或NODE<br>换行类型：3 或 NEWLINE
 ---* param 额外参数, 参考上面的提示哈:
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param type integer|string
 ---@param param table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```tips
 ---node             = 节点类型必需参数 object 控件对象
 ---color            = 颜色值 默认: "#FFFFFF"
@@ -10132,17 +10132,17 @@ function GUI:RichTextCombineCell_Create(parent, ID, x, y, type, param) end
 ---* str 文本内容
 ---* scrollTime 滚动时长 (秒)
 ---* fontPath 字体文件路径
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param fontSize integer
 ---@param fontColor integer
 ---@param str string
 ---@param scrollTime integer
 ---@param fontPath string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local returnVal=GUI:ScrollText_Create(GUI:Attach_LeftBottom(), "scrollText", 300, 300, 50, 16, "#000000", "这是一串神奇的文本内容",10)
 ---print("GUI:ScrollText_Create--------",type(returnVal),returnVal)
@@ -10154,11 +10154,11 @@ function GUI:ScrollText_Create(parent, ID, x, y, width, fontSize, fontColor, str
 ---* ID 唯一ID
 ---* x 位置 横坐标
 ---* y 位置 纵坐标
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
----@return table "成功时返回控件对象，失败时返回空"
+---@param x number
+---@param y number
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local node = GUI:Node_Create(parent, "node", 0, 0)
 ---```
@@ -10171,13 +10171,13 @@ function GUI:Node_Create(parent, ID, x, y) end
 ---* y 位置 纵坐标
 ---* width 宽
 ---* height 高
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local returnVal=GUI:Widget_Create(parent, "widgetID", 100, 100, 300, 300)
 ---print("GUI:Widget_Create(parent, ID, x, y, width, height)--------",type(returnVal),returnVal)
@@ -10190,12 +10190,12 @@ function GUI:Widget_Create(parent, ID, x, y, width, height) end
 ---* x 位置 横坐标
 ---* y 位置 纵坐标
 ---* setData 配置数据
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param setData table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local setData  = {}
 ---setData.index = 4                     -- 物品Index
@@ -10238,14 +10238,14 @@ function GUI:ItemShow_Create(parent, ID, x, y, setData) end
 ---* img 放置框底图资源路径
 ---* boxindex 放置框 唯一ID
 ---* stdmode 允许传入的StdMode ("*": 所有 、单个用number 、多个用table)
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param img string
 ---@param boxindex integer
 ---@param stdmode string/number/table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local returnVal=GUI:ItemBox_Create(parent, "itemBox", 250, 250, "res/public/061101.JPG", 613, 25)
 ---print("GUI:ItemBox_Create--------",type(returnVal),returnVal)
@@ -10259,13 +10259,13 @@ function GUI:ItemBox_Create(parent, ID, x, y, img, boxindex, stdmode) end
 ---* y 位置 纵坐标
 ---* nimg 正常图片路径
 ---* pimg 选中图片路径
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param nimg string
 ---@param pimg string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local nimg = "res/private/gui_edit/CheckBox_Normal.png"
 ---local pimg = "res/private/gui_edit/CheckBox_Press.png"
@@ -10281,14 +10281,14 @@ function GUI:CheckBox_Create(parent, ID, x, y, nimg, pimg) end
 ---* width 宽度
 ---* height 高度
 ---* fontSize 字体大小
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
 ---@param fontSize integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
 ---```
@@ -10302,14 +10302,14 @@ function GUI:TextInput_Create(parent, ID, x, y, width, height, fontSize) end
 ---* barimg 滚动条背景图片
 ---* pbarimg 滚动条图片
 ---* nimg 滚动条拖动块图片
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param barimg string
 ---@param pbarimg string
 ---@param nimg string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local barimg = "res/private/new_setting/bg_progress.png"
 ---local pbarimg = "res/private/new_setting/bg_progress2.png"
@@ -10324,12 +10324,12 @@ function GUI:Slider_Create(parent, ID, x, y, barimg, pbarimg, nimg) end
 ---* x 位置 横坐标
 ---* y 位置 纵坐标
 ---* img 图片路径
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param img string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local ui_img ="res/public/061101.JPG"
 ---local heroProgress = GUI:ProgressTimer_Create(parent, "heroProgress", 100, 100, ui_img)
@@ -10344,13 +10344,13 @@ function GUI:ProgressTimer_Create(parent, ID, x, y, img) end
 ---* y 位置 纵坐标
 ---* nimg 图片路径
 ---* direction 方向：<br>0 从左到右<br>1 从右到左
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param nimg string
 ---@param direction integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local imgBar ="res/public/061201.JPG"
 ---local loadingBar = GUI:LoadingBar_Create(parent, "loadingBar", 0, 0, imgBar, 0)
@@ -10369,17 +10369,17 @@ function GUI:LoadingBar_Create(parent, ID, x, y, nimg, direction) end
 ---* act 0 待机<br>1 走<br>2 攻击<br>3 施法 <br>4 死亡<br>5 跑步
 ---* dir 方向
 ---* speed 播放速度
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param effecttype integer
 ---@param effectid integer
 ---@param sex integer
 ---@param act integer
 ---@param dir integer
 ---@param speed integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```tips
 ---1. 请勿自行给特效设置锚点
 ---```
@@ -10400,17 +10400,17 @@ function GUI:Effect_Create(parent, ID, x, y, effecttype, effectid, sex, act, dir
 ---* useStaticScale 是否使用game_data配置staticSacle数据, 默认忽略
 ---* job 职业id 012 战法道等新增职业
 ---* ext_param 额外参数列表
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param sex integer
 ---@param feature table
 ---@param scale integer
 ---@param useStaticScale boolean
 ---@param job integer
 ---@param ext_param table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ----- feature 使用方法
 ---！！除特效ID外 其余装备ID传入对应装备数据的Looks参数.
@@ -10445,14 +10445,14 @@ function GUI:UIModel_Create(parent, ID, x, y, sex, feature, scale, useStaticScal
 ---* width 宽度
 ---* height 长度
 ---* isClip 是否裁切
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
 ---@param isClip boolean
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local layout = GUI:Layout_Create(parent, "layout", 0, 0, 100, 100, false)
 ---```
@@ -10469,17 +10469,17 @@ function GUI:Layout_Create(parent, ID, x, y, width, height, isClip) end
 ---* cellWid 单个cell 宽
 ---* cellHei 单个cell 高
 ---* num 需创建cell个数
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
 ---@param direction integer
 ---@param cellWid integer
 ---@param cellHei integer
 ---@param num integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local winWidth = 900
 ---local winHeight = 600
@@ -10496,14 +10496,14 @@ function GUI:TableView_Create(parent, ID, x, y, width, height, direction, cellWi
 ---* width 宽度
 ---* height 高度
 ---* direction 1：垂直; 2：水平
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
 ---@param direction integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 0, 0, 300, 500, 1)
 ---```
@@ -10516,13 +10516,13 @@ function GUI:ScrollView_Create(parent, ID, x, y, width, height, direction) end
 ---* y 位置 纵坐标
 ---* width 宽度
 ---* height 高度
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
 ---print("GUI:PageView_Create----------",type(pageView),pageView)
@@ -10538,15 +10538,15 @@ function GUI:PageView_Create(parent, ID, x, y, width, height) end
 ---* h 高度
 ---* createCB 创建子节点内容回调 [函数返回 widget]
 ---* activeCB 判断是否需要激活/创建 [函数返回 boolean值]
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param w integer
 ---@param h integer
 ---@param createCB function
 ---@param activeCB function
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local listviewCells = GUI:ListView_Create(parent, "listviewCells", 200, 80, 587, 200, 1)
 ---for i = 1, 10 do
@@ -10588,16 +10588,16 @@ function GUI:QuickCell_Create(parent, ID, x, y, w, h, createCB, activeCB) end
 ---* beginframe 起始帧, 默认1
 ---* finishframe 结束帧
 ---* ext 附加参数{<br>speed=播放速度(毫秒),<br>count=图片数量,<br>loop=播放次数(-1=循环),<br> finishhide=播放结束是否隐藏(1=隐藏),<br>callback=播放结束回调}
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param prefix string
 ---@param suffix string
 ---@param beginframe integer
 ---@param finishframe integer
 ---@param ext table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local ext = {
 ---    count = 10,
@@ -10615,12 +10615,12 @@ function GUI:Frames_Create(parent, ID, x, y, prefix, suffix, beginframe, finishf
 ---* x 位置 横坐标
 ---* y 位置 纵坐标
 ---* res 粒子特效资源路径 plist文件
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param res string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local widget = GUI:ParticleEffect_Create(GUI:Attach_LeftBottom(), "TT", 568, 320, "res/private/particles/petal_1.plist")
 ---GUI:ParticleEffect_setDuration(widget, -1)
@@ -10638,16 +10638,16 @@ function GUI:ParticleEffect_Create(parent, ID, x, y, res) end
 ---* trackIndex 索引值
 ---* name 动画名
 ---* loop 动画是否循环
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param jsonPath string
 ---@param atlasPath string
 ---@param trackIndex integer
 ---@param name string
 ---@param loop boolean
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```tips
 ---1. 版本：3.8.75
 ---```
@@ -10668,15 +10668,15 @@ function GUI:SpineAnim_Create(parent, ID, x, y, jsonPath, atlasPath, trackIndex,
 ---* height 高
 ---* from 控件来自(界面位置) 官方默认的可参照GUIDefine.ItemFrom, <br>自定义类型的示例 : <br>`GUIDefine.ItemFrom.xxx` <br>[xxx: 自定义类型名]
 ---* ext 额外参数<br>beginMoveCB : 开始移动回调 <br>endMoveCB : 结束移动回调<br>cancelMoveCB : 取消移动回调 <br>equipPos: 放置装备的装备位置【来源 <br>`GUIDefine.ItemFrom.PALYER_EQUIP` 时生效】<br>pcDoubleCB : pc双击回调 <br> mouseScrollCB: 鼠标滚轮回调
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
 ---@param from integer
 ---@param ext table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local bg = GUI:Image_Create(GUI:Attach_LeftBottom(), "bg_TT", 400, 300, "res/public/btn_npcsm_01.png")
 ---local function beginMoveCallBack(node)
@@ -10731,10 +10731,10 @@ function GUI:MoveWidget_Create(parent, ID, x, y, width, height, from, ext) end
 ---* clearHei 刮除高度, 默认16
 ---* moveTime 刮除时间, 单位: 秒
 ---* beginTime 开始点击到结束触发间隔, 单位: 秒
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param showImg string
 ---@param maskImg string
 ---@param clearHei integer
@@ -10758,15 +10758,15 @@ function GUI:ScrapePic_Create(parent, ID, x, y, showImg, maskImg, clearHei, move
 ---* height 高度
 ---* scrollGap 滑动间隙, 默认100
 ---* param 子节点参数, 参考如下
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
 ---@param scrollGap integer
 ---@param param table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local param = {
 ---    [1] = {scale = 0.4, img = "res/public/word_fubentg_1.png"},
@@ -10790,14 +10790,14 @@ function GUI:RotateView_Create(parent, ID, x, y, width, height, scrollGap, param
 ---* pos 装备装戴位置
 ---* isHero 是否英雄装备
 ---* data 额外参数
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param pos integer
 ---@param isHero boolean
 ---@param data table
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```tips
 ---data参数详细说明:
 ---参数名:lookPlayer; 类型:boolean; 说明:是否查看其他玩家装备
@@ -10833,10 +10833,10 @@ function GUI:EquipShow_Create(parent, ID, x, y, pos, isHero, data) end
 ---* param1 渐变参数（param1，param2组合<br>1，0为横向渐变<br>0，1为纵向渐变）
 ---* param2 渐变参数（param1，param2组合<br>1，0为横向渐变<br>0，1为纵向渐变）
 ---* fontPath 字体文件路径<br>例: `fonts/font.ttf`
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param size integer
 ---@param txt string
 ---@param color1 string
@@ -10844,7 +10844,7 @@ function GUI:EquipShow_Create(parent, ID, x, y, pos, isHero, data) end
 ---@param param1 integer
 ---@param param2 integer
 ---@param fontPath string
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local txt = GUI:GradientColorText_Create(layer, "shwha", 200, 200, 16, "啊啊啊啊啊", "#FF0000", "#0F0000", 1, 0)
 ---GUI:GradientColorText_setString(txt, "1, 0  棍棍尴尴尬尬哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈")
@@ -10864,14 +10864,14 @@ function GUI:GradientColorText_Create(parent, ID, x, y, size, txt, color1, color
 ---* width 容器宽度
 ---* height 容器高度
 ---* direction 1：垂直; 2：水平
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
 ---@param direction integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ----- 创建列表容器
 ---local listView = GUI:ListView_Create(parent, "listView", 350, 200, 400, 200, 1)
@@ -10895,13 +10895,13 @@ function GUI:ListView_Create(parent, ID, x, y, width, height, direction) end
 ---* y 位置 纵坐标
 ---* width 容器宽度
 ---* height 容器高度
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param width integer
 ---@param height integer
----@return table "成功时返回控件对象，失败时返回空"
+---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
 ---local vedioParent = GUI:Win_Create("testWin", 0, 0, 0, 0, false, false, true, true)
 ---
@@ -10962,10 +10962,10 @@ function GUI:VideoPlayer_Create(parent, ID, x, y, width, height) end
 ---* y y坐标
 ---* type 0: 图片 1: 特效
 ---* param 图片路径/特效id<br>type=参数时默认为F6设置; type=1 时参数必填
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param type integer
 ---@param param string
 ---@return table "红点控件"
@@ -10992,10 +10992,10 @@ function GUI:RedDot_Create(parent, ID, x, y, type, param) end
 ---* titleText 标题文本
 ---* fontSize 字体大小，默认16
 ---* simplenum 1: 简化数字显示
----@param parent table
+---@param Parent userdata
 ---@param ID string
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param data table
 ---@return table "成功时返回控件对象，失败时返回空 "
 ---```tips
@@ -11025,7 +11025,7 @@ function GUI:CostItem_Create(parent, ID, x, y, data) end
 ---界面弹窗特效1
 ---* widget 控件对象
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param timelineCB function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11038,7 +11038,7 @@ function GUI:Timeline_Window1(widget, timelineCB) end
 ---界面弹窗特效2
 ---* widget 控件对象
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param timelineCB function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11051,7 +11051,7 @@ function GUI:Timeline_Window2(widget, timelineCB) end
 ---界面弹窗特效3
 ---* widget 控件对象
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param timelineCB function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11064,7 +11064,7 @@ function GUI:Timeline_Window3(widget, timelineCB) end
 ---界面弹窗特效4
 ---* widget 控件对象
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param timelineCB function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11077,7 +11077,7 @@ function GUI:Timeline_Window4(widget, timelineCB) end
 ---界面弹窗特效5
 ---* widget 控件对象
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param timelineCB function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11090,7 +11090,7 @@ function GUI:Timeline_Window5(widget, timelineCB) end
 ---界面弹窗特效6
 ---* widget 控件对象
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param timelineCB function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11116,7 +11116,7 @@ function GUI:Timeline_SetTag(action, tag) end
 
 ---停止所有动画
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
 ---GUI:Timeline_EaseSineIn_MoveTo(aniImg, {x=30,y=30}, 3, function()
@@ -11129,7 +11129,7 @@ function GUI:Timeline_StopAll(widget) end
 ---通过标记停止动画
 ---* widget 控件对象
 ---* tag 标记值
----@param widget table
+---@param widget userdata
 ---@param tag integer
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11145,7 +11145,7 @@ function GUI:Timeline_StopByTag(widget, tag) end
 ---* widget 控件对象
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param timelineCB function
 ---@return userdata "Action"
@@ -11162,7 +11162,7 @@ function GUI:Timeline_FadeOut(widget, time, timelineCB) end
 ---* widget 控件对象
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param timelineCB function
 ---@return userdata "Action"
@@ -11181,7 +11181,7 @@ function GUI:Timeline_FadeIn(widget, time, timelineCB) end
 ---* value 透明度(0-255)
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---@param time integer
 ---@param timelineCB function
@@ -11201,7 +11201,7 @@ function GUI:Timeline_FadeTo(widget, value, time, timelineCB) end
 ---* value 缩放比例(0-100)
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---@param time integer
 ---@param timelineCB function
@@ -11224,7 +11224,7 @@ function GUI:Timeline_ScaleTo(widget, value, time, timelineCB) end
 ---* value 缩放比例(0-100)
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---@param time integer
 ---@param timelineCB function
@@ -11247,7 +11247,7 @@ function GUI:Timeline_ScaleBy(widget, value, time, timelineCB) end
 ---* value 旋转角度(0-360)
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---@param time integer
 ---@param timelineCB function
@@ -11289,7 +11289,7 @@ function GUI:GradientColorText_setColor(object, color1, color2) end
 ---* value 旋转角度(0-360)
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---@param time integer
 ---@param timelineCB function
@@ -11308,7 +11308,7 @@ function GUI:Timeline_RotateBy(widget, value, time, timelineCB) end
 ---* value {x = 0, y = 0}
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param value table
 ---@param time integer
 ---@param timelineCB function
@@ -11328,7 +11328,7 @@ function GUI:Timeline_MoveTo(widget, value, time, timelineCB) end
 ---* value {x = 0, y = 0}
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param value table
 ---@param time integer
 ---@param timelineCB function
@@ -11348,7 +11348,7 @@ function GUI:Timeline_MoveBy(widget, value, time, timelineCB) end
 ---* value 闪烁次数
 ---* time 时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---@param time integer
 ---@param timelineCB function
@@ -11369,10 +11369,10 @@ function GUI:Timeline_Blink(widget, value, time, timelineCB) end
 ---* x X轴震动像素
 ---* y Y轴震动像素
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param time integer
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---@param timelineCB function
 ---@return userdata "Action"
 ---```lua
@@ -11389,7 +11389,7 @@ function GUI:Timeline_Shake(widget, time, x, y, timelineCB) end
 ---* widget 控件对象
 ---* time 时间
 ---* angle 抖动幅度（0-360）
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param angle integer
 ---```lua
@@ -11404,7 +11404,7 @@ function GUI:Timeline_Waggle(widget, time, angle) end
 ---* widget 控件对象
 ---* time 延迟时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param timelineCB function
 ---@return userdata "Action"
@@ -11422,7 +11422,7 @@ function GUI:Timeline_DelayTime(widget, time, timelineCB) end
 ---* widget 控件对象
 ---* time 延迟时间
 ---* timelineCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param timelineCB function
 ---@return userdata "Action"
@@ -11437,7 +11437,7 @@ function GUI:Timeline_CallFunc(widget, time, timelineCB) end
 ---动画延迟显示
 ---* widget 控件对象
 ---* time 延迟时间
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@return userdata "Action"
 ---```lua
@@ -11452,7 +11452,7 @@ function GUI:Timeline_Show(widget, time) end
 ---动画延迟隐藏
 ---* widget 控件对象
 ---* time 延迟时间
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@return userdata "Action"
 ---```lua
@@ -11469,7 +11469,7 @@ function GUI:Timeline_Hide(widget, time) end
 ---* value 目标坐标位置
 ---* time 动作时间
 ---* callback 动作执行完的回调
----@param widget table
+---@param widget userdata
 ---@param value table
 ---@param time integer
 ---@param callback function
@@ -11487,7 +11487,7 @@ function GUI:Timeline_EaseSineIn_MoveTo(widget, value, time, callback) end
 ---通过标记获取动作内容
 ---* widget 控件对象
 ---* tag 动作标记
----@param widget table
+---@param widget userdata
 ---@param tag integer
 ---@return userdata "action"
 ---```lua
@@ -11504,7 +11504,7 @@ function GUI:getActionByTag(widget, tag) end
 ---* value 目标坐标位置
 ---* time 动作时间
 ---* callback 动作执行完的回调
----@param widget table
+---@param widget userdata
 ---@param value table
 ---@param time integer
 ---@param callback function
@@ -11524,7 +11524,7 @@ function GUI:Timeline_EaseSineOut_MoveTo(widget, value, time, callback) end
 ---* cur 当前数值
 ---* target 目标数值
 ---* interval 变动间隔（秒）
----@param widget table
+---@param widget userdata
 ---@param cur integer
 ---@param target integer
 ---@param interval integer
@@ -11539,8 +11539,8 @@ function GUI:Timeline_DigitChange(widget, cur, target, interval) end
 ---* x 位置 横坐标
 ---* y 位置 纵坐标
 ---@param time integer
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---```lua
 ---local action = GUI:ActionSequence(GUI:ActionMoveTo(2, 100, 100))
 ---GUI:runAction(btn_up, action)
@@ -11552,8 +11552,8 @@ function GUI:ActionMoveTo(time, x, y) end
 ---* x 位置 横坐标
 ---* y 位置 纵坐标
 ---@param time integer
----@param x integer
----@param y integer
+---@param x number
+---@param y number
 ---```lua
 ---local action = GUI:ActionSequence(GUI:ActionMoveBy(2, 100, 100))
 ---GUI:runAction(btn_up, action)
@@ -11656,7 +11656,7 @@ function GUI:DelayTime(time) end
 ---播放动作
 ---* widget 控件对象
 ---* value 动作内容
----@param widget table
+---@param widget userdata
 ---@param value table
 ---```lua
 ---local action = GUI:ActionRepeatForever(GUI:ActionSequence(GUI:ActionFadeTo(0.4, 125), GUI:ActionFadeTo(0.4, 255), GUI:DelayTime(0.6)))
@@ -11666,7 +11666,7 @@ function GUI:runAction(widget, value) end
 
 ---停止所有动作
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local action = GUI:ActionRepeatForever(GUI:ActionSequence(GUI:ActionFadeTo(0.4, 125), GUI:ActionFadeTo(0.4, 255), GUI:DelayTime(0.6)))
 ---GUI:runAction(btn_up, action)
@@ -11677,7 +11677,7 @@ function GUI:stopAllActions(widget) end
 ---通过标记停止动作
 ---* widget 控件对象
 ---* tag 动作标记
----@param widget table
+---@param widget userdata
 ---@param tag integer
 ---```lua
 ---local action = GUI:ActionRepeatForever(GUI:ActionSequence(GUI:ActionFadeTo(0.4, 125), GUI:ActionFadeTo(0.4, 255), GUI:DelayTime(0.6)))
@@ -11801,7 +11801,7 @@ function GUI:ActionEaseExponentialInOut(action) end
 
 ---播放器视频播放
 ---* widget 播放器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---GUI:VideoPlayer_play(vedioWidget)
 ---```
@@ -11809,7 +11809,7 @@ function GUI:VideoPlayer_play(widget) end
 
 ---播放器视频停止
 ---* widget 播放器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---GUI:VideoPlayer_stop(vedioWidget)
 ---```
@@ -11817,7 +11817,7 @@ function GUI:VideoPlayer_stop(widget) end
 
 ---播放器视频暂停
 ---* widget 播放器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---GUI:VideoPlayer_pause(vedioWidget)
 ---```
@@ -11825,7 +11825,7 @@ function GUI:VideoPlayer_pause(widget) end
 
 ---播放器视频恢复播放
 ---* widget 播放器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---GUI:VideoPlayer_resume(vedioWidget)
 ---```
@@ -11857,7 +11857,7 @@ function GUI:Timeline_BezierTo(time, controlPoint_1, controlPoint_2, endPosition
 ---设置层背景颜色
 ---* widget 层对象
 ---* value 色值("#000000")<br> !渐变色需传参table<br> `{"#FF0000", "#FFFFFF"}`
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local layout = GUI:Layout_Create(GUI:Attach_Center(), "layout", 200, 200, 100, 100, false)
@@ -11869,7 +11869,7 @@ function GUI:Layout_setBackGroundColor(widget, value) end
 ---设置层背景颜色类型
 ---* widget 层对象
 ---* value 类型(1单色，2渐变色)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local layout = GUI:Layout_Create(GUI:Attach_Center(), "layout", 200, 200, 100, 100, false)
@@ -11880,7 +11880,7 @@ function GUI:Layout_setBackGroundColorType(widget, value) end
 ---设置层背景颜色不透明度
 ---* widget 层对象
 ---* value 不透明度(0-255)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local layout = GUI:Layout_Create(GUI:Attach_Center(), "layout", 200, 200, 100, 100, false)
@@ -11893,7 +11893,7 @@ function GUI:Layout_setBackGroundColorOpacity(widget, value) end
 ---设置层背景是否裁切
 ---* widget 层对象
 ---* value 是否裁切
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local layout = GUI:Layout_Create(GUI:Attach_Center(), "layout", 200, 200, 100, 100, false)
@@ -11904,7 +11904,7 @@ function GUI:Layout_setClippingEnabled(widget, value) end
 ---设置层背景图片
 ---* widget 层对象
 ---* value 图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local layout = GUI:Layout_Create(GUI:Attach_Center(), "layout", 200, 200, 100, 100, false)
@@ -11918,7 +11918,7 @@ function GUI:Layout_setBackGroundImage(widget, value) end
 ---* scale9r 右边比例
 ---* scale9t 上边比例
 ---* scale9b 下边比例
----@param widget table
+---@param widget userdata
 ---@param scale9l integer
 ---@param scale9r integer
 ---@param scale9t integer
@@ -11931,7 +11931,7 @@ function GUI:Layout_setBackGroundImageScale9Slice(widget, scale9l, scale9r, scal
 
 ---移除层背景图片设置
 ---* widget 层对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local layout = GUI:Layout_Create(GUI:Attach_Center(), "layout", 200, 200, 100, 100, false)
 ---GUI:Layout_setBackGroundImage(layout, "res/public/061302.PNG")
@@ -11942,7 +11942,7 @@ function GUI:Layout_removeBackGroundImage(widget) end
 ---设置列表容器对齐方式
 ---* widget 容器对象
 ---* value 0：左对齐<br>1：右对齐<br>2：水平居中<br>3：顶对齐<br>4：底对齐<br>5：垂直居中
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -11953,7 +11953,7 @@ function GUI:ListView_setGravity(widget, value) end
 ---设置列表容器滑动方向
 ---* widget 容器对象
 ---* value 1：垂直; 2：水平
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -11964,7 +11964,7 @@ function GUI:ListView_setDirection(widget, value) end
 ---设置列表容器间隔
 ---* widget 容器对象
 ---* value 间隔大小(50像素)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -11975,7 +11975,7 @@ function GUI:ListView_setItemsMargin(widget, value) end
 ---设置列表容器是否有裁切
 ---* widget 容器对象
 ---* value 是否有裁切
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -11986,7 +11986,7 @@ function GUI:ListView_setClippingEnabled(widget, value) end
 ---设置列表容器背景颜色
 ---* widget tableView对象
 ---* value 十六进制颜色值 例: "#FFFFFF"
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local tableView = GUI:TableView_Create(wnd, "TABLEVIEW", 200, 100, 600, 400, 1, 600, 40, 200)
@@ -11997,7 +11997,7 @@ function GUI:TableView_setBackGroundColor(widget, value) end
 ---设置列表容器背景颜色类型
 ---* widget 容器对象
 ---* value 1：单色，2：渐变色
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -12008,7 +12008,7 @@ function GUI:ListView_setBackGroundColorType(widget, value) end
 ---设置列表容器背景透明度
 ---* widget 容器对象
 ---* value 透明度(0-255)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -12019,7 +12019,7 @@ function GUI:ListView_setBackGroundColorOpacity(widget, value) end
 ---设置列表容器背景图片
 ---* widget 容器对象
 ---* value 图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -12033,7 +12033,7 @@ function GUI:ListView_setBackGroundImage(widget, value) end
 ---* scale9r 右边比例
 ---* scale9t 上边比例
 ---* scale9b 下边比例
----@param widget table
+---@param widget userdata
 ---@param scale9l integer
 ---@param scale9r integer
 ---@param scale9t integer
@@ -12047,7 +12047,7 @@ function GUI:ListView_setBackGroundImageScale9Slice(widget, scale9l, scale9r, sc
 ---设置列表容器滚动事件
 ---* widget 容器对象
 ---* eventCB 事件函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -12062,7 +12062,7 @@ function GUI:ListView_addOnScrollEvent(widget, eventCB) end
 ---* percent 百分比(0-100)
 ---* time 时间(秒)
 ---* bool 是否衰减滚动速度
----@param widget table
+---@param widget userdata
 ---@param percent integer
 ---@param time integer
 ---@param bool boolean
@@ -12077,7 +12077,7 @@ function GUI:ListView_scrollToPercentVertical(widget, percent, time, bool) end
 ---* percent 百分比(0-100)
 ---* time 时间(秒)
 ---* bool 是否衰减滚动速度
----@param widget table
+---@param widget userdata
 ---@param percent integer
 ---@param time integer
 ---@param bool boolean
@@ -12089,7 +12089,7 @@ function GUI:ListView_scrollToPercentHorizontal(widget, percent, time, bool) end
 
 ---添加鼠标滚轮滑动列表容器事件
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
 ---GUI:ListView_addMouseScrollPercent(listView)
@@ -12100,7 +12100,7 @@ function GUI:ListView_addMouseScrollPercent(widget) end
 ---* widget 容器对象
 ---* value1 宽度 或 尺寸
 ---* value2 高度
----@param widget table
+---@param widget userdata
 ---@param value1 integer|table
 ---@param value2 integer
 ---```lua
@@ -12115,7 +12115,7 @@ function GUI:ScrollView_setInnerContainerSize(widget, value1, value2) end
 ---设置滚动容器滚动方向
 ---* widget 容器对象
 ---* value 1：垂直; 2：水平
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 200, 200, 300, 500, 1)
@@ -12126,7 +12126,7 @@ function GUI:ScrollView_setDirection(widget, value) end
 ---设置滚动容器是否有回弹
 ---* widget 容器对象
 ---* value 是否有回弹
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 200, 200, 300, 500, 1)
@@ -12137,7 +12137,7 @@ function GUI:ScrollView_setBounceEnabled(widget, value) end
 ---设置滚动容器是否有裁切
 ---* widget 容器对象
 ---* value 是否有裁切
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 200, 200, 300, 500, 1)
@@ -12148,7 +12148,7 @@ function GUI:ScrollView_setClippingEnabled(widget, value) end
 ---设置滚动容器背景颜色
 ---* widget 容器对象
 ---* value 色值("#000000")<br> !渐变色需传参table<br> `{"#FF0000", "#FFFFFF"}`
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 200, 200, 300, 500, 1)
@@ -12159,7 +12159,7 @@ function GUI:ScrollView_setBackGroundColor(widget, value) end
 ---设置滚动容器背景颜色类型
 ---* widget 容器对象
 ---* value 1：单色，2：渐变色
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 0, 0, 300, 500, 1)
@@ -12170,7 +12170,7 @@ function GUI:ScrollView_setBackGroundColorType(widget, value) end
 ---设置滚动容器背景透明度
 ---* widget 容器对象
 ---* value 透明度(0-255)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 0, 0, 300, 500, 1)
@@ -12181,7 +12181,7 @@ function GUI:ScrollView_setBackGroundColorOpacity(widget, value) end
 ---设置滚动容器背景图片
 ---* widget 容器对象
 ---* value 图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 0, 0, 300, 500, 1)
@@ -12195,7 +12195,7 @@ function GUI:ScrollView_setBackGroundImage(widget, value) end
 ---* scale9r 右边比例
 ---* scale9t 上边比例
 ---* scale9b 下边比例
----@param widget table
+---@param widget userdata
 ---@param scale9l integer
 ---@param scale9r integer
 ---@param scale9t integer
@@ -12208,7 +12208,7 @@ function GUI:ScrollView_setBackGroundImageScale9Slice(widget, scale9l, scale9r, 
 
 ---移除滚动容器背景图片设置
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(parent, "scrollView", 0, 0, 300, 500, 1)
 ---GUI:ScrollView_removeBackGroundImage(scrollView)
@@ -12218,7 +12218,7 @@ function GUI:ScrollView_removeBackGroundImage(widget) end
 ---设置滚动容器滚动事件
 ---* widget 容器对象
 ---* eventCB 事件函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(GUI:Attach_Top(), "scrollView", 0, 0, 300, 500, 1)
@@ -12231,7 +12231,7 @@ function GUI:ScrollView_addOnScrollEvent(widget, eventCB) end
 ---滚动容器加载子节点
 ---* widget 容器对象
 ---* value 子节点对象
----@param widget table
+---@param widget userdata
 ---@param value table
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(GUI:Attach_Bottom(), "scrollView", 0, 0, 300, 500, 1)
@@ -12242,7 +12242,7 @@ function GUI:ScrollView_addChild(widget, value) end
 
 ---滚动容器删除所有子节点
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---GUI:ScrollView_removeAllChildren(scrollView)
 ---```
@@ -12252,7 +12252,7 @@ function GUI:ScrollView_removeAllChildren(widget) end
 ---* widget 容器对象
 ---* time 时间
 ---* boolvalue 是否衰减（顶部）
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param boolvalue boolean
 ---```lua
@@ -12265,7 +12265,7 @@ function GUI:ScrollView_scrollToTop(widget, time, boolvalue) end
 ---* widget 容器对象
 ---* time 时间
 ---* boolvalue 是否衰减（底部）
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param boolvalue boolean
 ---```lua
@@ -12278,7 +12278,7 @@ function GUI:ScrollView_scrollToBottom(widget, time, boolvalue) end
 ---* widget 容器对象
 ---* time 时间
 ---* boolvalue 是否衰减（顶左）
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param boolvalue boolean
 ---```lua
@@ -12291,7 +12291,7 @@ function GUI:ScrollView_scrollToTopLeft(widget, time, boolvalue) end
 ---* widget 容器对象
 ---* time 时间
 ---* boolvalue 是否衰减（右边）
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param boolvalue boolean
 ---```lua
@@ -12304,7 +12304,7 @@ function GUI:ScrollView_scrollToRight(widget, time, boolvalue) end
 ---* widget 容器对象
 ---* time 时间
 ---* boolvalue 是否衰减（左边）
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param boolvalue boolean
 ---```lua
@@ -12318,7 +12318,7 @@ function GUI:ScrollView_scrollToLeft(widget, time, boolvalue) end
 ---* percent 百分比
 ---* time 时间
 ---* boolvalue 是否衰减滚动速度
----@param widget table
+---@param widget userdata
 ---@param percent integer
 ---@param time integer
 ---@param boolvalue boolean
@@ -12336,7 +12336,7 @@ function GUI:ScrollView_scrollToPercentVertical(widget, percent, time, boolvalue
 ---* percent 百分比
 ---* time 时间
 ---* boolvalue 是否衰减滚动速度
----@param widget table
+---@param widget userdata
 ---@param percent integer
 ---@param time integer
 ---@param boolvalue boolean
@@ -12352,7 +12352,7 @@ function GUI:ScrollView_scrollToPercentHorizontal(widget, percent, time, boolval
 ---滚动容器添加滚动条
 ---* parent 父节点对象
 ---* param 布局参数
----@param parent table
+---@param parent userdata
 ---@param param table
 ---```lua
 ---GUI:SetScrollViewVerticalBar(parent, {
@@ -12376,7 +12376,7 @@ function GUI:SetScrollViewVerticalBar(parent, param) end
 ---设置翻页容器是否有裁切
 ---* widget 容器对象
 ---* value 是否有裁切
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -12387,7 +12387,7 @@ function GUI:PageView_setClippingEnabled(widget, value) end
 ---设置翻页容器背景颜色
 ---* widget 容器对象
 ---* value 色值("#000000")<br> !渐变色需传参table<br> `{"#FF0000", "#FFFFFF"}`
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -12398,7 +12398,7 @@ function GUI:PageView_setBackGroundColor(widget, value) end
 ---设置翻页容器背景颜色类型
 ---* widget 容器对象
 ---* value 1：单色，2：渐变色
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -12409,7 +12409,7 @@ function GUI:PageView_setBackGroundColorType(widget, value) end
 ---设置翻页容器背景透明度
 ---* widget 容器对象
 ---* value 透明度(0-255)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -12420,7 +12420,7 @@ function GUI:PageView_setBackGroundColorOpacity(widget, value) end
 ---设置翻页容器滚动到子页面
 ---* widget 容器对象
 ---* index 子页面序列号
----@param widget table
+---@param widget userdata
 ---@param index integer
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -12431,7 +12431,7 @@ function GUI:PageView_scrollToItem(widget, index) end
 ---设置翻页容器当前子页序列号
 ---* widget 容器对象
 ---* index 子页面序列号
----@param widget table
+---@param widget userdata
 ---@param index integer
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -12442,7 +12442,7 @@ function GUI:PageView_setCurrentPageIndex(widget, index) end
 ---设置子cell创建方法
 ---* widget tableView对象
 ---* func 创建函数 传入参数(cell父节点, cell下标)
----@param widget table
+---@param widget userdata
 ---@param func function
 ---```lua
 ---local winWidth = 900
@@ -12466,7 +12466,7 @@ function GUI:TableView_setCellCreateEvent(widget, func) end
 ---设置列表容器滚动方向
 ---* widget tableView对象
 ---* value 滚动方向 1：垂直; 2：水平
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local tableView = GUI:TableView_Create(wnd, "TABLEVIEW", 200, 100, 600, 400, 1, 600, 40, 200)
@@ -12478,9 +12478,9 @@ function GUI:TableView_setDirection(widget, value) end
 ---* widget tableView对象
 ---* x 偏移坐标X
 ---* y 偏移坐标Y
----@param widget table
----@param x integer
----@param y integer
+---@param widget userdata
+---@param x number
+---@param y number
 ---```lua
 ---local tableView = GUI:TableView_Create(wnd, "TABLEVIEW", 200, 100, 600, 400, 1, 600, 40, 200)
 ---GUI:TableView_setContentOffset(tableView, 3, 3)
@@ -12490,7 +12490,7 @@ function GUI:TableView_setContentOffset(widget, x, y) end
 ---添加列表容器点击cell事件
 ---* widget tableView对象
 ---* func 点击cell触发回调
----@param widget table
+---@param widget userdata
 ---@param func function
 ---```lua
 ---local winWidth = 900
@@ -12530,7 +12530,7 @@ function GUI:TableView_addOnTouchedCellEvent(widget, func) end
 ---列表容器滚动到某cell位置
 ---* widget tableView对象
 ---* index 对应cell下标
----@param widget table
+---@param widget userdata
 ---@param index integer
 ---```lua
 ---local tableView = GUI:TableView_Create(wnd, "TABLEVIEW", 200, 100, 600, 400, 1, 600, 40, 200)
@@ -12541,7 +12541,7 @@ function GUI:TableView_scrollToCell(widget, index) end
 ---添加容器滚动回调
 ---* widget tableView对象
 ---* func 容器滚动回调函数 param1: TableView控件
----@param widget table
+---@param widget userdata
 ---@param func function
 ---```lua
 ---local tableView = GUI:TableView_Create(wnd, "TABLEVIEW", 200, 100, 600, 400, 1, 600, 40, 200)
@@ -12552,7 +12552,7 @@ function GUI:TableView_addOnScrollEvent(widget, func) end
 ---设置容器cell个数
 ---* widget tableView对象
 ---* func cell总个数(int)/返回cell总个数的函数(func)
----@param widget table
+---@param widget userdata
 ---@param func integer|function
 ---```lua
 ---local tableView = GUI:TableView_Create(wnd, "TABLEVIEW", 200, 100, 600, 400, 1, 600, 40, 200)
@@ -12562,7 +12562,7 @@ function GUI:TableView_setTableViewCellsNumHandler(widget, func) end
 
 ---移除列表容器背景图片设置
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
 ---GUI:ListView_setBackGroundImage(listView, "res/public/061302.PNG")
@@ -12573,7 +12573,7 @@ function GUI:ListView_removeBackGroundImage(widget) end
 ---列表容器加载子节点
 ---* widget 容器对象
 ---* value 子节点对象（末尾加载）
----@param widget table
+---@param widget userdata
 ---@param value table
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -12585,7 +12585,7 @@ function GUI:ListView_pushBackCustomItem(widget, value) end
 ---* widget 容器对象
 ---* value 子节点对象
 ---* value2 序列号（index = 1）
----@param widget table
+---@param widget userdata
 ---@param value table
 ---@param value2 integer
 ---```lua
@@ -12597,7 +12597,7 @@ function GUI:ListView_insertCustomItem(widget, value, value2) end
 
 ---列表容器删除所有子节点
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
 ---GUI:ListView_pushBackCustomItem(listView, cell)
@@ -12607,7 +12607,7 @@ function GUI:ListView_removeAllItems(widget) end
 ---通过序列号删除列表容器子节点
 ---* widget 容器对象
 ---* index 序列号位置
----@param widget table
+---@param widget userdata
 ---@param index integer
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -12619,7 +12619,7 @@ function GUI:ListView_removeItemByIndex(widget, index) end
 ---列表容器删除子节点
 ---* widget 容器对象
 ---* item 子节点对象
----@param widget table
+---@param widget userdata
 ---@param item table
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -12631,7 +12631,7 @@ function GUI:ListView_removeChild(widget, item) end
 ---跳转到列表容器序列号节点位置
 ---* widget 容器对象
 ---* value 序列号位置
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---GUI:ListView_jumpToItem(listView, 10)
@@ -12642,7 +12642,7 @@ function GUI:ListView_jumpToItem(widget, value) end
 ---* widget 容器对象
 ---* time 时间
 ---* boolvalue 滑动速度是否减弱
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param boolvalue boolean
 ---```lua
@@ -12654,7 +12654,7 @@ function GUI:ListView_scrollToTop(widget, time, boolvalue) end
 ---* widget 容器对象
 ---* time 时间
 ---* boolvalue 滑动速度是否减弱
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param boolvalue boolean
 ---```lua
@@ -12664,7 +12664,7 @@ function GUI:ListView_scrollToBottom(widget, time, boolvalue) end
 
 ---列表容器刷新
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
 ---GUI:ListView_doLayout(listView)
@@ -12673,7 +12673,7 @@ function GUI:ListView_doLayout(widget) end
 
 ---列表容器可见区域绘制
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
 ---GUI:ListView_paintItems(listView)
@@ -12682,7 +12682,7 @@ function GUI:ListView_paintItems(widget) end
 
 ---列表容器可见区域自动绘制
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
 ---GUI:ListView_autoPaintItems(widget)
@@ -12692,7 +12692,7 @@ function GUI:ListView_autoPaintItems(widget) end
 ---翻页容器加载子页面
 ---* widget 容器对象
 ---* value 子页面对象
----@param widget table
+---@param widget userdata
 ---@param value table
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -12709,7 +12709,7 @@ function GUI:PageView_addPage(widget, value) end
 ---翻页容器加监听事件
 ---* widget 容器对象
 ---* eventCB 监听事件函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -12721,7 +12721,7 @@ function GUI:PageView_addOnEvent(widget, eventCB) end
 
 ---加载容器所有列表数据
 ---* widget tableView对象
----@param widget table
+---@param widget userdata
 ---```tips
 ---结合GUI:TableView_setTableViewCellsNumHandler方法 改变数据使用
 ---tableView相关接口在设置后,调用当前接口重新加载
@@ -12735,7 +12735,7 @@ function GUI:TableView_reloadData(widget) end
 ---添加容器鼠标滚动事件
 ---* widget tableView对象
 ---* func 鼠标滚动回调函数传参{widget = widget, x = 滚动坐标X, y = 滚动坐标Y} [不填采用官方默认添加滚动]
----@param widget table
+---@param widget userdata
 ---@param func function
 ---```lua
 ---local tableView = GUI:TableView_Create(wnd, "TABLEVIEW", 200, 100, 600, 400, 1, 600, 40, 200)
@@ -12747,7 +12747,7 @@ function GUI:TableView_addMouseScrollEvent(widget, func) end
 ---* widget 旋转容器对象
 ---* value 控件对象
 ---* index 对应下标
----@param widget table
+---@param widget userdata
 ---@param value table
 ---@param index integer
 ---```lua
@@ -12770,7 +12770,7 @@ function GUI:RotateView_addChild(widget, value, index) end
 
 ---通过对象关闭界面
 ---* widget 界面对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local win = GUI:Win_Create("testWin", 0, 0, 0, 0, false, false, true, true)
 ---GUI:Win_Close(win)
@@ -12800,7 +12800,7 @@ function GUI:Win_CloseByNPCID(NPCID) end
 ---通过键盘的Esc键关闭界面
 ---* widget 界面对象
 ---* value 石否关闭
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local win = GUI:Win_Create("winID", 0, 0, 0, 0, false, false, true, false)
@@ -12817,7 +12817,7 @@ function GUI:Win_CloseAll() end
 
 ---判断对象是否为空
 ---* widget 对象
----@param widget table
+---@param widget userdata
 ---@return boolean "true/false"
 ---```lua
 ---local testWin = GUI:Win_Create("winID", 0, 0, 0,0, false, false, true, true)
@@ -12828,7 +12828,7 @@ function GUI:Win_IsNull(widget) end
 
 ---判断对象是否不为空
 ---* widget 对象
----@param widget table
+---@param widget userdata
 ---@return boolean "true/false"
 ---```lua
 ---local testWin = GUI:Win_Create("winID", 0, 0, 0,0, false, false, true, true)
@@ -12840,7 +12840,7 @@ function GUI:Win_IsNotNull(widget) end
 ---禁用文本特效
 ---* widget 对象
 ---* value 特效类型：<br>0：正常<br> 1：描边<br>2：阴影<br>3：发光
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local str = "我的名字" or ""
@@ -12852,7 +12852,7 @@ function GUI:Text_disableEffect(widget, value) end
 
 ---禁用文本普通特效
 ---* widget 对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local str = "我的名字" or ""
 ---local Text_name = GUI:Text_Create(Parent, "Text_name", 0, 0, 16, "#ffffff", str)
@@ -12862,7 +12862,7 @@ function GUI:Text_disableNormal(widget) end
 
 ---禁用文本描边特效
 ---* widget 对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local str = "我的名字" or ""
 ---local Text_name = GUI:Text_Create(Parent, "Text_name", 0, 0, 16, "#ffffff", str)
@@ -12872,7 +12872,7 @@ function GUI:Text_disableOutLine(widget) end
 
 ---禁用文本阴影特效
 ---* widget 对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local str = "我的名字" or ""
 ---local Text_name = GUI:Text_Create(Parent, "Text_name", 0, 0, 16, "#ffffff", str)
@@ -12882,7 +12882,7 @@ function GUI:Text_disableShadow(widget) end
 
 ---禁用文本发光特效
 ---* widget 对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local str = "我的名字" or ""
 ---local Text_name = GUI:Text_Create(Parent, "Text_name", 0, 0, 16, "#ffffff", str)
@@ -12893,7 +12893,7 @@ function GUI:Text_disableGlow(widget) end
 ---添加自定义富文本cell
 ---* widget 控件对象
 ---* elements [RichTextCombineCell] 单个元素控件对象 或 控件对象table
----@param widget table
+---@param widget userdata
 ---@param elements table
 ---```lua
 -----组合使用，详见“创建自定义组合富文本”
@@ -12903,7 +12903,7 @@ function GUI:RichTextCombine_pushBackElements(widget, elements) end
 
 ---添加cell完毕格式化富文本
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```lua
 -----组合使用，详见“创建自定义组合富文本”
 ---GUI:RichTextCombine_format(richText)
@@ -12913,7 +12913,7 @@ function GUI:RichTextCombine_format(widget) end
 ---添加富文本url点击触发事件
 ---* widget 控件对象
 ---* handle 触发函数 (param1: 富文本控件, param2: string 文本传递内容)
----@param widget table
+---@param widget userdata
 ---@param handle function
 ---```lua
 ---local str = string.format("<a href='position#%s#200#200'>TTTT</a>", SL:Get_MAP_ID())
@@ -12944,7 +12944,7 @@ function GUI:RichText_setOpenUrlEvent(widget, handle) end
 ---* widget 物品框对象
 ---* funcname GUILayout/Item.lua中的函数名字
 ---* ... 可变参数
----@param widget table
+---@param widget userdata
 ---@param funcname string
 ---@param ... any
 ---```lua
@@ -12972,7 +12972,7 @@ function GUI:ItemShow_OnRunFunc(widget, funcname, ...) end
 ---清空对应ID放置框的传入数据
 ---* widget 物品放入框控件对象
 ---* boxindex 放置框 唯一ID
----@param widget table
+---@param widget userdata
 ---@param boxindex integer
 ---```lua
 ---local itemBox=GUI:ItemBox_Create(parent, "itemBox",0, 0, img, "res/public/061302.PNG", 1,5)
@@ -12984,7 +12984,7 @@ function GUI:ItemBox_RemoveBoxData(widget, boxindex) end
 ---* widget 物品放入框控件对象
 ---* boxindex 放置框 唯一ID
 ---* itemData 填充指定的ItemData数据<br>
----@param widget table
+---@param widget userdata
 ---@param boxindex integer
 ---@param itemData table
 ---```lua
@@ -12996,7 +12996,7 @@ function GUI:ItemBox_UpdateBoxData(widget, boxindex, itemData) end
 
 ---关闭输入框输入
 ---* widget 输入框对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
 ---GUI:TextInput_closeInput(TextField_input)
@@ -13010,7 +13010,7 @@ function GUI:TextInput_closeInput(widget) end
 ---* isLoop 是否循环播放
 ---* speed 播放速度
 ---* isSequence 倒放参数 [仅false为倒放特效 ]
----@param widget table
+---@param widget userdata
 ---@param act integer
 ---@param dir integer
 ---@param isLoop boolean
@@ -13027,7 +13027,7 @@ function GUI:Effect_play(widget, act, dir, isLoop, speed, isSequence) end
 ---* frameIndex 第几帧
 ---* act 0 待机<br>1 走<br>2 攻击<br>3 施法 <br>4 死亡<br>5 跑步
 ---* dir 方向
----@param widget table
+---@param widget userdata
 ---@param frameIndex integer
 ---@param act integer
 ---@param dir integer
@@ -13041,7 +13041,7 @@ function GUI:Effect_stop(widget, frameIndex, act, dir) end
 ---特效播放完成事件
 ---* widget 特效对象
 ---* value 播放完成回调函数
----@param widget table
+---@param widget userdata
 ---@param value function
 ---```lua
 ---local sfx = GUI:Effect_Create(parent, "sfx", 0, 0, 0, 4004, 0, 0, 3, 1)
@@ -13053,7 +13053,7 @@ function GUI:Effect_addOnCompleteEvent(widget, value) end
 
 ---刷新展示QuickCell
 ---* widget QuickCell对象
----@param widget table
+---@param widget userdata
 ---```lua
 ----- 顺序使用 通常用于刷新单个cell内容 [可参照 GUILayout/AuctionPutList 等..]
 ---GUI:QuickCell_Exit(quickCell)
@@ -13063,7 +13063,7 @@ function GUI:QuickCell_Refresh(widget) end
 
 ---强制退出/ 清理内容QuickCell
 ---* widget QuickCell对象
----@param widget table
+---@param widget userdata
 ---```lua
 ----- 顺序使用 通常用于刷新单个cell内容 [可参照 GUILayout/AuctionPutList 等..]
 ---GUI:QuickCell_Exit(quickCell)
@@ -13075,7 +13075,7 @@ function GUI:QuickCell_Exit(widget) end
 ---* parent 父节点对象
 ---* filename 文件路径
 ---* callback 回调函数
----@param parent table
+---@param parent userdata
 ---@param filename string
 ---@param callback function
 ---```tips
@@ -13094,9 +13094,9 @@ function GUI:LoadExport(parent, filename, callback) end
 ---* widget 控件对象
 ---* x 节点坐标X
 ---* y 节点坐标Y
----@param widget table
----@param x integer
----@param y integer
+---@param widget userdata
+---@param x number
+---@param y number
 ---@return table "世界坐标"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -13110,9 +13110,9 @@ function GUI:convertToWorldSpace(widget, x, y) end
 ---* widget 控件对象
 ---* x 世界坐标X
 ---* y 世界坐标Y
----@param widget table
----@param x integer
----@param y integer
+---@param widget userdata
+---@param x number
+---@param y number
 ---@return table "对应控件的节点坐标"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -13125,7 +13125,7 @@ function GUI:convertToNodeSpace(widget, x, y) end
 ---加载子控件
 ---* widget 父控件对象
 ---* child 子控件对象
----@param widget table
+---@param widget userdata
 ---@param child table
 ---```lua
 ---local image = GUI:Image_Create(-1, "layerImage", 0, 0, Guide._path .. "dec_else_3.png")
@@ -13136,7 +13136,7 @@ function GUI:addChild(widget, child) end
 
 ---移除传入控件的所有子节点
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
 ---local Btn = GUI:Button_Create(parent, "btnTest", 0, 0, "res/public/061302.PNG")
@@ -13146,7 +13146,7 @@ function GUI:removeAllChildren(widget) end
 
 ---将传入控件从父节点上移除
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
 ---local Btn = GUI:Button_Create(parent, "btnTest", 0, 0, "res/public/061302.PNG")
@@ -13157,7 +13157,7 @@ function GUI:removeFromParent(widget) end
 ---通过名字删除传入控件的对应子节点
 ---* widget 控件对象
 ---* name 控件名字
----@param widget table
+---@param widget userdata
 ---@param name string
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
@@ -13170,7 +13170,7 @@ function GUI:removeChildByName(widget, name) end
 ---* widget 控件对象
 ---* callback 回调函数
 ---* delay 时间间隔
----@param widget table
+---@param widget userdata
 ---@param callback function
 ---@param delay integer
 ---```tips
@@ -13186,7 +13186,7 @@ function GUI:schedule(widget, callback, delay) end
 
 ---停止定时器绑定节点
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```tips
 ---1.GUI:schedule 与 GUI:unSchedule 为相关接口
 ---```
@@ -13281,7 +13281,7 @@ function GUI:Win_Open(filename) end
 ---视频播放器添加监听
 ---* widget 播放器对象
 ---* eventCB 回调函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 -----eventType: 0=播放 1=暂停 2=停止(区别于暂停，此停止不可恢复播放) 3=播放完成 4=点击 5=恢复播放 6=播放错误
@@ -13296,7 +13296,7 @@ function GUI:VideoPlayer_addEventListener(widget, eventCB) end
 ---* trackIndex 轨道索引
 ---* name 动画名
 ---* loop 是否循环播放
----@param widget table
+---@param widget userdata
 ---@param trackIndex integer
 ---@param name string
 ---@param loop boolean
@@ -13306,21 +13306,21 @@ function GUI:SpineAnim_addAnimation(widget, trackIndex, name, loop) end
 ---清除骨骼指定轨道动画
 ---* widget Spine 控件对象
 ---* trackIndex 轨道索引
----@param widget table
+---@param widget userdata
 ---@param trackIndex integer
 ---@return false|nil "无效对象返回 false；有效时清除成功，无显式返回（nil）。"
 function GUI:SpineAnim_clearTrack(widget, trackIndex) end
 
 ---清除骨骼全部轨道动画
 ---* widget Spine 控件对象
----@param widget table
+---@param widget userdata
 ---@return false|nil "无效对象返回 false；有效时清除成功，无显式返回（nil）。"
 function GUI:SpineAnim_clearTracks(widget) end
 
 ---查找骨骼动画
 ---* widget Spine 控件对象
 ---* name 动画名
----@param widget table
+---@param widget userdata
 ---@param name string
 ---@return false|table|nil "无效对象返回 false；有效时返回动画对象（未找到返回 nil）。"
 function GUI:SpineAnim_findAnimation(widget, name) end
@@ -13328,7 +13328,7 @@ function GUI:SpineAnim_findAnimation(widget, name) end
 ---查找骨骼动画插槽对象
 ---* widget Spine 控件对象
 ---* slotName 插槽名
----@param widget table
+---@param widget userdata
 ---@param slotName string
 ---@return false|string|nil "无效对象返回 false；有效时返回插槽对象（未找到返回 nil）。"
 function GUI:SpineAnim_findSlot(widget, slotName) end
@@ -13337,7 +13337,7 @@ function GUI:SpineAnim_findSlot(widget, slotName) end
 ---* widget Spine 控件对象
 ---* handler 事件回调函数；入参为事件对象 {animation, loopCount, trackIndex, type, eventData}
 ---* eventType 事件类型（"start"、"interrupt"、"end"、"dispose"、"complete"、"event" 等）
----@param widget table
+---@param widget userdata
 ---@param handler function
 ---@param eventType string
 ---@return false|nil "无效对象返回 false；有效时注册成功，无显式返回（nil）。"
@@ -13346,7 +13346,7 @@ function GUI:SpineAnim_registerSpineEventHandler(widget, handler, eventType) end
 ---添加控件状态监听事件
 ---* widget 控件对象
 ---* func 回调函数
----@param widget table
+---@param widget userdata
 ---@param func function
 ---```tips
 ---eventName: 事件名
@@ -13373,7 +13373,7 @@ function GUI:addStateEvent(widget, func) end
 ---获取界面控件
 ---* parent 父控件对象
 ---* ID 控件ID
----@param parent table
+---@param parent userdata
 ---@param ID string
 ---```lua
 ---local _parent = GUI:Win_Create("QSQ_challengeboss", 0, 0, 0, 0, false, false, true, false)
@@ -13399,7 +13399,7 @@ function GUI:GetWindow(parent, ID) end
 
 ---获取控件自定义参数
 ---* widget 界面对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local index = GUI:Win_GetParam(widget)
 ---```
@@ -13407,7 +13407,7 @@ function GUI:Win_GetParam(widget) end
 
 ---获取按钮文字
 ---* widget 按钮对象
----@param widget table
+---@param widget userdata
 ---@return string "按钮文字"
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -13420,7 +13420,7 @@ function GUI:Button_getTitleText(widget) end
 
 ---获取文本
 ---* widget 对象
----@param widget table
+---@param widget userdata
 ---@return string "文本内容"
 ---```lua
 ---local testWin = GUI:Win_Create("winID", 0, 0, 0,0, false, false, true, true)
@@ -13435,7 +13435,7 @@ function GUI:Text_getString(widget) end
 
 ---获取艺术字文本
 ---* widget 艺术字对象
----@param widget table
+---@param widget userdata
 ---@return string "艺术字文本内容"
 ---```lua
 ---local artPath = "res/public/TextAtlasPicture.png"
@@ -13447,7 +13447,7 @@ function GUI:TextAtlas_getString(widget) end
 
 ---获取滚动文本内容
 ---* widget 滚动文本对象
----@param widget table
+---@param widget userdata
 ---@return string "滚动文本内容"
 ---```lua
 ---local scrollTxt=GUI:ScrollText_Create(GUI:Attach_LeftBottom(), "scrollText", 300, 300, 600, 16, "#000000", "这是一串神奇的文本内容",10)
@@ -13460,7 +13460,7 @@ function GUI:ScrollText_getString(widget) end
 ---获取对应ID放置框的物品数据
 ---* widget 物品放入框控件对象
 ---* boxindex 放置框 唯一ID
----@param widget table
+---@param widget userdata
 ---@param boxindex integer
 ---@return table "放置框的物品数据"
 ---```lua
@@ -13470,7 +13470,7 @@ function GUI:ItemBox_GetItemData(widget, boxindex) end
 
 ---获取复选框是否选中
 ---* widget 复选框对象
----@param widget table
+---@param widget userdata
 ---@return boolean "true(选中)/false(未选中)"
 ---```lua
 ---local nimg = "res/public/061301.JPG"
@@ -13483,7 +13483,7 @@ function GUI:CheckBox_isSelected(widget) end
 
 ---获取输入框文本
 ---* widget 输入框对象
----@param widget table
+---@param widget userdata
 ---@return string "输入框文本"
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -13495,7 +13495,7 @@ function GUI:TextInput_getString(widget) end
 
 ---获得滚动条进度
 ---* widget 滚动条对象
----@param widget table
+---@param widget userdata
 ---@return number "滚动条进度"
 ---```lua
 ---local barimg = "res/private/new_setting/bg_progress.png"
@@ -13510,7 +13510,7 @@ function GUI:Slider_getPercent(widget) end
 
 ---获取圆形进度条百分比
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return number "圆形进度条百分比"
 ---```lua
 ---local ui_img ="res/public/061101.JPG"
@@ -13523,7 +13523,7 @@ function GUI:ProgressTimer_getPercentage(widget) end
 
 ---获取进度条进度
 ---* widget 进度条对象
----@param widget table
+---@param widget userdata
 ---@return number "进度条进度"
 ---```lua
 ---local imgBar ="res/public/061201.JPG"
@@ -13536,7 +13536,7 @@ function GUI:LoadingBar_getPercent(widget) end
 
 ---获取进度条颜色
 ---* widget 进度条对象
----@param widget table
+---@param widget userdata
 ---@return string "进度条颜色值"
 ---```lua
 ---local imgBar ="res/public/061201.JPG"
@@ -13549,7 +13549,7 @@ function GUI:LoadingBar_getColor(widget) end
 
 ---获取层背景图片文件路径
 ---* widget 图片控件对象
----@param widget table
+---@param widget userdata
 ---@return string "背景图片路径"
 ---```lua
 ---local imgPath = "res/public/1900000600.png"
@@ -13561,7 +13561,7 @@ function GUI:Image_getTextureFile(widget) end
 
 ---获取列表容器间隔
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return number "间隔距离(像素)"
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -13573,7 +13573,7 @@ function GUI:ListView_getItemsMargin(widget) end
 
 ---获取列表容器最顶部可见范围子节点
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return userdata "顶部范围子节点对象"
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -13588,7 +13588,7 @@ function GUI:ListView_getTopmostItemInCurrentView(widget) end
 
 ---获取列表容器最底部部可见范围子节点
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return userdata "底部范围子节点对象"
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -13604,7 +13604,7 @@ function GUI:ListView_getBottommostItemInCurrentView(widget) end
 ---获取子节点序列号
 ---* widget 容器对象
 ---* value 子节点对象
----@param widget table
+---@param widget userdata
 ---@param value table
 ---@return number "子节点序列号"
 ---```lua
@@ -13620,7 +13620,7 @@ function GUI:ListView_getItemIndex(widget, value) end
 ---通过子节点序列号获取子节点对象
 ---* widget 容器对象
 ---* value 子节点序列号
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---@return userdata "子控件对象"
 ---```lua
@@ -13634,7 +13634,7 @@ function GUI:ListView_getItemByIndex(widget, value) end
 
 ---获取列表容器所有子节点对象
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return table "所有子节点对象"
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -13647,7 +13647,7 @@ function GUI:ListView_getItems(widget) end
 
 ---获取列表容器所有子节点数量
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return number "子节点总数量"
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -13660,7 +13660,7 @@ function GUI:ListView_getItemCount(widget) end
 
 ---获取列表容器滚动范围大小
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return table "列表容器滚动范围大小"
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -13671,7 +13671,7 @@ function GUI:ListView_getInnerContainerSize(widget) end
 
 ---获取列表容器内部滚动区域坐标
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return table "列表容器内部滚动区域坐标"
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(),"listView", 200, 200, 300, 400, 2)
@@ -13682,7 +13682,7 @@ function GUI:ListView_getInnerContainerPosition(widget) end
 
 ---获取滚动容器滚动范围大小
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return table "滚动容器滚动范围大小"
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(GUI:Attach_Bottom(), "scrollView", 200, 200, 300, 500, 1)
@@ -13693,7 +13693,7 @@ function GUI:ScrollView_getInnerContainerSize(widget) end
 
 ---获取容器内部滚动区域坐标
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return table "容器内部滚动区域坐标"
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(GUI:Attach_Bottom(), "scrollView", 200, 200, 300, 500, 1)
@@ -13704,7 +13704,7 @@ function GUI:ScrollView_getInnerContainerPosition(widget) end
 
 ---获取当前子页面序列号
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return number "子页面序列号"
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -13722,7 +13722,7 @@ function GUI:PageView_getCurrentPageIndex(widget) end
 
 ---获取翻页容器子页面
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return table "子页面对象"
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -13740,7 +13740,7 @@ function GUI:PageView_getItems(widget) end
 
 ---获取翻页容器子页面数量
 ---* widget 容器对象
----@param widget table
+---@param widget userdata
 ---@return number "子页面数量"
 ---```lua
 ---local pageView = GUI:PageView_Create(parent, "pageView", 200,0, 300, 500, 1)
@@ -13758,7 +13758,7 @@ function GUI:PageView_getItemCount(widget) end
 
 ---获取列表容器内部区域偏移位置
 ---* widget tableView对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local tableView = GUI:TableView_Create(wnd, "TABLEVIEW", 200, 100, 600, 400, 1, 600, 40, 200)
 ---GUI:TableView_setContentOffset(tableView, 3, 3)
@@ -13807,7 +13807,7 @@ function GUI:TableViewCell_getIdx(cell) end
 ---获取对应下标item添加的子节点
 ---* widget 旋转容器对象
 ---* index 对应下标
----@param widget table
+---@param widget userdata
 ---@param index integer
 ---@return table "子节点"
 ---```lua
@@ -13830,7 +13830,7 @@ function GUI:RotateView_getChildByIndex(widget, index) end
 ---获取对应下标item
 ---* widget 旋转容器对象
 ---* index 对应下标
----@param widget table
+---@param widget userdata
 ---@param index integer
 ---@return userdata "对应下标item"
 ---```lua
@@ -13858,7 +13858,7 @@ function GUI:RotateView_getItemByIndex(widget, index) end
 
 ---获取父节点的快捷子控件组
 ---* parent 父节点
----@param parent table
+---@param parent userdata
 ---@return table "[key 为控件名] 父节点的快捷子控件组"
 ---```lua
 ---local ui = GUI:ui_delegate(parent)
@@ -13984,7 +13984,7 @@ function GUI:Win_FindParent(ID) end
 
 ---获取坐标
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return table "控件坐标"
 ---```lua
 ---local pos = GUI:getPosition(widget)
@@ -13995,7 +13995,7 @@ function GUI:getPosition(widget) end
 
 ---获取横坐标
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return number "横坐标"
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061302.PNG")
@@ -14008,7 +14008,7 @@ function GUI:getPositionX(widget) end
 
 ---获取纵坐标
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return number "纵坐标"
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061302.PNG")
@@ -14021,7 +14021,7 @@ function GUI:getPositionY(widget) end
 
 ---获取控件锚点
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return table "控件锚点"
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -14032,7 +14032,7 @@ function GUI:getAnchorPoint(widget) end
 
 ---获取控件尺寸大小(纹理大小 不考虑缩放)
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return table "{height = height, width = width}"
 ---```lua
 ---local post = GUI:getContentSize(widget)
@@ -14041,7 +14041,7 @@ function GUI:getContentSize(widget) end
 
 ---获取控件尺寸大小(考虑缩放的真实大小)
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return table "{height = height, width = width}"
 ---```lua
 ---local post = GUI:getBoundingBox(widget)
@@ -14050,7 +14050,7 @@ function GUI:getBoundingBox(widget) end
 
 ---获取控件标签
 ---* widget 图片对象
----@param widget table
+---@param widget userdata
 ---@return number "标签"
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -14062,7 +14062,7 @@ function GUI:getTag(widget) end
 
 ---获取控件旋转角度
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return number "控件旋转角度"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -14075,7 +14075,7 @@ function GUI:getRotation(widget) end
 
 ---获取控件是否显示状态
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return boolean "控件是否显示 true/false"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -14087,7 +14087,7 @@ function GUI:getVisible(widget) end
 
 ---获取控件Y轴方向缩放比例
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return number "控件Y轴方向缩放比例"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -14100,7 +14100,7 @@ function GUI:getScaleY(widget) end
 
 ---获取控件X轴方向缩放比例
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return number "控件X轴方向缩放比例"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -14113,7 +14113,7 @@ function GUI:getScaleX(widget) end
 
 ---获取是否水平翻转
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return boolean "是否水平翻转"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -14126,7 +14126,7 @@ function GUI:getFlippedX(widget) end
 
 ---获取是否垂直翻转
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return boolean "是否垂直翻转"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -14139,7 +14139,7 @@ function GUI:getFlippedY(widget) end
 
 ---获得控件世界坐标
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return table "控件世界坐标"
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 100, 100, "res/public/061302.PNG")
@@ -14149,7 +14149,7 @@ function GUI:getWorldPosition(widget) end
 
 ---获取控件是否可以触摸
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return boolean "是否可触摸 true/false"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -14162,7 +14162,7 @@ function GUI:getTouchEnabled(widget) end
 
 ---获取父节点
 ---* widget 子控件对象
----@param widget table
+---@param widget userdata
 ---@return table "父节点"
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
@@ -14174,7 +14174,7 @@ function GUI:getParent(widget) end
 
 ---获取控件所有子节点
 ---* widget 父控件对象
----@param widget table
+---@param widget userdata
 ---@return table "控件所有子节点"
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
@@ -14186,7 +14186,7 @@ function GUI:getChildren(widget) end
 
 ---获取控件名字
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return string "控件名字"
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
@@ -14199,7 +14199,7 @@ function GUI:getName(widget) end
 ---通过控件名字获取子节点
 ---* widget 父控件对象
 ---* name 控件名字
----@param widget table
+---@param widget userdata
 ---@param name string
 ---@return table "子节点"
 ---```lua
@@ -14213,7 +14213,7 @@ function GUI:getChildByName(widget, name) end
 ---通过控件标记获取子节点
 ---* widget 父控件对象
 ---* tag 控件标记
----@param widget table
+---@param widget userdata
 ---@param tag integer
 ---@return table "子节点"
 ---```lua
@@ -14227,7 +14227,7 @@ function GUI:getChildByTag(widget, tag) end
 
 ---获取控件触摸开始时位置
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return table "触摸开始时位置{x = x, y = y}"
 ---```lua
 ---local beginPos = GUI:getTouchBeganPosition(sender)
@@ -14237,7 +14237,7 @@ function GUI:getTouchBeganPosition(widget) end
 
 ---获取控件触摸移动时位置
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return table "控件触摸移动时位置{x = x, y = y}"
 ---```lua
 ---local movePos = GUI:getTouchMovePosition(sender)
@@ -14247,7 +14247,7 @@ function GUI:getTouchMovePosition(widget) end
 
 ---获取控件触摸结束时位置
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return table "控件触摸结束时位置{x = x, y = y}"
 ---```lua
 ---local endPos = GUI:getTouchEndPosition(sender)
@@ -14257,7 +14257,7 @@ function GUI:getTouchEndPosition(widget) end
 
 ---获取控件是否触摸吞噬
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return boolean "是否触摸吞噬 true/false"
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "btnTest", 0, 0, "res/public/061302.PNG")
@@ -14269,7 +14269,7 @@ function GUI:getSwallowTouches(widget) end
 ---检查触摸位置是否被父节点裁剪
 ---* widget 控件对象
 ---* position 世界坐标
----@param widget table
+---@param widget userdata
 ---@param position table
 ---@return boolean "触摸位置是否被父节点裁剪 true/false"
 ---```lua
@@ -14289,7 +14289,7 @@ function GUI:Attach_Bottom() end
 ---* root 存储表
 ---* widget 根对象
 ---@param root table
----@param widget table
+---@param widget userdata
 ---```lua
 ---local ui = GUI:LoadExportEx2("main/skill/main_skill_cell", "skill_cell")
 ---GUI:ui_IterChilds(ui, ui)
@@ -14306,7 +14306,7 @@ function ui_IterChilds(root, widget) end
 ---* widget Spine 控件对象
 ---* slotName 插槽名
 ---* attachmentName 附件名
----@param widget table
+---@param widget userdata
 ---@param slotName string
 ---@param attachmentName string
 ---@return false|string|nil "无效对象返回 false；有效时返回附件对象（未找到返回 nil）"
@@ -14314,13 +14314,13 @@ function GUI:SpineAnim_getAttachment(widget, slotName, attachmentName) end
 
 ---获取骨骼动画全部插槽列表
 ---* widget Spine 控件对象
----@param widget table
+---@param widget userdata
 ---@return false|table "无效对象返回 false；有效时返回由 sp.Slot 组成的数组表"
 function GUI:SpineAnim_getSlots(widget) end
 
 ---获取骨骼动画播放时间缩放（速度）
 ---* widget Spine 控件对象
----@param widget table
+---@param widget userdata
 ---@return false|number "无效对象返回 false；有效时返回播放速度（默认 1，越大越快）"
 function GUI:SpineAnim_getTimeScale(widget) end
 
@@ -14335,7 +14335,7 @@ function GUI:SpineSlot_getColor(widget) end
 ---设置控件自定义参数
 ---* widget 界面对象
 ---* param 参数内容
----@param widget table
+---@param widget userdata
 ---@param param integer|string|boolean
 ---```lua
 ---GUI:Win_SetParam(widget, param)
@@ -14345,7 +14345,7 @@ function GUI:Win_SetParam(widget, param) end
 ---设置界面拖拽
 ---* widget 界面对象
 ---* dragLayer 拖拽区域控件
----@param widget table
+---@param widget userdata
 ---@param dragLayer table
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
@@ -14357,7 +14357,7 @@ function GUI:Win_SetDrag(widget, dragLayer) end
 ---设置主界面隐藏
 ---* widget 界面对象
 ---* value 是否隐藏, 普通面板生效
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local testWin = GUI:Win_Create("winID", 0, 0, 0, 0, false, false, true, true)
@@ -14368,7 +14368,7 @@ function GUI:Win_SetMainHide(widget, value) end
 ---设置界面绑定NPC
 ---* widget 界面对象
 ---* npcID NPCID
----@param widget table
+---@param widget userdata
 ---@param npcID integer
 ---```lua
 ---local testWin = GUI:Win_Create("winID", 0, 0, 0, 0, false, false, true, true)
@@ -14379,7 +14379,7 @@ function GUI:Win_BindNPC(widget, npcID) end
 ---设置界面浮起
 ---* widget 界面对象
 ---* zPanel 控件对象
----@param widget table
+---@param widget userdata
 ---@param zPanel table
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
@@ -14393,7 +14393,7 @@ function GUI:Win_SetZPanel(widget, zPanel) end
 ---* widget 界面对象
 ---* eventID 事件ID
 ---* eventTag 事件描述
----@param widget table
+---@param widget userdata
 ---@param eventID string
 ---@param eventTag string
 ---```lua
@@ -14405,7 +14405,7 @@ function GUI:Win_BindLuaEvent(widget, eventID, eventTag) end
 ---设置界面内鼠标右键吞噬
 ---* widget 界面对象
 ---* state 是否吞噬
----@param widget table
+---@param widget userdata
 ---@param state boolean
 ---```lua
 ---testWin = GUI:Win_Create("winID", 0, 0, 200,200, false, false, true, true)
@@ -14419,7 +14419,7 @@ function GUI:Win_SetSwallowRightMouseTouch(widget, state) end
 ---* scale9r 右边像素
 ---* scale9t 上边像素
 ---* scale9b 下边像素
----@param widget table
+---@param widget userdata
 ---@param scale9l integer
 ---@param scale9r integer
 ---@param scale9t integer
@@ -14434,7 +14434,7 @@ function GUI:Image_setScale9Slice(widget, scale9l, scale9r, scale9t, scale9b) en
 ---设置图片是否变灰
 ---* widget 图片对象
 ---* isGrey 是否置灰
----@param widget table
+---@param widget userdata
 ---@param isGrey boolean
 ---```lua
 ---local testWin = GUI:Win_Create("winID", 0, 0, 0,0, false, false, true, true)
@@ -14449,7 +14449,7 @@ function GUI:Image_setGrey(widget, isGrey) end
 ---* Pressedfilepath 按压状态图片路径
 ---* Disabledfilepath 禁用状态图片路径
 ---* TextureType 加载类型：<br>0 图片<br>1 图片集 plist文件
----@param widget table
+---@param widget userdata
 ---@param Normalfilepath string
 ---@param Pressedfilepath string
 ---@param Disabledfilepath string
@@ -14464,7 +14464,7 @@ function GUI:Button_loadTextures(widget, Normalfilepath, Pressedfilepath, Disabl
 ---设置正常状态图片
 ---* widget 按钮对象
 ---* filepath 图片路径
----@param widget table
+---@param widget userdata
 ---@param filepath string
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14476,7 +14476,7 @@ function GUI:Button_loadTextureNormal(widget, filepath) end
 ---设置按下状态图片
 ---* widget 按钮对象
 ---* filepath 图片路径
----@param widget table
+---@param widget userdata
 ---@param filepath string
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14488,7 +14488,7 @@ function GUI:Button_loadTexturePressed(widget, filepath) end
 ---设置禁用状态图片
 ---* widget 按钮对象
 ---* filepath 图片路径
----@param widget table
+---@param widget userdata
 ---@param filepath string
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14500,7 +14500,7 @@ function GUI:Button_loadTextureDisabled(widget, filepath) end
 ---设置按钮文字
 ---* widget 按钮对象
 ---* value 按钮显示文本
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14512,7 +14512,7 @@ function GUI:Button_setTitleText(widget, value) end
 ---设置按钮文字颜色
 ---* widget 按钮对象
 ---* value 色值（#000000）
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14525,7 +14525,7 @@ function GUI:Button_setTitleColor(widget, value) end
 ---设置按钮文字大小
 ---* widget 按钮对象
 ---* value 字体大小（字号16）
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14538,7 +14538,7 @@ function GUI:Button_setTitleFontSize(widget, value) end
 ---设置按钮文字样式
 ---* widget 按钮对象
 ---* value 字体样式（font.ttf）
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14551,7 +14551,7 @@ function GUI:Button_setTitleFontName(widget, value) end
 ---设置按钮文本最大宽度
 ---* widget 按钮对象
 ---* value 文本最大宽度
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14565,7 +14565,7 @@ function GUI:Button_setMaxLineWidth(widget, value) end
 ---* widget 按钮对象
 ---* color 描边色值（#000000）
 ---* outline 描边大小
----@param widget table
+---@param widget userdata
 ---@param color string
 ---@param outline integer
 ---```lua
@@ -14578,7 +14578,7 @@ function GUI:Button_titleEnableOutline(widget, color, outline) end
 
 ---取消按钮文本描边
 ---* widget 按钮对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
 ---GUI:setContentSize(Btn, 100, 100)
@@ -14591,7 +14591,7 @@ function GUI:Button_titleDisableOutLine(widget) end
 ---设置按钮是否禁用(可触摸)
 ---* widget 按钮对象
 ---* value 是否禁用（可触摸）
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14603,7 +14603,7 @@ function GUI:Button_setBright(widget, value) end
 ---设置按钮是否禁用(不可触摸)
 ---* widget 按钮对象
 ---* value 是否禁用（不可触摸）
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14615,7 +14615,7 @@ function GUI:Button_setBrightEx(widget, value) end
 ---设置按钮当前状态
 ---* widget 按钮对象
 ---* value 状态（0正常 1按下）
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14628,7 +14628,7 @@ function GUI:Button_setBrightStyle(widget, value) end
 ---设置按钮是否灰态
 ---* widget 按钮对象
 ---* value 是否灰态
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061101.JPG")
@@ -14643,7 +14643,7 @@ function GUI:Button_setGrey(widget, value) end
 ---* scale9r 右边比例
 ---* scale9t 上边比例
 ---* scale9b 下边比例
----@param widget table
+---@param widget userdata
 ---@param scale9l integer
 ---@param scale9r integer
 ---@param scale9t integer
@@ -14658,7 +14658,7 @@ function GUI:Button_setScale9Slice(widget, scale9l, scale9r, scale9t, scale9b) e
 ---设置文本
 ---* widget 对象
 ---* value 文本
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local str = "我的名字" or ""
@@ -14670,7 +14670,7 @@ function GUI:Text_setString(widget, value) end
 ---设置文本颜色
 ---* widget 对象
 ---* value 色值("#000000")
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local str = "我的名字" or ""
@@ -14682,7 +14682,7 @@ function GUI:Text_setTextColor(widget, value) end
 ---设置字体大小
 ---* widget 对象
 ---* value 字体大小
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local str = "我的名字" or ""
@@ -14694,7 +14694,7 @@ function GUI:Text_setFontSize(widget, value) end
 ---设置字体路径
 ---* widget 对象
 ---* value 字体文件路径<br>例: "fonts/font.ttf"
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local str = "我的名字" or ""
@@ -14707,7 +14707,7 @@ function GUI:Text_setFontName(widget, value) end
 ---* widget 对象
 ---* color 色值("#000000")
 ---* size 描边宽度
----@param widget table
+---@param widget userdata
 ---@param color string
 ---@param size integer
 ---```lua
@@ -14719,7 +14719,7 @@ function GUI:Text_enableOutline(widget, color, size) end
 
 ---设置是否启用下划线
 ---* widget 文本对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local str = "我的名字" or ""
 ---local Text_name = GUI:Text_Create(Parent, "Text_name", 0, 0, 16, "#ffffff", str)
@@ -14730,7 +14730,7 @@ function GUI:Text_enableUnderline(widget) end
 ---设置文本最大行宽
 ---* widget 对象
 ---* value 宽度
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ----- 需要在设置文本最大行宽后再填充文本内容
@@ -14743,7 +14743,7 @@ function GUI:Text_setMaxLineWidth(widget, value) end
 ---设置文本垂直对齐
 ---* widget 对象
 ---* value 0：顶对齐<br> 1：垂直居中<br>2：底对齐
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 -----先设置文本尺寸
@@ -14758,7 +14758,7 @@ function GUI:Text_setTextVerticalAlignment(widget, value) end
 ---设置文本水平对齐
 ---* widget 对象
 ---* value 0：顶对齐<br> 1：垂直居中<br>2：底对齐
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 -----先设置文本尺寸
@@ -14773,7 +14773,7 @@ function GUI:Text_setTextHorizontalAlignment(widget, value) end
 ---设置文本尺寸
 ---* widget 对象
 ---* value {width = 0, height = 0}
----@param widget table
+---@param widget userdata
 ---@param value table
 ---```lua
 ---local str = "我的名字" or ""
@@ -14788,7 +14788,7 @@ function GUI:Text_setTextAreaSize(widget, value) end
 ---* time 倒计时时间, 单位:秒
 ---* callback 倒计时结束触发
 ---* showType 倒计时时间显示方式 <br>0: xx时xx分xx秒 <br>1: 小于1天显示xx:xx:xx 大于显示xx天xx时xx分
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param callback function
 ---@param showType integer
@@ -14806,7 +14806,7 @@ function GUI:Text_COUNTDOWN(widget, time, callback, showType) end
 ---* itemHeight 字体高度
 ---* startCharMap 起始字符设置("/")
 ---* sheet 字体内容(H5专属)<br>比如图片文字是“+-0123456789”,那这个sheet的值就是"+-0123456789"
----@param widget table
+---@param widget userdata
 ---@param stringValue string
 ---@param charMapFile string
 ---@param itemWidth integer
@@ -14823,7 +14823,7 @@ function GUI:TextAtlas_setProperty(widget, stringValue, charMapFile, itemWidth, 
 ---设置艺术字文本
 ---* widget 艺术字对象
 ---* value 文本内容
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local artPath = "res/public/TextAtlasPicture.png"
@@ -14835,7 +14835,7 @@ function GUI:TextAtlas_setString(widget, value) end
 ---设置富文本背景颜色
 ---* widget 控件对象
 ---* color 颜色值, 例: "#000000"
----@param widget table
+---@param widget userdata
 ---@param color string
 ---```lua
 ---GUI:RichText_setBackgroundColor(richText, "#FFFFFF")
@@ -14845,7 +14845,7 @@ function GUI:RichText_setBackgroundColor(widget, color) end
 ---设置滚动文本内容
 ---* widget 滚动文本对象
 ---* value 文本内容
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local scrollTxt=GUI:ScrollText_Create(GUI:Attach_LeftBottom(), "scrollText", 300, 300, 600, 16, "#000000", "这是一串神奇的文本内容",10)
@@ -14857,7 +14857,7 @@ function GUI:ScrollText_setString(widget, value) end
 ---* widget 滚动文本对象
 ---* color 描边色值("#000000")
 ---* size 描边大小
----@param widget table
+---@param widget userdata
 ---@param color string
 ---@param size integer
 ---```lua
@@ -14870,7 +14870,7 @@ function GUI:ScrollText_enableOutline(widget, color, size) end
 ---设置滚动文本水平对齐
 ---* widget 滚动文本对象
 ---* value 对齐方式：<br>1 左对齐<br>2 水平居中<br>3 右对齐
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local scrollTxt=GUI:ScrollText_Create(GUI:Attach_LeftBottom(), "scrollText", 300, 300, 600, 16, "#000000", "这是一串神奇的文本内容",10)
@@ -14881,7 +14881,7 @@ function GUI:ScrollText_setHorizontalAlignment(widget, value) end
 ---设置滚动文本颜色
 ---* widget 滚动文本对象
 ---* value 色值("#000000")
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local scrollTxt=GUI:ScrollText_Create(GUI:Attach_LeftBottom(), "scrollText", 300, 300, 600, 16, "#000000", "这是一串神奇的文本内容",10)
@@ -14892,7 +14892,7 @@ function GUI:ScrollText_setTextColor(widget, value) end
 ---设置物品框单击事件
 ---* widget 物品框对象
 ---* eventCB 单击事件函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 ---local setData  = {}
@@ -14922,7 +14922,7 @@ function GUI:ItemShow_addReplaceClickEvent(widget, eventCB) end
 ---设置物品框双击事件
 ---* widget 物品框对象
 ---* eventCB 双击事件函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 ---local setData  = {}
@@ -14952,7 +14952,7 @@ function GUI:ItemShow_addDoubleEvent(widget, eventCB) end
 ---设置物品框长按事件
 ---* widget 物品框对象
 ---* eventCB 长按事件函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 ---local setData  = {}
@@ -14982,7 +14982,7 @@ function GUI:ItemShow_addPressEvent(widget, eventCB) end
 ---设置物品框是否置灰
 ---* widget 物品框对象
 ---* value 是否置灰
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local setData  = {}
@@ -15010,7 +15010,7 @@ function GUI:ItemShow_setIconGrey(widget, value) end
 ---设置物品框是否选中
 ---* widget 物品框对象
 ---* value 是否选中
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local setData  = {}
@@ -15038,7 +15038,7 @@ function GUI:ItemShow_setItemShowChooseState(widget, value) end
 ---设置物品框是否拖动
 ---* widget 物品框对象
 ---* value 是否拖动
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local setData  = {}
@@ -15066,7 +15066,7 @@ function GUI:ItemShow_setMoveEnable(widget, value) end
 ---更新物品框内容
 ---* widget 物品框对象
 ---* itemData 配置数据
----@param widget table
+---@param widget userdata
 ---@param itemData table
 ---```lua
 ---local setData  = {}
@@ -15094,7 +15094,7 @@ function GUI:ItemShow_updateItem(widget, itemData) end
 ---设置物品框是否触摸吞噬
 ---* widget 物品框对象
 ---* isSwallow 是否触摸吞噬
----@param widget table
+---@param widget userdata
 ---@param isSwallow boolean
 ---```lua
 ---local setData  = {}
@@ -15122,7 +15122,7 @@ function GUI:ItemShow_setItemTouchSwallow(widget, isSwallow) end
 ---设置复选框默认状态背景图片
 ---* widget 复选框对象
 ---* value 默认状态图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local nimg = "res/private/gui_edit/CheckBox_Normal.png"
@@ -15136,7 +15136,7 @@ function GUI:CheckBox_loadTextureBackGround(widget, value) end
 ---设置复选框选中状态背景图片
 ---* widget 复选框对象
 ---* value 选中状态图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local nimg = "res/private/gui_edit/CheckBox_Normal.png"
@@ -15150,7 +15150,7 @@ function GUI:CheckBox_loadTextureFrontCross(widget, value) end
 ---设置复选框禁用状态背景图片
 ---* widget 复选框对象
 ---* value 禁用状态图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local nimg = "res/private/gui_edit/CheckBox_Normal.png"
@@ -15164,7 +15164,7 @@ function GUI:CheckBox_loadTextureFrontCrossDisabled(widget, value) end
 ---设置复选框选中或取消
 ---* widget 复选框对象
 ---* value 选中或取消
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local nimg = "res/private/gui_edit/CheckBox_Normal.png"
@@ -15177,7 +15177,7 @@ function GUI:CheckBox_setSelected(widget, value) end
 ---设置输入框字体颜色
 ---* widget 输入框对象
 ---* value 色值("#000000")
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15189,7 +15189,7 @@ function GUI:TextInput_setFontColor(widget, value) end
 ---* widget 输入框对象
 ---* value 字体路径
 ---* value2 字号
----@param widget table
+---@param widget userdata
 ---@param value string
 ---@param value2 integer
 ---```lua
@@ -15201,7 +15201,7 @@ function GUI:TextInput_setFont(widget, value, value2) end
 ---设置输入框字体大小
 ---* widget 输入框对象
 ---* value 字号
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15213,7 +15213,7 @@ function GUI:TextInput_setFontSize(widget, value) end
 ---* widget 输入框对象
 ---* value 字体路径
 ---* value2 字体("font.ttf")
----@param widget table
+---@param widget userdata
 ---@param value string
 ---@param value2 string
 ---```lua
@@ -15225,7 +15225,7 @@ function GUI:TextInput_setPlaceholderFont(widget, value, value2) end
 ---设置输入框占位文本字体颜色
 ---* widget 输入框对象
 ---* value 色值("#000000")
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15236,7 +15236,7 @@ function GUI:TextInput_setPlaceholderFontColor(widget, value) end
 ---设置输入框占位文本字体大小
 ---* widget 输入框对象
 ---* value 字号
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15247,7 +15247,7 @@ function GUI:TextInput_setPlaceholderFontSize(widget, value) end
 ---设置输入框占位文本
 ---* widget 输入框对象
 ---* value 输入内容
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15258,7 +15258,7 @@ function GUI:TextInput_setPlaceHolder(widget, value) end
 ---设置输入框文本
 ---* widget 输入框对象
 ---* value 输入内容
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15269,7 +15269,7 @@ function GUI:TextInput_setString(widget, value) end
 ---设置输入框行宽
 ---* widget 输入框对象
 ---* value 输入框控件宽度
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15280,7 +15280,7 @@ function GUI:TextInput_setMaxLength(widget, value) end
 ---设置输入框水平对齐
 ---* widget 输入框对象
 ---* value 对齐方式：<br>0 顶对齐<br> 1 底对齐<br>2 水平居中
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15291,7 +15291,7 @@ function GUI:TextInput_setTextHorizontalAlignment(widget, value) end
 ---设置输入框文本类型
 ---* widget 输入框对象
 ---* value 类型
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```tips
 ---!!!!类型!!!!
@@ -15310,7 +15310,7 @@ function GUI:TextInput_setInputFlag(widget, value) end
 ---设置输入框键盘编辑类型
 ---* widget 输入框对象
 ---* value 类型
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```tips
 ---!!!!类型!!!!
@@ -15331,7 +15331,7 @@ function GUI:TextInput_setInputMode(widget, value) end
 ---设置输入框弹出式键盘返回类型
 ---* widget 输入框对象
 ---* value 类型
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local TextField_input = GUI:TextInput_Create(parent, "TextField_input", 0, 0, 30, 33, 16)
@@ -15371,7 +15371,7 @@ function GUI:TextInput_addOnEvent(widget, eventCB) end
 ---设置滚动条背景图
 ---* widget 滚动条对象
 ---* value 背景图路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local barimg = "res/private/new_setting/bg_progress.png"
@@ -15385,7 +15385,7 @@ function GUI:Slider_loadBarTexture(widget, value) end
 ---设置滚动条图片
 ---* widget 滚动条对象
 ---* value 滚动条图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local barimg = "res/private/new_setting/bg_progress.png"
@@ -15399,7 +15399,7 @@ function GUI:Slider_loadProgressBarTexture(widget, value) end
 ---设置滚动条拖动块普通图片
 ---* widget 滚动条对象
 ---* value 拖动块图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local barimg = "res/private/new_setting/bg_progress.png"
@@ -15413,7 +15413,7 @@ function GUI:Slider_loadSlidBallTextureNormal(widget, value) end
 ---设置滚动条进度
 ---* widget 滚动条对象
 ---* value 滚动条进度(0-100)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local barimg = "res/private/new_setting/bg_progress.png"
@@ -15427,7 +15427,7 @@ function GUI:Slider_setPercent(widget, value) end
 ---设置滚动条最大进度值
 ---* widget 滚动条对象
 ---* value 滚动条最大进度值
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local barimg = "res/private/new_setting/bg_progress.png"
@@ -15441,7 +15441,7 @@ function GUI:Slider_setMaxPercent(widget, value) end
 ---设置滚动条触摸事件
 ---* widget 滚动条对象
 ---* value 事件函数
----@param widget table
+---@param widget userdata
 ---@param value function
 ---```lua
 ---local barimg = "res/private/new_setting/bg_progress.png"
@@ -15457,7 +15457,7 @@ function GUI:Slider_addOnEvent(widget, value) end
 ---设置圆形进度条百分比
 ---* widget 控件对象
 ---* value 进度(0-100)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local ui_img ="res/public/061101.JPG"
@@ -15469,7 +15469,7 @@ function GUI:ProgressTimer_setPercentage(widget, value) end
 ---设置圆形进度条方向
 ---* widget 控件对象
 ---* value true 顺时针<br>false 逆时针
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local ui_img ="res/public/061101.JPG"
@@ -15482,7 +15482,7 @@ function GUI:ProgressTimer_setReverseDirection(widget, value) end
 ---设置控件Y轴方向缩放
 ---* widget 控件对象
 ---* value 缩放比例, 默认1.0
----@param widget table
+---@param widget userdata
 ---@param value number
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -15496,7 +15496,7 @@ function GUI:setScaleY(widget, value) end
 ---* to 结束进度(0-100)
 ---* completeCB 回调函数
 ---* tag 标记
----@param widget table
+---@param widget userdata
 ---@param time integer
 ---@param to integer
 ---@param completeCB function
@@ -15513,7 +15513,7 @@ function GUI:ProgressTimer_progressTo(widget, time, to, completeCB, tag) end
 ---设置圆形进度条背景图
 ---* widget 控件对象
 ---* img 图片路径
----@param widget table
+---@param widget userdata
 ---@param img string
 ---```lua
 ---local ui_img ="res/public/061101.JPG"
@@ -15525,7 +15525,7 @@ function GUI:ProgressTimer_ChangeImg(widget, img) end
 ---设置进度条图片
 ---* widget 进度条对象
 ---* value 图片路径
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local imgBar ="res/public/061201.JPG"
@@ -15537,7 +15537,7 @@ function GUI:LoadingBar_loadTexture(widget, value) end
 ---设置进度条方向
 ---* widget 进度条对象
 ---* value 方向：<br>0 从左到右<br>1 从右到左
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local imgBar ="res/public/061201.JPG"
@@ -15549,7 +15549,7 @@ function GUI:LoadingBar_setDirection(widget, value) end
 ---设置进度条进度
 ---* widget 进度条对象
 ---* value 进度(0-100)
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local imgBar ="res/public/061201.JPG"
@@ -15561,7 +15561,7 @@ function GUI:LoadingBar_setPercent(widget, value) end
 ---设置进度条颜色
 ---* widget 进度条对象
 ---* value 色值("#000000")
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local imgBar ="res/public/061201.JPG"
@@ -15572,7 +15572,7 @@ function GUI:LoadingBar_setColor(widget, value) end
 
 ---设置特效播放完自动移除
 ---* widget 特效对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local sfx = GUI:Effect_Create(parent, "sfx", 0, 0, 0, 4004, 0, 0, 3, 1)
 ---GUI:Effect_setAutoRemoveOnFinish(sfx)
@@ -15582,7 +15582,7 @@ function GUI:Effect_setAutoRemoveOnFinish(widget) end
 ---设置粒子持续时间
 ---* widget 粒子特效
 ---* value 持续时间, 单位: 秒 <br> -1 表示永久
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local widget = GUI:ParticleEffect_Create(GUI:Attach_LeftBottom(), "TT", 568, 320, "res/private/particles/petal_1.plist")
@@ -15594,7 +15594,7 @@ function GUI:ParticleEffect_setDuration(widget, value) end
 ---设置总粒子数量
 ---* widget 粒子特效
 ---* value 数量
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local widget = GUI:ParticleEffect_Create(GUI:Attach_LeftBottom(), "TT", 568, 320, "res/private/particles/petal_1.plist")
@@ -15638,7 +15638,7 @@ function GUI:AddMoveWidgetTypeEvent(fromType, toType, fromToEvent, toFromEvent) 
 
 ---设置装备框显示自动刷新
 ---* widget 装备框对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local equipShow = GUI:EquipShow_Create(GUI:Attach_LeftBottom(), "equipShow1", 400, 300, 1, false, {bgVisible = true, look = true, doubleTakeOff = true})
 ----- 装戴后自动刷新
@@ -15650,9 +15650,9 @@ function GUI:EquipShow_setAutoUpdate(widget) end
 ---* widget 控件对象
 ---* x 横坐标
 ---* y 纵坐标
----@param widget table
----@param x integer
----@param y integer
+---@param widget userdata
+---@param x number
+---@param y number
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061302.PNG")
 ---GUI:setPosition(Btn,100,100)
@@ -15662,7 +15662,7 @@ function GUI:setPosition(widget, x, y) end
 ---设置横坐标
 ---* widget 控件对象
 ---* value 横坐标
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061302.PNG")
@@ -15673,7 +15673,7 @@ function GUI:setPositionX(widget, value) end
 ---设置纵坐标
 ---* widget 控件对象
 ---* value 纵坐标
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 0, 0, "res/public/061302.PNG")
@@ -15685,9 +15685,9 @@ function GUI:setPositionY(widget, value) end
 ---* widget 控件对象
 ---* x 横坐标
 ---* y 纵坐标
----@param widget table
----@param x integer
----@param y integer
+---@param widget userdata
+---@param x number
+---@param y number
 ---```lua
 ---GUI:setAnchorPoint(parent, 0, 0)        -- 左 下
 ---GUI:setAnchorPoint(parent, 0, 0.5)      -- 左 中
@@ -15705,7 +15705,7 @@ function GUI:setAnchorPoint(widget, x, y) end
 ---* widget 控件对象
 ---* sizeW 宽度
 ---* sizeH 长度
----@param widget table
+---@param widget userdata
 ---@param sizeW integer
 ---@param sizeH integer
 ---```lua
@@ -15717,7 +15717,7 @@ function GUI:setContentSize(widget, sizeW, sizeH) end
 ---设置忽略设置的自定义尺寸大小
 ---* widget 控件对象
 ---* value 是否忽略用户定义尺寸大小
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---GUI:setIgnoreContentAdaptWithSize(btn, true)
@@ -15727,7 +15727,7 @@ function GUI:setIgnoreContentAdaptWithSize(widget, value) end
 ---设置控件标签
 ---* widget 控件对象
 ---* value 标签值
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -15738,7 +15738,7 @@ function GUI:setTag(widget, value) end
 ---设置控件名字
 ---* widget 控件对象
 ---* value 名字
----@param widget table
+---@param widget userdata
 ---@param value string
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -15749,7 +15749,7 @@ function GUI:setName(widget, value) end
 ---设置控件置灰
 ---* widget 控件对象
 ---* isGrey 是否置灰
----@param widget table
+---@param widget userdata
 ---@param isGrey boolean
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -15760,7 +15760,7 @@ function GUI:setGrey(widget, isGrey) end
 ---设置控件旋转角度
 ---* widget 控件对象
 ---* value 旋转角度（0 - 360）
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -15793,7 +15793,7 @@ function SL:ResumeAudioBGM() end
 ---* trackIndex 轨道索引
 ---* name 动画名
 ---* loop 是否循环播放
----@param widget table
+---@param widget userdata
 ---@param trackIndex integer
 ---@param name string
 ---@param loop boolean
@@ -15804,7 +15804,7 @@ function GUI:SpineAnim_setAnimation(widget, trackIndex, name, loop) end
 ---* widget Spine 控件对象
 ---* slotName 插槽名
 ---* attachmentName 附件名（需存在于该插槽）
----@param widget table
+---@param widget userdata
 ---@param slotName string
 ---@param attachmentName string
 ---@return false|nil "无效对象返回 false；有效时设置成功，无显式返回（nil）"
@@ -15813,7 +15813,7 @@ function GUI:SpineAnim_setAttachment(widget, slotName, attachmentName) end
 ---设置骨骼动画水平翻转（X 轴镜像）
 ---* widget Spine 控件对象
 ---* bool true：翻转；false：正常
----@param widget table
+---@param widget userdata
 ---@param bool boolean
 ---@return false|nil "无效对象返回 false；有效时设置成功，无显式返回（nil）"
 function GUI:SpineAnim_setFlipX(widget, bool) end
@@ -15821,7 +15821,7 @@ function GUI:SpineAnim_setFlipX(widget, bool) end
 ---设置骨骼动画垂直翻转（Y 轴镜像）
 ---* widget Spine 控件对象
 ---* bool true：翻转；false：正常
----@param widget table
+---@param widget userdata
 ---@param bool boolean
 ---@return false|nil "无效对象返回 false；有效时设置成功，无显式返回（nil）"
 function GUI:SpineAnim_setFlipY(widget, bool) end
@@ -15831,7 +15831,7 @@ function GUI:SpineAnim_setFlipY(widget, bool) end
 ---* fromAnimName 起始动画名
 ---* toAnimName 目标动画名
 ---* duration 过渡时长（秒）
----@param widget table
+---@param widget userdata
 ---@param fromAnimName string
 ---@param toAnimName string
 ---@param duration number
@@ -15841,28 +15841,28 @@ function GUI:SpineAnim_setMix(widget, fromAnimName, toAnimName, duration) end
 ---设置骨骼动画皮肤
 ---* widget Spine 控件对象
 ---* skinName 皮肤名称
----@param widget table
+---@param widget userdata
 ---@param skinName string
 ---@return false|nil "无效对象返回 false；有效时设置成功，无显式返回（nil）"
 function GUI:SpineAnim_setSkin(widget, skinName) end
 
 ---重置骨骼动画插槽到初始姿态
 ---* widget Spine 控件对象
----@param widget table
+---@param widget userdata
 ---@return false|nil "无效对象返回 false；有效时重置成功，无显式返回（nil）"
 function GUI:SpineAnim_setSlotsToSetupPose(widget) end
 
 ---设置骨骼动画播放时间缩放（速度）
 ---* widget Spine 控件对象
 ---* scale 播放速度（>1 更快，<1 更慢）
----@param widget table
+---@param widget userdata
 ---@param scale number
 ---@return false|nil "无效对象返回 false；有效时设置成功，无显式返回（nil）"
 function GUI:SpineAnim_setTimeScale(widget, scale) end
 
 ---重置到初始姿态（骨骼+插槽）
 ---* widget Spine 控件对象
----@param widget table
+---@param widget userdata
 ---@return false|nil "无效对象返回 false；有效时重置成功，无显式返回（nil）"
 function GUI:SpineAnim_setToSetupPose(widget) end
 
@@ -15899,7 +15899,7 @@ function GUI:SpineSlot_setVisible(widget, isVisible) end
 ---设置红点唯一ID
 ---* widget 红点控件
 ---* gid 唯一id
----@param widget table
+---@param widget userdata
 ---@param gid string
 ---```lua
 ---GUI:RedDot_setGID(widget, gid)
@@ -15909,7 +15909,7 @@ function GUI:RedDot_setGID(widget, gid) end
 ---红点控件绑定条件ID
 ---* widget 红点对象
 ---* conditionID 条件id
----@param widget table
+---@param widget userdata
 ---@param conditionID integer
 ---```lua
 ---GUI:RedDot_setBindConditionID(widget, conditionID)
@@ -15920,9 +15920,9 @@ function GUI:RedDot_setBindConditionID(widget, conditionID) end
 ---* widget 容器对象
 ---* x x
 ---* y y
----@param widget table
----@param x integer
----@param y integer
+---@param widget userdata
+---@param x number
+---@param y number
 ---```lua
 ---local scrollView = GUI:ScrollView_Create(GUI:Attach_Bottom(), "scrollView", 200, 200, 300, 500, 1)
 ---GUI:ScrollView_setInnerContainerPosition(scrollView,100,100)
@@ -15933,9 +15933,9 @@ function GUI:ScrollView_setInnerContainerPosition(widget, x, y) end
 ---* widget 容器对象
 ---* x x
 ---* y y
----@param widget table
----@param x integer
----@param y integer
+---@param widget userdata
+---@param x number
+---@param y number
 ---```lua
 ---local listView = GUI:ListView_Create(GUI:Attach_Bottom(), "listView", 200, 200, 300, 500, 1)
 ---GUI:ListView_setInnerContainerPosition(listView,100,100)
@@ -15945,7 +15945,7 @@ function GUI:ListView_setInnerContainerPosition(widget, x, y) end
 ---设置复选框监听事件
 ---* widget 控件对象
 ---* eventCB 监听函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 ---GUI:CheckBox_addOnEvent(CheckBox, function(CheckBox,editbox)
@@ -15961,7 +15961,7 @@ function GUI:CheckBox_addOnEvent(widget, eventCB) end
 ---设置播放器视频路径
 ---* widget 播放器对象
 ---* fileName 视频路径
----@param widget table
+---@param widget userdata
 ---@param fileName string
 ---```lua
 ---GUI:VideoPlayer_setFileName(vedioWidget, "res/03/testVedio.mp4")
@@ -15971,7 +15971,7 @@ function GUI:VideoPlayer_setFileName(widget, fileName) end
 ---设置播放器视频是否原视频分辨率
 ---* widget 播放器对象
 ---* isEnable 是否原视频分辨率
----@param widget table
+---@param widget userdata
 ---@param isEnable boolean
 ---```lua
 ---GUI:VideoPlayer_setKeepAspectRatioEnabled(vedioWidget, true)
@@ -15981,7 +15981,7 @@ function GUI:VideoPlayer_setKeepAspectRatioEnabled(widget, isEnable) end
 ---设置视频播放器是否全屏
 ---* widget 播放器对象
 ---* isEnable 是否全屏
----@param widget table
+---@param widget userdata
 ---@param isEnable boolean
 ---```lua
 ---GUI:VideoPlayer_setFullScreenEnabled(vedioWidget, true)
@@ -15994,7 +15994,7 @@ function GUI:VideoPlayer_setFullScreenEnabled(widget, isEnable) end
 ---* endColor 结束颜色
 ---* xPer 渐变参数（xPer，xPer<br>1，0为横向渐变<br>0，1为纵向渐变）
 ---* yPer 渐变参数（xPer，xPer<br>1，0为横向渐变<br>0，1为纵向渐变）
----@param widget table
+---@param widget userdata
 ---@param startColor string
 ---@param endColor string
 ---@param xPer integer
@@ -16008,7 +16008,7 @@ function GUI:Shader_GradientColor(widget, startColor, endColor, xPer, yPer) end
 
 ---设置控件阴影
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local parent = GUI:Win_Create("testWin", 0, 0, 0, 0, false, false, true, true)
 ---local Btn = GUI:Button_Create(parent, "BtnOk", 200, 200, "res/public/1900000679.png")
@@ -16019,7 +16019,7 @@ function GUI:SetShaderShadow(widget) end
 ---设置控件X轴倾斜角度
 ---* widget 控件对象
 ---* value 倾斜角度（0 - 360）
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16030,7 +16030,7 @@ function GUI:setRotationSkewX(widget, value) end
 ---设置控件Y轴倾斜角度
 ---* widget 控件对象
 ---* value 倾斜角度（0 - 360）
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16041,7 +16041,7 @@ function GUI:setRotationSkewY(widget, value) end
 ---设置控件可见性
 ---* widget 控件对象
 ---* value 是否显示
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16052,7 +16052,7 @@ function GUI:setVisible(widget, value) end
 ---设置控件不透明度
 ---* widget 控件对象
 ---* value 不透明度(0-255), 默认255
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16062,7 +16062,7 @@ function GUI:setOpacity(widget, value) end
 
 ---获取控件不透明度
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return number "控件不透明度"
 ---```lua
 ---local attachParent=GUI:Attach_Parent()
@@ -16076,7 +16076,7 @@ function GUI:getOpacity(widget) end
 ---设置控件缩放
 ---* widget 控件对象
 ---* value 缩放比例, 默认1.0
----@param widget table
+---@param widget userdata
 ---@param value number
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16086,7 +16086,7 @@ function GUI:setScale(widget, value) end
 
 ---获取控件缩放比例
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---@return number "控件缩放比例"
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16096,7 +16096,7 @@ function GUI:getScale(widget) end
 ---设置控件X轴方向缩放
 ---* widget 控件对象
 ---* value 缩放比例, 默认1.0
----@param widget table
+---@param widget userdata
 ---@param value number
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16107,7 +16107,7 @@ function GUI:setScaleX(widget, value) end
 ---设置水平X轴方向翻转
 ---* widget 控件对象
 ---* value X轴方向是否翻转
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16118,7 +16118,7 @@ function GUI:setFlippedX(widget, value) end
 ---设置垂直Y轴方向翻转
 ---* widget 控件对象
 ---* value Y轴方向是否翻转
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16129,7 +16129,7 @@ function GUI:setFlippedY(widget, value) end
 ---设置控件渲染层级
 ---* widget 控件对象
 ---* value 渲染层级, 值越大显示越靠前
----@param widget table
+---@param widget userdata
 ---@param value integer
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16140,7 +16140,7 @@ function GUI:setLocalZOrder(widget, value) end
 ---设置控件是否跟随父控件变化透明度
 ---* widget 控件对象
 ---* value 是否跟随
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16151,7 +16151,7 @@ function GUI:setCascadeOpacityEnabled(widget, value) end
 ---设置控件的所有子控件是否跟随变化透明度
 ---* widget 控件对象
 ---* value 是否跟随
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16162,7 +16162,7 @@ function GUI:setChildrenCascadeOpacityEnabled(widget, value) end
 ---设置控件是否可以触摸
 ---* widget 控件对象
 ---* value 是否触摸
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16173,7 +16173,7 @@ function GUI:setTouchEnabled(widget, value) end
 ---设置延迟可触摸
 ---* widget 控件对象
 ---* delay 延迟触摸间隔
----@param widget table
+---@param widget userdata
 ---@param delay number
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16184,7 +16184,7 @@ function GUI:delayTouchEnabled(widget, delay) end
 ---设置控件是否可以鼠标触摸
 ---* widget 控件对象
 ---* value 是否鼠标触摸
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
@@ -16195,7 +16195,7 @@ function GUI:setMouseEnabled(widget, value) end
 ---设置控件是否触摸吞噬
 ---* widget 控件对象
 ---* value 是否吞噬
----@param widget table
+---@param widget userdata
 ---@param value boolean
 ---```lua
 ---local layout1 = GUI:Layout_Create(parent, "layout1", 0, 0, 100, 100, true)
@@ -16207,7 +16207,7 @@ function GUI:setSwallowTouches(widget, value) end
 
 ---设置控件吞噬鼠标按键事件 [检查自身触摸吞噬时]
 ---* widget 控件对象
----@param widget table
+---@param widget userdata
 ---```lua
 ---local Btn = GUI:Button_Create(attachParent, "btnAnchor", 0, 0, "res/public/061302.PNG")
 ---GUI:setMouseRSwallowTouches(Btn)
@@ -16217,7 +16217,7 @@ function GUI:setMouseRSwallowTouches(widget) end
 ---设置控件点击事件
 ---* widget 控件对象
 ---* func 回调函数
----@param widget table
+---@param widget userdata
 ---@param func function
 ---```lua
 ---local parent = GUI:Win_Create("winC", 0, 0, 0, 0, false, false, true, true, true, nil, nil, 1)
@@ -16231,7 +16231,7 @@ function GUI:addOnClickEvent(widget, func) end
 ---设置控件触摸事件
 ---* widget 控件对象
 ---* func 回调函数
----@param widget table
+---@param widget userdata
 ---@param func function
 ---```lua
 ----- 添加长按事件, 长按0.5秒触发
@@ -16319,7 +16319,7 @@ function GUI:addOnTouchEvent(widget, func) end
 ---设置控件长按触发事件
 ---* widget 控件对象
 ---* func 回调函数
----@param widget table
+---@param widget userdata
 ---@param func function
 ---```lua
 ---GUI:addOnLongTouchEvent(Btn, function()
@@ -16331,7 +16331,7 @@ function GUI:addOnLongTouchEvent(widget, func) end
 ---设置控件鼠标进入/移出事件
 ---* widget 控件对象
 ---* param onEnterFunc: function 鼠标进入回调函数<br>onLeaveFunc: function 鼠标移出回调函数<br>onInsideFunc: function 鼠标一直在内部回调函数
----@param widget table
+---@param widget userdata
 ---@param param table
 ---```lua
 ---GUI:addMouseMoveEvent(button,
@@ -16350,7 +16350,7 @@ function GUI:addMouseMoveEvent(widget, param) end
 ---设置鼠标按钮事件
 ---* widget 控件对象
 ---* param onRightDownFunc: function 鼠标右键点击事件; <br> onRightUpFunc: function 鼠标右键松开事件;<br> needTouchPos: boolean 需要传入鼠标触摸位置;<br>~~onScrollFunc: function 鼠标滚轮滚动事件~~;<br>onDoubleLFunc: function 鼠标左键双击事件;<br>checkIsVisible: boolean 检查控件可见;<br>checkTouchEnable: boolean 检查控件可点性
----@param widget table
+---@param widget userdata
 ---@param param table
 ---```lua
 ---GUI:addMouseButtonEvent(btn, {onRightDownFunc = function()
@@ -16365,7 +16365,7 @@ function GUI:addMouseButtonEvent(widget, param) end
 ---* pos 位置
 ---* anr 锚点
 ---* param checkCallback: function 检查接触点是否能展示[函数传入参数: pos <br>返回: true / false ]
----@param widget table
+---@param widget userdata
 ---@param str string
 ---@param pos table
 ---@param anr table
@@ -16389,7 +16389,7 @@ function GUI:addMouseOverTips(widget, str, pos, anr, param) end
 ---* releaseCB 松开回调(单按键时有效)
 ---* autoPressInterval 长按触发函数间隔 默认 1
 ---* checkFullSort 兼容全顺序键盘key排列, 针对监听多键
----@param codeKeys string / table
+---@param codeKeys string | table
 ---@param pressedCB function
 ---@param releaseCB function
 ---@param autoPressInterval integer
@@ -16578,7 +16578,7 @@ function GUI:addKeyboardEvent(codeKeys, pressedCB, releaseCB, autoPressInterval,
 
 ---移除键盘监听
 ---* codeKeys 要移除监听的键盘键key
----@param codeKeys string / table
+---@param codeKeys string | table
 ---```lua
 ---GUI:removeKeyboardEvent("KEY_F7")
 ---```
@@ -16587,7 +16587,7 @@ function GUI:removeKeyboardEvent(codeKeys) end
 ---加载纹理图片
 ---* widget 图片对象
 ---* filepath 图片路径
----@param widget table
+---@param widget userdata
 ---@param filepath string
 ---```lua
 ---path="btn_jnkan_01.png"
@@ -16598,7 +16598,7 @@ function GUI:Image_loadTexture(widget, filepath) end
 ---设置物品放入框监听事件
 ---* widget 父节点对象
 ---* eventCB 事件处理函数
----@param widget table
+---@param widget userdata
 ---@param eventCB function
 ---```lua
 ---local returnVal=GUI:ItemBox_Create(Hand, "itemBo2323x", 250, 250, "res/gmmain/02.png", 613, 5)
