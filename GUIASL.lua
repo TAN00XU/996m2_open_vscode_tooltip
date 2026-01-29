@@ -9791,8 +9791,8 @@ function SL:OpenURL(url) end
 ---* Type 创建层 0主界面层 1普通面板层 2通知层 默认1<br>仅普通面板时 Main、Last、EscC
 ---* enterFunc 鼠标点击回调
 ---@param ID integer
----@param X integer
----@param Y integer
+---@param X number
+---@param Y number
 ---@param W integer
 ---@param H integer
 ---@param Main boolean
@@ -9822,8 +9822,8 @@ function GUI:Win_Create(ID, X, Y, W, H, Main, Last, NV, EscC, IsRev, NpcID, Type
 ---* nimg 图片路径
 ---@param Parent userdata
 ---@param ID string
----@param X integer
----@param Y integer
+---@param X number
+---@param Y number
 ---@param nimg string
 ---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
@@ -9846,8 +9846,8 @@ function GUI:Image_Create(Parent, ID, X, Y, nimg) end
 ---* alpha 透明度
 ---@param Parent userdata
 ---@param ID string
----@param X integer
----@param Y integer
+---@param X number
+---@param Y number
 ---@param width integer
 ---@param startX integer
 ---@param startY integer
@@ -9875,8 +9875,8 @@ function GUI:DrawLine_Create(Parent, ID, X, Y, width, startX, startY, endX, endY
 ---* nimg 图片路径
 ---@param Parent userdata
 ---@param ID string
----@param X integer
----@param Y integer
+---@param X number
+---@param Y number
 ---@param nimg string
 ---@return userdata "成功时返回控件对象，失败时返回空"
 ---```lua
@@ -9894,8 +9894,8 @@ function GUI:Button_Create(Parent, ID, X, Y, nimg) end
 ---* str 文本
 ---@param Parent userdata
 ---@param ID string
----@param X integer
----@param Y integer
+---@param X number
+---@param Y number
 ---@param fontSize integer
 ---@param fontColor string
 ---@param str string
