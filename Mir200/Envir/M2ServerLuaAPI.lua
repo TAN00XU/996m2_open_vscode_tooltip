@@ -3029,6 +3029,23 @@ function setotherparams(actor, varIndex, varValue) end
 ---```
 function StopShop(actor) end
 
+---禁止摆摊
+---* actor 玩家对象
+---@param actor table
+---```tips
+---注意:当前接口需在摆摊触发(startmyshop)中使用
+---```
+---```lua
+---function startmyshop(actor)
+---    if getbaseinfo(actor,6) < 250 then
+---        say(actor,"角色小于50级不允许摆摊")
+---        ForbidMyShop(actor)
+---        return
+---    end
+---end
+---```
+function ForbidMyShop(actor) end
+
 ---骰子功能
 ---* actor 玩家对象
 ---* num 动画数量<br>比如3就是会出现3个骰子转动
@@ -5613,7 +5630,7 @@ function parsetext(text, actor) end
 ---* param3 参数3<br>(仅ID=1时，可用)
 ---@param object table
 ---@param nID integer
----@param param3 integer
+---@param param3? integer
 ---@return any "返回值"
 ---```tips
 ---说明
@@ -12343,10 +12360,16 @@ function dealend(actor, buyer, itemjson) end
 ---摆摊触发
 ---* actor 玩家对象
 ---@param actor table
----@return boolean "true=允许摆摊;false=不允许摆摊"
+---```tips
+---注意:阻止摆摊需使用接口ForbidMyShop
+---```
 ---```lua
 ---function startmyshop(actor)
----    release_print("摆摊触发")
+---    if getbaseinfo(actor,6) < 250 then
+---        say(actor,"角色小于50级不允许摆摊")
+---        ForbidMyShop(actor)
+---        return
+---    end
 ---end
 ---```
 function startmyshop(actor) end
@@ -12814,7 +12837,7 @@ function ignoredef(actor, target, damage, magicId) end
 ---@param target table
 ---@param skillid integer
 ---@param SysCanPush boolean
----@return boolean "可以击退——true|不可以击退——false"
+---@return boolean "true=可以击退,false=不可以击退"
 ---```lua
 ---function on_push_pre(actor, target, skillid, SysCanPush)
 ---    return SysCanPush

@@ -1139,6 +1139,12 @@
         "body": "StopShop(actor)",
         "scope": "接口/人物相关/收摊"
     },
+    "禁止摆摊": {
+        "prefix": "ForbidMyShop",
+        "description": "禁止摆摊",
+        "body": "ForbidMyShop(actor)",
+        "scope": "接口/人物相关/禁止摆摊"
+    },
     "骰子功能": {
         "prefix": "playdice",
         "description": "骰子功能",
