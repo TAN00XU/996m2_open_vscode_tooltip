@@ -7812,7 +7812,7 @@ function SL:GetWndProperty(widget, desc, key) end
 ---@param eventID string
 ---@param eventTag string
 ---@param eventCB function
----@param widget userdata
+---@param widget? userdata
 ---```lua
 ---SL:RegisterLUAEvent(LUA_EVENT_ONPLAYLEVELUP, "属性刷新", shuxing)
 ---```
@@ -11026,7 +11026,7 @@ function GUI:CostItem_Create(parent, ID, x, y, data) end
 ---* widget 控件对象
 ---* timelineCB 回调函数
 ---@param widget userdata
----@param timelineCB function
+---@param timelineCB? function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
 ---GUI:Timeline_Window1(aniImg, function()
@@ -11039,7 +11039,7 @@ function GUI:Timeline_Window1(widget, timelineCB) end
 ---* widget 控件对象
 ---* timelineCB 回调函数
 ---@param widget userdata
----@param timelineCB function
+---@param timelineCB? function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
 ---GUI:Timeline_Window2(aniImg, function()
@@ -11052,7 +11052,7 @@ function GUI:Timeline_Window2(widget, timelineCB) end
 ---* widget 控件对象
 ---* timelineCB 回调函数
 ---@param widget userdata
----@param timelineCB function
+---@param timelineCB? function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
 ---GUI:Timeline_Window3(aniImg, function()
@@ -11065,7 +11065,7 @@ function GUI:Timeline_Window3(widget, timelineCB) end
 ---* widget 控件对象
 ---* timelineCB 回调函数
 ---@param widget userdata
----@param timelineCB function
+---@param timelineCB? function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
 ---GUI:Timeline_Window4(aniImg, function()
@@ -11078,7 +11078,7 @@ function GUI:Timeline_Window4(widget, timelineCB) end
 ---* widget 控件对象
 ---* timelineCB 回调函数
 ---@param widget userdata
----@param timelineCB function
+---@param timelineCB? function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
 ---GUI:Timeline_Window5(aniImg, function()
@@ -11091,7 +11091,7 @@ function GUI:Timeline_Window5(widget, timelineCB) end
 ---* widget 控件对象
 ---* timelineCB 回调函数
 ---@param widget userdata
----@param timelineCB function
+---@param timelineCB? function
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
 ---GUI:Timeline_Window6(aniImg, function()
@@ -11147,7 +11147,7 @@ function GUI:Timeline_StopByTag(widget, tag) end
 ---* timelineCB 回调函数
 ---@param widget userdata
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11164,7 +11164,7 @@ function GUI:Timeline_FadeOut(widget, time, timelineCB) end
 ---* timelineCB 回调函数
 ---@param widget userdata
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11184,7 +11184,7 @@ function GUI:Timeline_FadeIn(widget, time, timelineCB) end
 ---@param widget userdata
 ---@param value integer
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11204,7 +11204,7 @@ function GUI:Timeline_FadeTo(widget, value, time, timelineCB) end
 ---@param widget userdata
 ---@param value integer
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 -----实际只缩小到原先0.5倍数大小
@@ -11227,7 +11227,7 @@ function GUI:Timeline_ScaleTo(widget, value, time, timelineCB) end
 ---@param widget userdata
 ---@param value integer
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 -----实际缩小到原先0.25倍数大小
@@ -11250,7 +11250,7 @@ function GUI:Timeline_ScaleBy(widget, value, time, timelineCB) end
 ---@param widget userdata
 ---@param value integer
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11292,7 +11292,7 @@ function GUI:GradientColorText_setColor(object, color1, color2) end
 ---@param widget userdata
 ---@param value integer
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---GUI:Timeline_RotateTo(aniImg, 50, 1, function()
@@ -11311,7 +11311,7 @@ function GUI:Timeline_RotateBy(widget, value, time, timelineCB) end
 ---@param widget userdata
 ---@param value table
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11331,7 +11331,7 @@ function GUI:Timeline_MoveTo(widget, value, time, timelineCB) end
 ---@param widget userdata
 ---@param value table
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11351,7 +11351,7 @@ function GUI:Timeline_MoveBy(widget, value, time, timelineCB) end
 ---@param widget userdata
 ---@param value integer
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11373,7 +11373,7 @@ function GUI:Timeline_Blink(widget, value, time, timelineCB) end
 ---@param time integer
 ---@param x number
 ---@param y number
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11406,7 +11406,7 @@ function GUI:Timeline_Waggle(widget, time, angle) end
 ---* timelineCB 回调函数
 ---@param widget userdata
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -11424,7 +11424,7 @@ function GUI:Timeline_DelayTime(widget, time, timelineCB) end
 ---* timelineCB 回调函数
 ---@param widget userdata
 ---@param time integer
----@param timelineCB function
+---@param timelineCB? function
 ---@return userdata "Action"
 ---```lua
 ---local aniImg=GUI:Image_Create(GUI:Attach_LeftBottom(),"aniImg",400,163,"res/public/061303.PNG")
@@ -13373,7 +13373,7 @@ function GUI:addStateEvent(widget, func) end
 ---获取界面控件
 ---* parent 父控件对象
 ---* ID 控件ID
----@param parent userdata
+---@param parent? userdata
 ---@param ID string
 ---```lua
 ---local _parent = GUI:Win_Create("QSQ_challengeboss", 0, 0, 0, 0, false, false, true, false)
@@ -14757,7 +14757,7 @@ function GUI:Text_setTextVerticalAlignment(widget, value) end
 
 ---设置文本水平对齐
 ---* widget 对象
----* value 0：顶对齐<br> 1：垂直居中<br>2：底对齐
+---* value 0：左对齐<br> 1：水平居中<br>2：右对齐
 ---@param widget userdata
 ---@param value integer
 ---```lua
@@ -15279,7 +15279,7 @@ function GUI:TextInput_setMaxLength(widget, value) end
 
 ---设置输入框水平对齐
 ---* widget 输入框对象
----* value 对齐方式：<br>0 顶对齐<br> 1 底对齐<br>2 水平居中
+---* value 对齐方式：<br>0 左对齐<br> 1 水平居中<br>2 右居中
 ---@param widget userdata
 ---@param value integer
 ---```lua
